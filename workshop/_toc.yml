@@ -1,0 +1,21 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: intro
+chapters:
+- file: overview
+- file: CoC
+- file: dei
+- file: outline
+- file: setup
+- file: materials/code_form_test_CI/overview_code_form_test.md
+  sections:
+  - file: materials/code_form_test_CI/code_formatting
+  - file: materials/code_form_test_CI/code_testing
+  - file: materials/code_form_test_CI/CI_CD
+- file: prerequisites
+  sections:
+  - file: materials/prerequisites/intro_to_shell.ipynb
+  - file: materials/prerequisites/intro_python.ipynb
+

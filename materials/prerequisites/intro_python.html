@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="../../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Introduction to Python &#8212; Code formatting &amp; testing</title>
   
@@ -17,58 +16,58 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
 
-  
-  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
-
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/myfile.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/myfile.css?v=3437f865" />
   
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
-  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
 
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/clipboard.min.js"></script>
-    <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'materials/prerequisites/intro_python';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="prev" title="Introduction to the (unix) command line: bash" href="intro_to_shell.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -84,19 +83,8 @@ const thebe_selector_output = ".output, .cell_output"
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-primary-sidebar-checkbox"/>
-  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-secondary-sidebar-checkbox"/>
-  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="../../search.html"
       method="get">
@@ -104,7 +92,6 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -112,8 +99,8 @@ const thebe_selector_output = ".output, .cell_output"
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -129,7 +116,8 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -159,11 +147,18 @@ const thebe_selector_output = ".output, .cell_output"
     
     
     <img src="https://impact-scholars.neuromatch.io/_static/Sciencematch.png" class="logo__image only-light" alt="Code formatting & testing - Home"/>
-    <script>document.write(`<img src="https://impact-scholars.neuromatch.io/_static/Sciencematch.png" class="logo__image only-dark" alt="Code formatting & testing - Home"/>`);</script>
+    <img src="https://impact-scholars.neuromatch.io/_static/Sciencematch.png" class="logo__image only-dark pst-js-only" alt="Code formatting & testing - Home"/>
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -230,9 +225,9 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -355,27 +350,19 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
-    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
-    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
-  </button>
-`);
-</script>
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -562,9 +549,9 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="introduction-to-python">
-<h1>Introduction to Python<a class="headerlink" href="#introduction-to-python" title="Permalink to this heading">#</a></h1>
+<h1>Introduction to Python<a class="headerlink" href="#introduction-to-python" title="Link to this heading">#</a></h1>
 <section id="before-we-get-started-1">
-<h2>Before we get started 1…<a class="headerlink" href="#before-we-get-started-1" title="Permalink to this heading">#</a></h2>
+<h2>Before we get started 1…<a class="headerlink" href="#before-we-get-started-1" title="Link to this heading">#</a></h2>
 <br>
 <ul class="simple">
 <li><p>most of what you’ll see within this lecture was prepared by Ross Markello, Michael Notter and Peer Herholz and further adapted for this course by Peer Herholz</p></li>
@@ -575,7 +562,7 @@ document.write(`
 </ul>
 </section>
 <section id="objectives">
-<h2>Objectives 📍<a class="headerlink" href="#objectives" title="Permalink to this heading">#</a></h2>
+<h2>Objectives 📍<a class="headerlink" href="#objectives" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>learn basic and efficient usage of the python programming language</p>
 <ul>
@@ -586,21 +573,21 @@ document.write(`
 </ul>
 </section>
 <section id="what-is-python">
-<h2>What is Python?<a class="headerlink" href="#what-is-python" title="Permalink to this heading">#</a></h2>
+<h2>What is Python?<a class="headerlink" href="#what-is-python" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Python is a programming language</p></li>
 <li><p>Specifically, it’s a <strong>widely used/very flexible</strong>, <strong>high-level</strong>, <strong>general-purpose</strong>, <strong>dynamic</strong> programming language</p></li>
 <li><p>That’s a mouthful! Let’s explore each of these points in more detail…</p></li>
 </ul>
 <section id="widely-used">
-<h3>Widely-used<a class="headerlink" href="#widely-used" title="Permalink to this heading">#</a></h3>
+<h3>Widely-used<a class="headerlink" href="#widely-used" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Python is the fastest-growing major programming language</p></li>
 <li><p>Top 3 overall (with JavaScript, Java)</p></li>
 </ul>
 <center><img src="https://149351115.v2.pressablecdn.com/wp-content/uploads/2017/09/growth_major_languages-1-1400x1200.png" width="800px" style="margin-bottom: 10px;"></center></section>
 <section id="high-level">
-<h3>High-level<a class="headerlink" href="#high-level" title="Permalink to this heading">#</a></h3>
+<h3>High-level<a class="headerlink" href="#high-level" title="Link to this heading">#</a></h3>
 <p>Python features a high level of abstraction</p>
 <ul class="simple">
 <li><p>Many operations that are explicit in lower-level languages (e.g., C/C++) are implicit in Python</p></li>
@@ -608,7 +595,7 @@ document.write(`
 <li><p>Python lets you write code faster</p></li>
 </ul>
 <section id="file-reading-in-java">
-<h4>File reading in Java<a class="headerlink" href="#file-reading-in-java" title="Permalink to this heading">#</a></h4>
+<h4>File reading in Java<a class="headerlink" href="#file-reading-in-java" title="Link to this heading">#</a></h4>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">java.io.BufferedReader</span><span class="p">;</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">java.io.FileReader</span><span class="p">;</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">java.io.IOException</span><span class="p">;</span>
@@ -634,14 +621,14 @@ document.write(`
 </div>
 </section>
 <section id="file-reading-in-python">
-<h4>File-reading in Python<a class="headerlink" href="#file-reading-in-python" title="Permalink to this heading">#</a></h4>
+<h4>File-reading in Python<a class="headerlink" href="#file-reading-in-python" title="Link to this heading">#</a></h4>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
 </pre></div>
 </div>
 </section>
 </section>
 <section id="general-purpose">
-<h3>General-purpose<a class="headerlink" href="#general-purpose" title="Permalink to this heading">#</a></h3>
+<h3>General-purpose<a class="headerlink" href="#general-purpose" title="Link to this heading">#</a></h3>
 <p>You can do almost everything in Python</p>
 <ul class="simple">
 <li><p>Comprehensive standard library</p></li>
@@ -650,7 +637,7 @@ document.write(`
 </ul>
 <center><img src="https://raw.githubusercontent.com/PeerHerholz/Python_for_Psychologists_Winter2021/master/lecture/static/general_purpose_meme.png"></center></section>
 <section id="dynamic">
-<h3>Dynamic<a class="headerlink" href="#dynamic" title="Permalink to this heading">#</a></h3>
+<h3>Dynamic<a class="headerlink" href="#dynamic" title="Link to this heading">#</a></h3>
 <p>Code is interpreted at run-time</p>
 <ul class="simple">
 <li><p>No compilation process*; code is read line-by-line when executed</p></li>
@@ -661,67 +648,67 @@ document.write(`
 <p>What we will do in this section of the course is a <em>short</em> introduction to <code class="docutils literal notranslate"><span class="pre">Python</span></code> to help beginners to get familiar with this <code class="docutils literal notranslate"><span class="pre">programming</span> <span class="pre">language</span></code>.</p>
 <p>It is divided into the following chapters:</p>
 <ul class="simple">
-<li><p><span class="xref myst">Module</span></p></li>
-<li><p><span class="xref myst">Help and Descriptions</span></p></li>
-<li><p><span class="xref myst">Variables and types</span></p>
+<li><p><a class="reference internal" href="#Module"><span class="xref myst">Module</span></a></p></li>
+<li><p><a class="reference internal" href="#Help-and-Descriptions"><span class="xref myst">Help and Descriptions</span></a></p></li>
+<li><p><a class="reference internal" href="#Variables-and-types"><span class="xref myst">Variables and types</span></a></p>
 <ul>
-<li><p><span class="xref myst">Symbol names</span></p></li>
-<li><p><span class="xref myst">Assignment</span></p></li>
-<li><p><span class="xref myst">Fundamental types</span></p></li>
+<li><p><a class="reference internal" href="#Symbol-names"><span class="xref myst">Symbol names</span></a></p></li>
+<li><p><a class="reference internal" href="#Assignment"><span class="xref myst">Assignment</span></a></p></li>
+<li><p><a class="reference internal" href="#Fundamental-types"><span class="xref myst">Fundamental types</span></a></p></li>
 </ul>
 </li>
-<li><p><span class="xref myst">Operators and comparisons</span></p>
+<li><p><a class="reference internal" href="#Operators-and-comparisons"><span class="xref myst">Operators and comparisons</span></a></p>
 <ul>
-<li><p><span class="xref myst">Shortcut math operation and assignment</span></p></li>
+<li><p><a class="reference internal" href="#Shortcut-math-operation-and-assignment"><span class="xref myst">Shortcut math operation and assignment</span></a></p></li>
 </ul>
 </li>
-<li><p><span class="xref myst">Strings, List and dictionaries</span></p>
+<li><p><a class="reference internal" href="#Strings,-List-and-dictionaries"><span class="xref myst">Strings, List and dictionaries</span></a></p>
 <ul>
-<li><p><span class="xref myst">Strings</span></p></li>
-<li><p><span class="xref myst">List</span></p></li>
-<li><p><span class="xref myst">Tuples</span></p></li>
-<li><p><span class="xref myst">Dictionaries</span></p></li>
+<li><p><a class="reference internal" href="#Strings"><span class="xref myst">Strings</span></a></p></li>
+<li><p><a class="reference internal" href="#List"><span class="xref myst">List</span></a></p></li>
+<li><p><a class="reference internal" href="#Tuples"><span class="xref myst">Tuples</span></a></p></li>
+<li><p><a class="reference internal" href="#Dictionaries"><span class="xref myst">Dictionaries</span></a></p></li>
 </ul>
 </li>
-<li><p><span class="xref myst">Indentation</span></p></li>
-<li><p><span class="xref myst">Control Flow</span></p>
+<li><p><a class="reference internal" href="#Indentation"><span class="xref myst">Indentation</span></a></p></li>
+<li><p><a class="reference internal" href="#Control-Flow"><span class="xref myst">Control Flow</span></a></p>
 <ul>
-<li><p><span class="xref myst">Conditional statements: <code class="docutils literal notranslate"><span class="pre">if</span></code>, <code class="docutils literal notranslate"><span class="pre">elif</span></code>, <code class="docutils literal notranslate"><span class="pre">else</span></code></span></p></li>
+<li><p><a class="reference internal" href="#Conditional-statements:-if,-elif,-else"><span class="xref myst">Conditional statements: <code class="docutils literal notranslate"><span class="pre">if</span></code>, <code class="docutils literal notranslate"><span class="pre">elif</span></code>, <code class="docutils literal notranslate"><span class="pre">else</span></code></span></a></p></li>
 </ul>
 </li>
-<li><p><span class="xref myst">Loops</span></p>
+<li><p><a class="reference internal" href="#Loops"><span class="xref myst">Loops</span></a></p>
 <ul>
-<li><p><span class="xref myst"><code class="docutils literal notranslate"><span class="pre">for</span></code> loops</span></p></li>
-<li><p><span class="xref myst"><code class="docutils literal notranslate"><span class="pre">break</span></code>, <code class="docutils literal notranslate"><span class="pre">continue</span></code> and <code class="docutils literal notranslate"><span class="pre">pass</span></code></span></p></li>
+<li><p><a class="reference internal" href="#for-loops"><span class="xref myst"><code class="docutils literal notranslate"><span class="pre">for</span></code> loops</span></a></p></li>
+<li><p><a class="reference internal" href="#break,-continue-and-pass"><span class="xref myst"><code class="docutils literal notranslate"><span class="pre">break</span></code>, <code class="docutils literal notranslate"><span class="pre">continue</span></code> and <code class="docutils literal notranslate"><span class="pre">pass</span></code></span></a></p></li>
 </ul>
 </li>
-<li><p><span class="xref myst">Functions</span></p>
+<li><p><a class="reference internal" href="#Functions"><span class="xref myst">Functions</span></a></p>
 <ul>
-<li><p><span class="xref myst">Default argument and keyword arguments</span></p></li>
-<li><p><span class="xref myst"><code class="docutils literal notranslate"><span class="pre">*args</span></code> and <code class="docutils literal notranslate"><span class="pre">*kwargs</span></code> parameters</span></p></li>
-<li><p><span class="xref myst">Unnamed functions: <code class="docutils literal notranslate"><span class="pre">lambda</span></code> function</span></p></li>
+<li><p><a class="reference internal" href="#Default-argument-and-keyword-arguments"><span class="xref myst">Default argument and keyword arguments</span></a></p></li>
+<li><p><a class="reference internal" href="#*args-and-*kwargs-parameters"><span class="xref myst"><code class="docutils literal notranslate"><span class="pre">*args</span></code> and <code class="docutils literal notranslate"><span class="pre">*kwargs</span></code> parameters</span></a></p></li>
+<li><p><a class="reference internal" href="#Unnamed-functions:-lambda-function"><span class="xref myst">Unnamed functions: <code class="docutils literal notranslate"><span class="pre">lambda</span></code> function</span></a></p></li>
 </ul>
 </li>
-<li><p><span class="xref myst">Classes</span></p></li>
-<li><p><span class="xref myst">Modules</span></p></li>
-<li><p><span class="xref myst">Exceptions</span></p></li>
+<li><p><a class="reference internal" href="#Classes"><span class="xref myst">Classes</span></a></p></li>
+<li><p><a class="reference internal" href="#Modules"><span class="xref myst">Modules</span></a></p></li>
+<li><p><a class="reference internal" href="#Exceptions"><span class="xref myst">Exceptions</span></a></p></li>
 </ul>
 <p>Here’s what we will focus on in the first block:</p>
 <ul class="simple">
-<li><p><span class="xref myst">Module</span></p></li>
-<li><p><span class="xref myst">Help and Descriptions</span></p></li>
-<li><p><span class="xref myst">Variables and types</span></p>
+<li><p><a class="reference internal" href="#Module"><span class="xref myst">Module</span></a></p></li>
+<li><p><a class="reference internal" href="#Help-and-Descriptions"><span class="xref myst">Help and Descriptions</span></a></p></li>
+<li><p><a class="reference internal" href="#Variables-and-types"><span class="xref myst">Variables and types</span></a></p>
 <ul>
-<li><p><span class="xref myst">Symbol names</span></p></li>
-<li><p><span class="xref myst">Assignment</span></p></li>
-<li><p><span class="xref myst">Fundamental types</span></p></li>
+<li><p><a class="reference internal" href="#Symbol-names"><span class="xref myst">Symbol names</span></a></p></li>
+<li><p><a class="reference internal" href="#Assignment"><span class="xref myst">Assignment</span></a></p></li>
+<li><p><a class="reference internal" href="#Fundamental-types"><span class="xref myst">Fundamental types</span></a></p></li>
 </ul>
 </li>
 </ul>
 </section>
 </section>
 <section id="modules">
-<h2>Modules<a class="headerlink" href="#modules" title="Permalink to this heading">#</a></h2>
+<h2>Modules<a class="headerlink" href="#modules" title="Link to this heading">#</a></h2>
 <p>Most of the functionality in <code class="docutils literal notranslate"><span class="pre">Python</span></code> is provided by <em>modules</em>. To use a module in a Python program it first has to be imported. A module can be imported using the <code class="docutils literal notranslate"><span class="pre">import</span></code> statement.</p>
 <center><img src="https://raw.githubusercontent.com/PeerHerholz/Python_for_Psychologists_Winter2021/master/lecture/static/python_import.png"></center><p>For example, to import the module <code class="docutils literal notranslate"><span class="pre">math</span></code>, which contains many standard mathematical functions, we can do:</p>
 <div class="cell docutils container">
@@ -1108,7 +1095,7 @@ FILE
 </div>
 </div>
 <section id="exercise-1-1">
-<h3>Exercise 1.1<a class="headerlink" href="#exercise-1-1" title="Permalink to this heading">#</a></h3>
+<h3>Exercise 1.1<a class="headerlink" href="#exercise-1-1" title="Link to this heading">#</a></h3>
 <p>Import the <code class="docutils literal notranslate"><span class="pre">max</span></code> from <code class="docutils literal notranslate"><span class="pre">numpy</span></code> and find out what it does.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1127,7 +1114,7 @@ FILE
 </div>
 </section>
 <section id="exercise-1-2">
-<h3>Exercise 1.2<a class="headerlink" href="#exercise-1-2" title="Permalink to this heading">#</a></h3>
+<h3>Exercise 1.2<a class="headerlink" href="#exercise-1-2" title="Link to this heading">#</a></h3>
 <p>Import the <code class="docutils literal notranslate"><span class="pre">scipy</span></code> package and assign the access name <code class="docutils literal notranslate"><span class="pre">middle_earth</span></code> and check its <code class="docutils literal notranslate"><span class="pre">functions</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1152,7 +1139,7 @@ FILE
 </div>
 </section>
 <section id="exercise-1-3">
-<h3>Exercise 1.3<a class="headerlink" href="#exercise-1-3" title="Permalink to this heading">#</a></h3>
+<h3>Exercise 1.3<a class="headerlink" href="#exercise-1-3" title="Link to this heading">#</a></h3>
 <p>What happens when we try to import a <code class="docutils literal notranslate"><span class="pre">module</span></code> that is either misspelled or doesn’t exist in our <code class="docutils literal notranslate"><span class="pre">environment</span></code> or at all?</p>
 <ol class="arabic simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">python</span></code> provides us a hint that the <code class="docutils literal notranslate"><span class="pre">module</span></code> name might be misspelled</p></li>
@@ -1169,7 +1156,7 @@ FILE
 </section>
 </section>
 <section id="namespaces-and-imports">
-<h2>Namespaces and imports<a class="headerlink" href="#namespaces-and-imports" title="Permalink to this heading">#</a></h2>
+<h2>Namespaces and imports<a class="headerlink" href="#namespaces-and-imports" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Python is <strong>very</strong> serious about maintaining orderly <code class="docutils literal notranslate"><span class="pre">namespaces</span></code></p></li>
 <li><p>If you want to use some code outside the current scope, you need to explicitly “<code class="docutils literal notranslate"><span class="pre">import</span></code>” it</p></li>
@@ -1181,7 +1168,7 @@ FILE
 </ul>
 </section>
 <section id="help-and-descriptions">
-<h2>Help and Descriptions<a class="headerlink" href="#help-and-descriptions" title="Permalink to this heading">#</a></h2>
+<h2>Help and Descriptions<a class="headerlink" href="#help-and-descriptions" title="Link to this heading">#</a></h2>
 <p>Using the function <code class="docutils literal notranslate"><span class="pre">help</span></code> we can get a description of almost all functions.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1227,7 +1214,7 @@ log(...)
 </div>
 </section>
 <section id="variables-and-data-types">
-<h2>Variables and data types<a class="headerlink" href="#variables-and-data-types" title="Permalink to this heading">#</a></h2>
+<h2>Variables and data types<a class="headerlink" href="#variables-and-data-types" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>in programming <code class="docutils literal notranslate"><span class="pre">variables</span></code> are things that store <code class="docutils literal notranslate"><span class="pre">values</span></code></p></li>
 <li><p>in <code class="docutils literal notranslate"><span class="pre">Python</span></code>, we declare a <code class="docutils literal notranslate"><span class="pre">variable</span></code> by <strong>assigning</strong> it a <code class="docutils literal notranslate"><span class="pre">value</span></code> with the <code class="docutils literal notranslate"><span class="pre">=</span></code> sign</p>
@@ -1257,7 +1244,7 @@ log(...)
 <li><p>We don’t specify a variable’s type at assignment</p></li>
 </ul>
 <section id="symbol-names">
-<h3>Symbol names<a class="headerlink" href="#symbol-names" title="Permalink to this heading">#</a></h3>
+<h3>Symbol names<a class="headerlink" href="#symbol-names" title="Link to this heading">#</a></h3>
 <p>Variable names in Python can contain alphanumerical characters <code class="docutils literal notranslate"><span class="pre">a-z</span></code>, <code class="docutils literal notranslate"><span class="pre">A-Z</span></code>, <code class="docutils literal notranslate"><span class="pre">0-9</span></code> and some special characters such as <code class="docutils literal notranslate"><span class="pre">_</span></code>. Normal variable names must start with a letter.</p>
 <p>By convention, variable names start with a lower-case letter, and Class names start with a capital letter.</p>
 <p>In addition, there are a number of Python keywords that cannot be used as variable names. These keywords are:</p>
@@ -1266,7 +1253,7 @@ log(...)
 </div>
 </section>
 <section id="assignment">
-<h3>Assignment<a class="headerlink" href="#assignment" title="Permalink to this heading">#</a></h3>
+<h3>Assignment<a class="headerlink" href="#assignment" title="Link to this heading">#</a></h3>
 <p>(Not an homework assignment but the operator in <code class="docutils literal notranslate"><span class="pre">python</span></code>.)</p>
 <p>The assignment operator in <code class="docutils literal notranslate"><span class="pre">Python</span></code> is <code class="docutils literal notranslate"><span class="pre">=</span></code>. <code class="docutils literal notranslate"><span class="pre">Python</span></code> is a <code class="docutils literal notranslate"><span class="pre">dynamically</span> <span class="pre">typed</span> <span class="pre">language</span></code>, so we do not need to specify the type of a <code class="docutils literal notranslate"><span class="pre">variable</span></code> when we create one.</p>
 <p><code class="docutils literal notranslate"><span class="pre">Assigning</span></code> a <code class="docutils literal notranslate"><span class="pre">value</span></code> to a new <code class="docutils literal notranslate"><span class="pre">variable</span></code> <em>creates</em> the <code class="docutils literal notranslate"><span class="pre">variable</span></code>:</p>
@@ -1393,7 +1380,7 @@ log(...)
 <li><p><code class="docutils literal notranslate"><span class="pre">shire</span></code> and <code class="docutils literal notranslate"><span class="pre">Shire</span></code> are different variables</p></li>
 </ul>
 <section id="exercise-2-1">
-<h4>Exercise 2.1<a class="headerlink" href="#exercise-2-1" title="Permalink to this heading">#</a></h4>
+<h4>Exercise 2.1<a class="headerlink" href="#exercise-2-1" title="Link to this heading">#</a></h4>
 <p>Create the following <code class="docutils literal notranslate"><span class="pre">variables</span></code> <code class="docutils literal notranslate"><span class="pre">n_elves</span></code>, <code class="docutils literal notranslate"><span class="pre">n_dwarfs</span></code>, <code class="docutils literal notranslate"><span class="pre">n_humans</span></code> with the respective values <code class="docutils literal notranslate"><span class="pre">3</span></code>, <code class="docutils literal notranslate"><span class="pre">7.0</span></code> and <code class="docutils literal notranslate"><span class="pre">nine</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1413,7 +1400,7 @@ log(...)
 </div>
 </section>
 <section id="exercise-2-2">
-<h4>Exercise 2.2<a class="headerlink" href="#exercise-2-2" title="Permalink to this heading">#</a></h4>
+<h4>Exercise 2.2<a class="headerlink" href="#exercise-2-2" title="Link to this heading">#</a></h4>
 <p>What’s the output of <code class="docutils literal notranslate"><span class="pre">n_elves</span> <span class="pre">+</span> <span class="pre">n_dwarfs</span></code>?</p>
 <ol class="arabic simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">n_elves</span> <span class="pre">+</span> <span class="pre">n_dwarfs</span></code></p></li>
@@ -1429,7 +1416,7 @@ log(...)
 </div>
 </section>
 <section id="exercise-2-3">
-<h4>Exercise 2.3<a class="headerlink" href="#exercise-2-3" title="Permalink to this heading">#</a></h4>
+<h4>Exercise 2.3<a class="headerlink" href="#exercise-2-3" title="Link to this heading">#</a></h4>
 <p>Consider the following lines of code.</p>
 <p><code class="docutils literal notranslate"><span class="pre">ring_bearer</span> <span class="pre">=</span> <span class="pre">'Gollum'</span></code><br />
 <code class="docutils literal notranslate"><span class="pre">ring_bearer</span></code><br />
@@ -1454,7 +1441,7 @@ log(...)
 </section>
 </section>
 <section id="fundamental-types-data-structures">
-<h3>Fundamental types &amp; data structures<a class="headerlink" href="#fundamental-types-data-structures" title="Permalink to this heading">#</a></h3>
+<h3>Fundamental types &amp; data structures<a class="headerlink" href="#fundamental-types-data-structures" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Most code requires more <em>complex structures</em> built out of <em>basic data <code class="docutils literal notranslate"><span class="pre">types</span></code></em></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">data</span> <span class="pre">type</span></code> refers to the <code class="docutils literal notranslate"><span class="pre">value</span></code> that is <code class="docutils literal notranslate"><span class="pre">assigned</span></code> to a <code class="docutils literal notranslate"><span class="pre">variable</span></code></p></li>
@@ -1473,7 +1460,7 @@ log(...)
 </ul>
 <p>If you’re unsure about the <code class="docutils literal notranslate"><span class="pre">data</span> <span class="pre">type</span></code> of a given <code class="docutils literal notranslate"><span class="pre">variable</span></code>, you can always use the <code class="docutils literal notranslate"><span class="pre">type()</span></code> command.</p>
 <section id="integers">
-<h4>Integers<a class="headerlink" href="#integers" title="Permalink to this heading">#</a></h4>
+<h4>Integers<a class="headerlink" href="#integers" title="Link to this heading">#</a></h4>
 <p>Lets check out the different <code class="docutils literal notranslate"><span class="pre">data</span> <span class="pre">types</span></code> in more detail, starting with <code class="docutils literal notranslate"><span class="pre">integers</span></code>. <code class="docutils literal notranslate"><span class="pre">Intergers</span></code> are <em>natural numbers</em> that can be <em>signed</em> (e.g. <code class="docutils literal notranslate"><span class="pre">1</span></code>, <code class="docutils literal notranslate"><span class="pre">42</span></code>, <code class="docutils literal notranslate"><span class="pre">180</span></code>, <code class="docutils literal notranslate"><span class="pre">-1</span></code>, <code class="docutils literal notranslate"><span class="pre">-42</span></code>, <code class="docutils literal notranslate"><span class="pre">-180</span></code>).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1516,7 +1503,7 @@ log(...)
 </div>
 </section>
 <section id="floating-point-numbers">
-<h4>Floating-point numbers<a class="headerlink" href="#floating-point-numbers" title="Permalink to this heading">#</a></h4>
+<h4>Floating-point numbers<a class="headerlink" href="#floating-point-numbers" title="Link to this heading">#</a></h4>
 <p>So what’s the difference to <code class="docutils literal notranslate"><span class="pre">floating-point</span> <span class="pre">numbers</span></code>? <code class="docutils literal notranslate"><span class="pre">Floating-point</span> <span class="pre">numbers</span></code> are <em>decimal-point number</em> that can be <em>signed</em> (e.g. <code class="docutils literal notranslate"><span class="pre">1.0</span></code>, <code class="docutils literal notranslate"><span class="pre">42.42</span></code>, <code class="docutils literal notranslate"><span class="pre">180.90</span></code>, <code class="docutils literal notranslate"><span class="pre">-1.0</span></code>, <code class="docutils literal notranslate"><span class="pre">-42.42</span></code>, <code class="docutils literal notranslate"><span class="pre">-180.90</span></code>).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1559,7 +1546,7 @@ log(...)
 </div>
 </section>
 <section id="strings">
-<h4>Strings<a class="headerlink" href="#strings" title="Permalink to this heading">#</a></h4>
+<h4>Strings<a class="headerlink" href="#strings" title="Link to this heading">#</a></h4>
 <p>Next up: <code class="docutils literal notranslate"><span class="pre">strings</span></code>. <code class="docutils literal notranslate"><span class="pre">Strings</span></code> are basically <code class="docutils literal notranslate"><span class="pre">text</span> <span class="pre">elements</span></code>, from <code class="docutils literal notranslate"><span class="pre">letters</span></code> to <code class="docutils literal notranslate"><span class="pre">words</span></code> to <code class="docutils literal notranslate"><span class="pre">sentences</span></code> all can be/are <code class="docutils literal notranslate"><span class="pre">strings</span></code> in <code class="docutils literal notranslate"><span class="pre">python</span></code>. In order to define a <code class="docutils literal notranslate"><span class="pre">string</span></code>, <code class="docutils literal notranslate"><span class="pre">Python</span></code> needs <strong>quotation marks</strong>, more precisely <code class="docutils literal notranslate"><span class="pre">strings</span></code> start and end with quotation marks, e.g. <code class="docutils literal notranslate"><span class="pre">&quot;Rivendell&quot;</span></code>. You can choose between <code class="docutils literal notranslate"><span class="pre">&quot;</span></code> and <code class="docutils literal notranslate"><span class="pre">'</span></code> as both will work (NB: <code class="docutils literal notranslate"><span class="pre">python</span></code> will put <code class="docutils literal notranslate"><span class="pre">'</span></code> around <code class="docutils literal notranslate"><span class="pre">strings</span></code> even if you specified <code class="docutils literal notranslate"><span class="pre">&quot;</span></code>). However, it is recommended to decide on one and be consistent.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1602,7 +1589,7 @@ log(...)
 </div>
 </section>
 <section id="booleans">
-<h4>Booleans<a class="headerlink" href="#booleans" title="Permalink to this heading">#</a></h4>
+<h4>Booleans<a class="headerlink" href="#booleans" title="Link to this heading">#</a></h4>
 <p>How about some <code class="docutils literal notranslate"><span class="pre">Boolean</span></code>s? At this point it gets a bit more “abstract”. While there are many possible <code class="docutils literal notranslate"><span class="pre">numbers</span></code> and <code class="docutils literal notranslate"><span class="pre">strings</span></code>, a Boolean can only have one of two <code class="docutils literal notranslate"><span class="pre">values</span></code>: <code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">False</span></code>. That is, a <code class="docutils literal notranslate"><span class="pre">Boolean</span></code> says something about whether something <em>is the case or not</em>. It’s easier to understand with some examples. First try the <code class="docutils literal notranslate"><span class="pre">type()</span></code> function with a <code class="docutils literal notranslate"><span class="pre">Boolean</span></code> as an argument.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1670,7 +1657,7 @@ log(...)
 </div>
 </section>
 <section id="converting-data-types">
-<h4>Converting data types<a class="headerlink" href="#converting-data-types" title="Permalink to this heading">#</a></h4>
+<h4>Converting data types<a class="headerlink" href="#converting-data-types" title="Link to this heading">#</a></h4>
 <p>As mentioned before the <code class="docutils literal notranslate"><span class="pre">data</span> <span class="pre">type</span></code> is not set when <code class="docutils literal notranslate"><span class="pre">assigning</span></code> a <code class="docutils literal notranslate"><span class="pre">value</span></code> to a <code class="docutils literal notranslate"><span class="pre">variable</span></code> but determined based on its properties. Additionally, the <code class="docutils literal notranslate"><span class="pre">data</span> <span class="pre">type</span></code> of a given <code class="docutils literal notranslate"><span class="pre">value</span></code> can also be changed via set of functions.</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">int()</span></code> -&gt; convert the <code class="docutils literal notranslate"><span class="pre">value</span></code> of a <code class="docutils literal notranslate"><span class="pre">variable</span></code> to an <code class="docutils literal notranslate"><span class="pre">integer</span></code></p></li>
@@ -1727,7 +1714,7 @@ log(...)
 </div>
 </div>
 <section id="exercise-3-1">
-<h5>Exercise 3.1<a class="headerlink" href="#exercise-3-1" title="Permalink to this heading">#</a></h5>
+<h5>Exercise 3.1<a class="headerlink" href="#exercise-3-1" title="Link to this heading">#</a></h5>
 <p>Define the following <code class="docutils literal notranslate"><span class="pre">variables</span></code> with the respective <code class="docutils literal notranslate"><span class="pre">values</span></code> and <code class="docutils literal notranslate"><span class="pre">data</span> <span class="pre">types</span></code>: <code class="docutils literal notranslate"><span class="pre">fellowship_n_humans</span></code> with a <code class="docutils literal notranslate"><span class="pre">value</span></code> of two as a <code class="docutils literal notranslate"><span class="pre">float</span></code>, <code class="docutils literal notranslate"><span class="pre">fellowship_n_hobbits</span></code> with a <code class="docutils literal notranslate"><span class="pre">value</span></code> of four as a <code class="docutils literal notranslate"><span class="pre">string</span></code> and <code class="docutils literal notranslate"><span class="pre">fellowship_n_elves</span></code> with a value of one as an <code class="docutils literal notranslate"><span class="pre">integer</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1747,7 +1734,7 @@ log(...)
 </div>
 </section>
 <section id="exercise-3-2">
-<h5>Exercise 3.2<a class="headerlink" href="#exercise-3-2" title="Permalink to this heading">#</a></h5>
+<h5>Exercise 3.2<a class="headerlink" href="#exercise-3-2" title="Link to this heading">#</a></h5>
 <p>What outcome would you expect based on the following lines of code?</p>
 <ol class="arabic simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">True</span> <span class="pre">-</span> <span class="pre">False</span></code></p></li>
@@ -1759,7 +1746,7 @@ log(...)
 </ol>
 </section>
 <section id="exercise-3-3">
-<h5>Exercise 3.3<a class="headerlink" href="#exercise-3-3" title="Permalink to this heading">#</a></h5>
+<h5>Exercise 3.3<a class="headerlink" href="#exercise-3-3" title="Link to this heading">#</a></h5>
 <p>Define two <code class="docutils literal notranslate"><span class="pre">variables</span></code>, <code class="docutils literal notranslate"><span class="pre">fellowship_n_dwarfs</span></code> with a <code class="docutils literal notranslate"><span class="pre">value</span></code> of one as a <code class="docutils literal notranslate"><span class="pre">string</span></code> and <code class="docutils literal notranslate"><span class="pre">fellowship_n_wizards</span></code> with a <code class="docutils literal notranslate"><span class="pre">value</span></code> of one as a <code class="docutils literal notranslate"><span class="pre">float</span></code>. Subsequently, change the <code class="docutils literal notranslate"><span class="pre">data</span> <span class="pre">type</span></code> of <code class="docutils literal notranslate"><span class="pre">fellowship_n_dwarfs</span></code> to <code class="docutils literal notranslate"><span class="pre">integer</span></code> and the <code class="docutils literal notranslate"><span class="pre">data</span> <span class="pre">type</span></code> of <code class="docutils literal notranslate"><span class="pre">fellowship_n_wizard</span></code> to <code class="docutils literal notranslate"><span class="pre">string</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1787,13 +1774,13 @@ log(...)
 </section>
 </section>
 <section id="why-do-programming-science-in-python">
-<h3>Why do programming/science in Python?<a class="headerlink" href="#why-do-programming-science-in-python" title="Permalink to this heading">#</a></h3>
+<h3>Why do programming/science in Python?<a class="headerlink" href="#why-do-programming-science-in-python" title="Link to this heading">#</a></h3>
 <p>Lets go through some advantages of the <code class="docutils literal notranslate"><span class="pre">python</span></code> programming language.<br />
 <br/><br/></p>
 <center><img src="https://media1.tenor.com/m/ZhC2OUGhEoIAAAAd/kevin-malone-the-office.gif"></center>
 <center><sup><sup><sup><sup> https://media1.tenor.com/m/ZhC2OUGhEoIAAAAd/kevin-malone-the-office.gif </sup></sup></sup></sup></center></section>
 <section id="easy-to-learn">
-<h3>Easy to learn<a class="headerlink" href="#easy-to-learn" title="Permalink to this heading">#</a></h3>
+<h3>Easy to learn<a class="headerlink" href="#easy-to-learn" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Readable, explicit syntax</p></li>
 <li><p>Most packages are very well documented</p>
@@ -1805,7 +1792,7 @@ log(...)
 </ul>
 </section>
 <section id="comprehensive-standard-library">
-<h3>Comprehensive standard library<a class="headerlink" href="#comprehensive-standard-library" title="Permalink to this heading">#</a></h3>
+<h3>Comprehensive standard library<a class="headerlink" href="#comprehensive-standard-library" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>The <a class="reference external" href="https://docs.python.org/2/library/">Python standard library</a> contains a huge number of high-quality modules</p></li>
 <li><p>When in doubt, check the standard library first before you write your own tools!</p></li>
@@ -1822,7 +1809,7 @@ log(...)
 </ul>
 </section>
 <section id="exceptional-external-libraries">
-<h3>Exceptional external libraries<a class="headerlink" href="#exceptional-external-libraries" title="Permalink to this heading">#</a></h3>
+<h3>Exceptional external libraries<a class="headerlink" href="#exceptional-external-libraries" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">Python</span></code> has very good (often best-in-class) external <code class="docutils literal notranslate"><span class="pre">packages</span></code> for almost everything</p></li>
 <li><p>Particularly important for “data science”, which draws on a very broad toolkit</p></li>
@@ -1846,7 +1833,7 @@ log(...)
 </ul>
 </section>
 <section id="relatively-good-performance">
-<h3>(Relatively) good performance<a class="headerlink" href="#relatively-good-performance" title="Permalink to this heading">#</a></h3>
+<h3>(Relatively) good performance<a class="headerlink" href="#relatively-good-performance" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">Python</span></code> is a high-level dynamic language — this comes at a performance cost</p></li>
 <li><p>For many (not all!) use cases, performance is irrelevant most of the time</p></li>
@@ -1859,7 +1846,7 @@ log(...)
 </ul>
 </section>
 <section id="python-vs-other-data-science-languages">
-<h3>Python vs. other data science languages<a class="headerlink" href="#python-vs-other-data-science-languages" title="Permalink to this heading">#</a></h3>
+<h3>Python vs. other data science languages<a class="headerlink" href="#python-vs-other-data-science-languages" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">Python</span></code> competes for mind share with many other languages</p></li>
 <li><p>Most notably, <code class="docutils literal notranslate"><span class="pre">R</span></code></p></li>
@@ -1867,7 +1854,7 @@ log(...)
 </ul>
 </section>
 <section id="r">
-<h3>R<a class="headerlink" href="#r" title="Permalink to this heading">#</a></h3>
+<h3>R<a class="headerlink" href="#r" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p><a class="reference external" href="https://www.r-project.org/">R</a> is dominant in traditional statistics and some fields of science</p>
 <ul>
@@ -1882,7 +1869,7 @@ log(...)
 </ul>
 </section>
 <section id="matlab">
-<h3>MATLAB<a class="headerlink" href="#matlab" title="Permalink to this heading">#</a></h3>
+<h3>MATLAB<a class="headerlink" href="#matlab" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>A proprietary numerical computing language widely used by engineers</p></li>
 <li><p>Good performance and very active development, but expensive</p></li>
@@ -1895,7 +1882,7 @@ log(...)
 </ul>
 </section>
 <section id="so-why-python">
-<h3>So, why Python?<a class="headerlink" href="#so-why-python" title="Permalink to this heading">#</a></h3>
+<h3>So, why Python?<a class="headerlink" href="#so-why-python" title="Link to this heading">#</a></h3>
 <p>Why choose Python over other languages?</p>
 <ul class="simple">
 <li><p>Arguably none of these offers the same combination of readability, flexibility, libraries, and performance</p></li>
@@ -1908,7 +1895,7 @@ log(...)
 </ul>
 <center><img src="https://raw.githubusercontent.com/PeerHerholz/Python_for_Psychologists_Winter2021/master/lecture/static/general_purpose_meme.png"></center>    </section>
 <section id="you-can-have-your-cake-and-eat-it">
-<h3>You can have your cake <em>and</em> eat it!<a class="headerlink" href="#you-can-have-your-cake-and-eat-it" title="Permalink to this heading">#</a></h3>
+<h3>You can have your cake <em>and</em> eat it!<a class="headerlink" href="#you-can-have-your-cake-and-eat-it" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Many languages—particularly R—now interface seamlessly with Python</p></li>
 <li><p>You can work primarily in Python, fall back on R when you need it (or vice versa)</p></li>
@@ -1916,7 +1903,7 @@ log(...)
 </ul>
 </section>
 <section id="the-core-python-data-science-stack">
-<h3>The core Python “data science” stack<a class="headerlink" href="#the-core-python-data-science-stack" title="Permalink to this heading">#</a></h3>
+<h3>The core Python “data science” stack<a class="headerlink" href="#the-core-python-data-science-stack" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>The Python ecosystem contains tens of thousands of packages</p></li>
 <li><p>Several are very widely used in data science applications:</p>
@@ -1937,7 +1924,7 @@ log(...)
 </ul>
 </section>
 <section id="the-core-python-for-psychology-neuroscience-stack">
-<h3>The core “Python for psychology/neuroscience” stack<a class="headerlink" href="#the-core-python-for-psychology-neuroscience-stack" title="Permalink to this heading">#</a></h3>
+<h3>The core “Python for psychology/neuroscience” stack<a class="headerlink" href="#the-core-python-for-psychology-neuroscience-stack" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>The <code class="docutils literal notranslate"><span class="pre">Python</span> <span class="pre">ecosystem</span></code> contains tens of thousands of <code class="docutils literal notranslate"><span class="pre">packages</span></code></p></li>
 <li><p>Several are very widely used in psychology research:</p>
@@ -1966,25 +1953,25 @@ log(...)
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="introduction-to-python-ii">
-<h1>Introduction to Python II<a class="headerlink" href="#introduction-to-python-ii" title="Permalink to this heading">#</a></h1>
+<h1>Introduction to Python II<a class="headerlink" href="#introduction-to-python-ii" title="Link to this heading">#</a></h1>
 <p>Here’s what we will focus on in the second block.</p>
 <ul class="simple">
-<li><p><span class="xref myst">Operators and comparisons</span></p>
+<li><p><a class="reference internal" href="#Operators-and-comparisons"><span class="xref myst">Operators and comparisons</span></a></p>
 <ul>
-<li><p><span class="xref myst">Shortcut math operation and assignment</span></p></li>
+<li><p><a class="reference internal" href="#Shortcut-math-operation-and-assignment"><span class="xref myst">Shortcut math operation and assignment</span></a></p></li>
 </ul>
 </li>
-<li><p><span class="xref myst">Strings, List and dictionaries</span></p>
+<li><p><a class="reference internal" href="#Strings,-List-and-dictionaries"><span class="xref myst">Strings, List and dictionaries</span></a></p>
 <ul>
-<li><p><span class="xref myst">Strings</span></p></li>
-<li><p><span class="xref myst">List</span></p></li>
-<li><p><span class="xref myst">Tuples</span></p></li>
-<li><p><span class="xref myst">Dictionaries</span></p></li>
+<li><p><a class="reference internal" href="#Strings"><span class="xref myst">Strings</span></a></p></li>
+<li><p><a class="reference internal" href="#List"><span class="xref myst">List</span></a></p></li>
+<li><p><a class="reference internal" href="#Tuples"><span class="xref myst">Tuples</span></a></p></li>
+<li><p><a class="reference internal" href="#Dictionaries"><span class="xref myst">Dictionaries</span></a></p></li>
 </ul>
 </li>
 </ul>
 <section id="id1">
-<h2>Objectives 📍<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
+<h2>Objectives 📍<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>learn basic and efficient usage of the python programming language</p>
 <ul>
@@ -1996,10 +1983,10 @@ log(...)
 </ul>
 </section>
 <section id="recap-of-the-prior-section">
-<h2>Recap of the prior section<a class="headerlink" href="#recap-of-the-prior-section" title="Permalink to this heading">#</a></h2>
+<h2>Recap of the prior section<a class="headerlink" href="#recap-of-the-prior-section" title="Link to this heading">#</a></h2>
 <p>Before we dive into new endeavors, it might be important to briefly recap the things we’ve talked about so far. Specifically, we will do this to evaluate if everyone’s roughly on the same page. Thus, if some of the aspects within the recap are either new or fuzzy to you, please have a quick look at the respective part of the last section again and as usual: ask questions wherever something is not clear.</p>
 <section id="id2">
-<h3>What is Python?<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h3>
+<h3>What is Python?<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Python is a programming language</p></li>
 <li><p>Specifically, it’s a <strong>widely used/very flexible</strong>, <strong>high-level</strong>, <strong>general-purpose</strong>, <strong>dynamic</strong> programming language</p></li>
@@ -2007,7 +1994,7 @@ log(...)
 </ul>
 </section>
 <section id="module">
-<h3>Module<a class="headerlink" href="#module" title="Permalink to this heading">#</a></h3>
+<h3>Module<a class="headerlink" href="#module" title="Link to this heading">#</a></h3>
 <p>Most of the functionality in Python is provided by <em>modules</em>. To use a module in a Python program it first has to be imported. A module can be imported using the <code class="docutils literal notranslate"><span class="pre">import</span></code> statement.</p>
 <center><img src="https://raw.githubusercontent.com/PeerHerholz/Python_for_Psychologists_Winter2021/master/lecture/static/python_import.png"></center><p>Assuming you want to import the entire <code class="docutils literal notranslate"><span class="pre">pandas</span></code> module to do some <code class="docutils literal notranslate"><span class="pre">data</span> <span class="pre">exploration</span></code>, <code class="docutils literal notranslate"><span class="pre">wrangling</span></code> and <code class="docutils literal notranslate"><span class="pre">statistics</span></code>, how would you do that?</p>
 <div class="cell docutils container">
@@ -2056,7 +2043,7 @@ log(...)
 </div>
 </section>
 <section id="id3">
-<h3>Variables and data types<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
+<h3>Variables and data types<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>in programming <code class="docutils literal notranslate"><span class="pre">variables</span></code> are things that store <code class="docutils literal notranslate"><span class="pre">values</span></code></p></li>
 <li><p>in <code class="docutils literal notranslate"><span class="pre">Python</span></code>, we declare a <code class="docutils literal notranslate"><span class="pre">variable</span></code> by <strong>assigning</strong> it a <code class="docutils literal notranslate"><span class="pre">value</span></code> with the <code class="docutils literal notranslate"><span class="pre">=</span></code> sign</p>
@@ -2087,7 +2074,7 @@ log(...)
 </ul>
 </section>
 <section id="id4">
-<h3>Assignment<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
+<h3>Assignment<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
 <p>(Not an homework assignment but the operator in <code class="docutils literal notranslate"><span class="pre">python</span></code>.)</p>
 <p>The assignment operator in <code class="docutils literal notranslate"><span class="pre">Python</span></code> is <code class="docutils literal notranslate"><span class="pre">=</span></code>. <code class="docutils literal notranslate"><span class="pre">Python</span></code> is a <code class="docutils literal notranslate"><span class="pre">dynamically</span> <span class="pre">typed</span> <span class="pre">language</span></code>, so we do not need to specify the type of a <code class="docutils literal notranslate"><span class="pre">variable</span></code> when we create one.</p>
 <p><code class="docutils literal notranslate"><span class="pre">Assigning</span></code> a <code class="docutils literal notranslate"><span class="pre">value</span></code> to a new <code class="docutils literal notranslate"><span class="pre">variable</span></code> <em>creates</em> the <code class="docutils literal notranslate"><span class="pre">variable</span></code>:</p>
@@ -2194,33 +2181,33 @@ log(...)
 <p>Alright, thanks for taking the time to go through this <code class="docutils literal notranslate"><span class="pre">recap</span></code>. Again: if you could solve/answer all questions, you should have the information/knowledge needed for this session.</p>
 <p>Here’s what we will focus on in the first block:</p>
 <ul class="simple">
-<li><p><span class="xref myst">Module</span></p></li>
-<li><p><span class="xref myst">Help and Descriptions</span></p></li>
-<li><p><span class="xref myst">Variables and types</span></p>
+<li><p><a class="reference internal" href="#Module"><span class="xref myst">Module</span></a></p></li>
+<li><p><a class="reference internal" href="#Help-and-Descriptions"><span class="xref myst">Help and Descriptions</span></a></p></li>
+<li><p><a class="reference internal" href="#Variables-and-types"><span class="xref myst">Variables and types</span></a></p>
 <ul>
-<li><p><span class="xref myst">Symbol names</span></p></li>
-<li><p><span class="xref myst">Assignment</span></p></li>
-<li><p><span class="xref myst">Fundamental types</span></p></li>
+<li><p><a class="reference internal" href="#Symbol-names"><span class="xref myst">Symbol names</span></a></p></li>
+<li><p><a class="reference internal" href="#Assignment"><span class="xref myst">Assignment</span></a></p></li>
+<li><p><a class="reference internal" href="#Fundamental-types"><span class="xref myst">Fundamental types</span></a></p></li>
 </ul>
 </li>
-<li><p><span class="xref myst">Operators and comparisons</span></p>
+<li><p><a class="reference internal" href="#Operators-and-comparisons"><span class="xref myst">Operators and comparisons</span></a></p>
 <ul>
-<li><p><span class="xref myst">Shortcut math operation and assignment</span></p></li>
+<li><p><a class="reference internal" href="#Shortcut-math-operation-and-assignment"><span class="xref myst">Shortcut math operation and assignment</span></a></p></li>
 </ul>
 </li>
-<li><p><span class="xref myst">Strings, List and dictionaries</span></p>
+<li><p><a class="reference internal" href="#Strings,-List-and-dictionaries"><span class="xref myst">Strings, List and dictionaries</span></a></p>
 <ul>
-<li><p><span class="xref myst">Strings</span></p></li>
-<li><p><span class="xref myst">List</span></p></li>
-<li><p><span class="xref myst">Tuples</span></p></li>
-<li><p><span class="xref myst">Dictionaries</span></p></li>
+<li><p><a class="reference internal" href="#Strings"><span class="xref myst">Strings</span></a></p></li>
+<li><p><a class="reference internal" href="#List"><span class="xref myst">List</span></a></p></li>
+<li><p><a class="reference internal" href="#Tuples"><span class="xref myst">Tuples</span></a></p></li>
+<li><p><a class="reference internal" href="#Dictionaries"><span class="xref myst">Dictionaries</span></a></p></li>
 </ul>
 </li>
 </ul>
 </section>
 </section>
 <section id="operators-and-comparisons">
-<h2>Operators and comparisons<a class="headerlink" href="#operators-and-comparisons" title="Permalink to this heading">#</a></h2>
+<h2>Operators and comparisons<a class="headerlink" href="#operators-and-comparisons" title="Link to this heading">#</a></h2>
 <p>One of the most basic utilizations of <code class="docutils literal notranslate"><span class="pre">python</span></code> might be simple <code class="docutils literal notranslate"><span class="pre">arithmetic</span> <span class="pre">operations</span></code> and <code class="docutils literal notranslate"><span class="pre">comparisons</span></code>. <code class="docutils literal notranslate"><span class="pre">operators</span></code> and <code class="docutils literal notranslate"><span class="pre">comparisons</span></code> in <code class="docutils literal notranslate"><span class="pre">python</span></code> work as one would expect:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">Arithmetic</span> <span class="pre">operators</span></code> available in <code class="docutils literal notranslate"><span class="pre">python</span></code>: <code class="docutils literal notranslate"><span class="pre">+</span></code>, <code class="docutils literal notranslate"><span class="pre">-</span></code>, <code class="docutils literal notranslate"><span class="pre">*</span></code>, <code class="docutils literal notranslate"><span class="pre">/</span></code>, <code class="docutils literal notranslate"><span class="pre">**</span></code> power, <code class="docutils literal notranslate"><span class="pre">%</span></code> modulo</p></li>
@@ -2638,7 +2625,7 @@ log(...)
 </div>
 </div>
 <section id="exercise-4-1">
-<h3>Exercise 4.1<a class="headerlink" href="#exercise-4-1" title="Permalink to this heading">#</a></h3>
+<h3>Exercise 4.1<a class="headerlink" href="#exercise-4-1" title="Link to this heading">#</a></h3>
 <p>You want to compute the <code class="docutils literal notranslate"><span class="pre">mean</span></code> of the following <code class="docutils literal notranslate"><span class="pre">reaction</span> <span class="pre">times</span></code>: <code class="docutils literal notranslate"><span class="pre">1.2</span></code>, <code class="docutils literal notranslate"><span class="pre">1.0</span></code>, <code class="docutils literal notranslate"><span class="pre">1.5</span></code>, <code class="docutils literal notranslate"><span class="pre">1.9</span></code>, <code class="docutils literal notranslate"><span class="pre">1.3</span></code>, <code class="docutils literal notranslate"><span class="pre">1.2</span></code>, <code class="docutils literal notranslate"><span class="pre">1.7</span></code>. Is there a way to achieve that using <code class="docutils literal notranslate"><span class="pre">operators</span></code>?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2665,7 +2652,7 @@ log(...)
 </div>
 </section>
 <section id="exercise-4-2">
-<h3>Exercise 4.2<a class="headerlink" href="#exercise-4-2" title="Permalink to this heading">#</a></h3>
+<h3>Exercise 4.2<a class="headerlink" href="#exercise-4-2" title="Link to this heading">#</a></h3>
 <p>Having computed the <code class="docutils literal notranslate"><span class="pre">mean</span></code>, you need to compare it to a reference <code class="docutils literal notranslate"><span class="pre">value</span></code>. The latter can be <em>possibly</em> found in a <code class="docutils literal notranslate"><span class="pre">string</span></code> that entails data from a previous analyses. If that’s the case, the <code class="docutils literal notranslate"><span class="pre">string</span></code> should contain the words <code class="docutils literal notranslate"><span class="pre">&quot;mean</span> <span class="pre">reaction</span> <span class="pre">time&quot;</span></code>. Is there a way to evaluate this?</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">string</span></code> would be: “In contrast to the majority of the prior studies the mean reaction time of the here described analyses was <code class="docutils literal notranslate"><span class="pre">1.2</span></code>.”</p>
 <div class="cell docutils container">
@@ -2684,7 +2671,7 @@ log(...)
 </div>
 </div>
 <section id="exercise-4-3">
-<h4>Exercise 4.3<a class="headerlink" href="#exercise-4-3" title="Permalink to this heading">#</a></h4>
+<h4>Exercise 4.3<a class="headerlink" href="#exercise-4-3" title="Link to this heading">#</a></h4>
 <p>Having found the reference <code class="docutils literal notranslate"><span class="pre">value</span></code>, that is <code class="docutils literal notranslate"><span class="pre">1.2</span></code> we can compare it to our <code class="docutils literal notranslate"><span class="pre">mean</span></code>. Specifically, you want to know if the <code class="docutils literal notranslate"><span class="pre">mean</span></code> is <code class="docutils literal notranslate"><span class="pre">less</span> <span class="pre">or</span> <span class="pre">equal</span></code> than <code class="docutils literal notranslate"><span class="pre">1.2</span></code>. The outcome of the <code class="docutils literal notranslate"><span class="pre">comparison</span></code> should then be the <code class="docutils literal notranslate"><span class="pre">value</span></code> of a new <code class="docutils literal notranslate"><span class="pre">variable</span></code> called <code class="docutils literal notranslate"><span class="pre">mean_reference_comp</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2707,26 +2694,26 @@ log(...)
 <center><img src="https://media4.giphy.com/media/kyLYXonQYYfwYDIeZl/giphy.gif?cid=ecf05e47vl8lju7wj80ak9p5azuq5imkcbv64d2jple35roj&rid=giphy.gif&ct=g" width="300"></center>
 <center><a href="https://giphy.com/gifs/sesamestreet-sesame-street-50th-anniversary-kyLYXonQYYfwYDIeZl">via GIPHY</a></center><p>Having already checked out <code class="docutils literal notranslate"><span class="pre">modules</span></code>, <code class="docutils literal notranslate"><span class="pre">help</span> <span class="pre">&amp;</span> <span class="pre">descriptions</span></code>, <code class="docutils literal notranslate"><span class="pre">variables</span> <span class="pre">and</span> <span class="pre">data</span> <span class="pre">types</span></code>, <code class="docutils literal notranslate"><span class="pre">operators</span> <span class="pre">and</span> <span class="pre">comparisons</span></code>, we will continue with the final section of the first block of our <code class="docutils literal notranslate"><span class="pre">python</span></code> introduction. More precisely, we will advance to new, more complex <code class="docutils literal notranslate"><span class="pre">data</span> <span class="pre">types</span></code> and <code class="docutils literal notranslate"><span class="pre">structures</span></code>: <code class="docutils literal notranslate"><span class="pre">strings</span></code>, <code class="docutils literal notranslate"><span class="pre">lists</span></code>, <code class="docutils literal notranslate"><span class="pre">tuples</span></code> and <code class="docutils literal notranslate"><span class="pre">dictionaries</span></code>.</p>
 <ul class="simple">
-<li><p><span class="xref myst">Module</span></p></li>
-<li><p><span class="xref myst">Help and Descriptions</span></p></li>
-<li><p><span class="xref myst">Variables and types</span></p>
+<li><p><a class="reference internal" href="#Module"><span class="xref myst">Module</span></a></p></li>
+<li><p><a class="reference internal" href="#Help-and-Descriptions"><span class="xref myst">Help and Descriptions</span></a></p></li>
+<li><p><a class="reference internal" href="#Variables-and-types"><span class="xref myst">Variables and types</span></a></p>
 <ul>
-<li><p><span class="xref myst">Symbol names</span></p></li>
-<li><p><span class="xref myst">Assignment</span></p></li>
-<li><p><span class="xref myst">Fundamental types</span></p></li>
+<li><p><a class="reference internal" href="#Symbol-names"><span class="xref myst">Symbol names</span></a></p></li>
+<li><p><a class="reference internal" href="#Assignment"><span class="xref myst">Assignment</span></a></p></li>
+<li><p><a class="reference internal" href="#Fundamental-types"><span class="xref myst">Fundamental types</span></a></p></li>
 </ul>
 </li>
-<li><p><span class="xref myst">Operators and comparisons</span></p>
+<li><p><a class="reference internal" href="#Operators-and-comparisons"><span class="xref myst">Operators and comparisons</span></a></p>
 <ul>
-<li><p><span class="xref myst">Shortcut math operation and assignment</span></p></li>
+<li><p><a class="reference internal" href="#Shortcut-math-operation-and-assignment"><span class="xref myst">Shortcut math operation and assignment</span></a></p></li>
 </ul>
 </li>
-<li><p><span class="xref myst">Strings, List and dictionaries</span></p>
+<li><p><a class="reference internal" href="#Strings,-List-and-dictionaries"><span class="xref myst">Strings, List and dictionaries</span></a></p>
 <ul>
-<li><p><span class="xref myst">Strings</span></p></li>
-<li><p><span class="xref myst">List</span></p></li>
-<li><p><span class="xref myst">Tuples</span></p></li>
-<li><p><span class="xref myst">Dictionaries</span></p></li>
+<li><p><a class="reference internal" href="#Strings"><span class="xref myst">Strings</span></a></p></li>
+<li><p><a class="reference internal" href="#List"><span class="xref myst">List</span></a></p></li>
+<li><p><a class="reference internal" href="#Tuples"><span class="xref myst">Tuples</span></a></p></li>
+<li><p><a class="reference internal" href="#Dictionaries"><span class="xref myst">Dictionaries</span></a></p></li>
 </ul>
 </li>
 </ul>
@@ -2734,11 +2721,11 @@ log(...)
 </section>
 </section>
 <section id="strings-list-and-dictionaries">
-<h2>Strings, List and dictionaries<a class="headerlink" href="#strings-list-and-dictionaries" title="Permalink to this heading">#</a></h2>
+<h2>Strings, List and dictionaries<a class="headerlink" href="#strings-list-and-dictionaries" title="Link to this heading">#</a></h2>
 <p>So far, we’ve explored <code class="docutils literal notranslate"><span class="pre">integers</span></code>, <code class="docutils literal notranslate"><span class="pre">float</span></code>, <code class="docutils literal notranslate"><span class="pre">strings</span></code> and <code class="docutils literal notranslate"><span class="pre">boolean</span></code> as <code class="docutils literal notranslate"><span class="pre">fundamental</span> <span class="pre">types</span></code>. However, there are a few more that are equally important within the <code class="docutils literal notranslate"><span class="pre">python</span></code> programing language and allow you to easily achieve complex behavoir and ease up your everyday programming life: <code class="docutils literal notranslate"><span class="pre">strings</span></code>, <code class="docutils literal notranslate"><span class="pre">lists</span></code>, <code class="docutils literal notranslate"><span class="pre">tuples</span></code> and <code class="docutils literal notranslate"><span class="pre">dictionaries</span></code>.</p>
 </br>
 <center><img src="https://raw.githubusercontent.com/PeerHerholz/Python_for_Psychologists_Winter2021/master/lecture/static/python_data_types_2.png"></center><section id="id5">
-<h3>Strings<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h3>
+<h3>Strings<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
 <p>Wait, what? Why are we talking about strings again? Well, actually, <code class="docutils literal notranslate"><span class="pre">strings</span></code> are more than a “just” fundamental type. There are quite a few things you can do with <code class="docutils literal notranslate"><span class="pre">strings</span></code> that we haven’t talked about yet. However, first things first: <code class="docutils literal notranslate"><span class="pre">strings</span></code> contain text:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2973,7 +2960,7 @@ log(...)
 </div>
 </div>
 <section id="string-formatting">
-<h4>String formatting<a class="headerlink" href="#string-formatting" title="Permalink to this heading">#</a></h4>
+<h4>String formatting<a class="headerlink" href="#string-formatting" title="Link to this heading">#</a></h4>
 <p>Besides <code class="docutils literal notranslate"><span class="pre">operating</span></code> on <code class="docutils literal notranslate"><span class="pre">strings</span></code> we can also apply different <code class="docutils literal notranslate"><span class="pre">formatting</span> <span class="pre">styles</span></code>. More precisely, this refers to different ways of displaying <code class="docutils literal notranslate"><span class="pre">strings</span></code>. The main <code class="docutils literal notranslate"><span class="pre">function</span></code> we’ll explore regarding this will be the <code class="docutils literal notranslate"><span class="pre">print</span></code> function. Comparable to <code class="docutils literal notranslate"><span class="pre">len</span></code>, it’s one of the <code class="docutils literal notranslate"><span class="pre">python</span></code> <code class="docutils literal notranslate"><span class="pre">functions</span></code> that’s always available to you, even without <code class="docutils literal notranslate"><span class="pre">import</span></code>.</p>
 <p>For example, if we <code class="docutils literal notranslate"><span class="pre">print</span></code> <code class="docutils literal notranslate"><span class="pre">strings</span></code> added with <code class="docutils literal notranslate"><span class="pre">+</span></code>, they are concatenated without space:</p>
 <div class="cell docutils container">
@@ -3097,16 +3084,16 @@ Rating: 5
 </div>
 </section>
 <section id="single-quote">
-<h4>Single Quote<a class="headerlink" href="#single-quote" title="Permalink to this heading">#</a></h4>
+<h4>Single Quote<a class="headerlink" href="#single-quote" title="Link to this heading">#</a></h4>
 <p>You can specify strings using single quotes such as <code class="docutils literal notranslate"><span class="pre">'Quote</span> <span class="pre">me</span> <span class="pre">on</span> <span class="pre">this'</span></code>.
 All white space i.e. spaces and tabs, within the quotes, are preserved as-is.</p>
 </section>
 <section id="double-quotes">
-<h4>Double Quotes<a class="headerlink" href="#double-quotes" title="Permalink to this heading">#</a></h4>
+<h4>Double Quotes<a class="headerlink" href="#double-quotes" title="Link to this heading">#</a></h4>
 <p>Strings in double quotes work exactly the same way as strings in single quotes. An example is <code class="docutils literal notranslate"><span class="pre">&quot;What's</span> <span class="pre">your</span> <span class="pre">name?&quot;</span></code>.</p>
 </section>
 <section id="triple-quotes">
-<h4>Triple Quotes<a class="headerlink" href="#triple-quotes" title="Permalink to this heading">#</a></h4>
+<h4>Triple Quotes<a class="headerlink" href="#triple-quotes" title="Link to this heading">#</a></h4>
 <p>You can specify multi-line strings using triple quotes - (<code class="docutils literal notranslate"><span class="pre">&quot;&quot;&quot;</span></code> or <code class="docutils literal notranslate"><span class="pre">'''</span></code>). You can use single quotes and double quotes freely within the triple quotes. An example is:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -3125,7 +3112,7 @@ All white space i.e. spaces and tabs, within the quotes, are preserved as-is.</p
 </div>
 </div>
 <section id="exercise-5-1">
-<h5>Exercise 5.1<a class="headerlink" href="#exercise-5-1" title="Permalink to this heading">#</a></h5>
+<h5>Exercise 5.1<a class="headerlink" href="#exercise-5-1" title="Link to this heading">#</a></h5>
 <p>Create two <code class="docutils literal notranslate"><span class="pre">variable</span></code>s called <code class="docutils literal notranslate"><span class="pre">info_wombat</span></code> and <code class="docutils literal notranslate"><span class="pre">info_capybara</span></code> and provide them the following <code class="docutils literal notranslate"><span class="pre">values</span></code> respectively:</p>
 <p>“The wombat is quadrupedal marsupial and can weigh up to 35 kg.”</p>
 <p>“The capybara is the largest rodent on earth. Its relatives include the guinea pig and the chinchilla.”</p>
@@ -3150,7 +3137,7 @@ All white space i.e. spaces and tabs, within the quotes, are preserved as-is.</p
 </div>
 </section>
 <section id="exercise-5-2">
-<h5>Exercise 5.2<a class="headerlink" href="#exercise-5-2" title="Permalink to this heading">#</a></h5>
+<h5>Exercise 5.2<a class="headerlink" href="#exercise-5-2" title="Link to this heading">#</a></h5>
 <p>Compute the <code class="docutils literal notranslate"><span class="pre">length</span></code> and <code class="docutils literal notranslate"><span class="pre">print</span></code> within the <code class="docutils literal notranslate"><span class="pre">strings</span></code> “The wombat information has [insert length here] characters.” and “The capybara information has [insert length here] characters.” After that, please compare the length of the <code class="docutils literal notranslate"><span class="pre">strings</span></code> and <code class="docutils literal notranslate"><span class="pre">print</span></code> if they are equal.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -3170,7 +3157,7 @@ All white space i.e. spaces and tabs, within the quotes, are preserved as-is.</p
 </div>
 </section>
 <section id="exercise-5-3">
-<h5>Exercise 5.3<a class="headerlink" href="#exercise-5-3" title="Permalink to this heading">#</a></h5>
+<h5>Exercise 5.3<a class="headerlink" href="#exercise-5-3" title="Link to this heading">#</a></h5>
 <p>Get the following <code class="docutils literal notranslate"><span class="pre">indices</span></code> from the <code class="docutils literal notranslate"><span class="pre">info_wombat</span></code> and <code class="docutils literal notranslate"><span class="pre">info_capybara</span></code> respectively: <code class="docutils literal notranslate"><span class="pre">4</span></code>-<code class="docutils literal notranslate"><span class="pre">10</span></code> and <code class="docutils literal notranslate"><span class="pre">4</span></code>-<code class="docutils literal notranslate"><span class="pre">12</span></code>. Replace the resulting word in <code class="docutils literal notranslate"><span class="pre">info_wombat</span></code> with <code class="docutils literal notranslate"><span class="pre">capybara</span></code> and the resulting word in <code class="docutils literal notranslate"><span class="pre">info_capybara</span></code> with <code class="docutils literal notranslate"><span class="pre">wombat</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -3187,7 +3174,7 @@ All white space i.e. spaces and tabs, within the quotes, are preserved as-is.</p
 </section>
 </section>
 <section id="list">
-<h3>List<a class="headerlink" href="#list" title="Permalink to this heading">#</a></h3>
+<h3>List<a class="headerlink" href="#list" title="Link to this heading">#</a></h3>
 <p>Next up: <code class="docutils literal notranslate"><span class="pre">list</span></code>s. In general, <code class="docutils literal notranslate"><span class="pre">list</span></code>s are very similar to <code class="docutils literal notranslate"><span class="pre">strings</span></code>. One crucial difference is that <code class="docutils literal notranslate"><span class="pre">list</span></code> elements (things in the <code class="docutils literal notranslate"><span class="pre">list</span></code>) can be of any <code class="docutils literal notranslate"><span class="pre">type</span></code>: <code class="docutils literal notranslate"><span class="pre">integers</span></code>, <code class="docutils literal notranslate"><span class="pre">floats</span></code>, <code class="docutils literal notranslate"><span class="pre">strings</span></code>, etc. . Additionally, <code class="docutils literal notranslate"><span class="pre">types</span></code> can be freely mixed within a <code class="docutils literal notranslate"><span class="pre">list</span></code>, that is, each <code class="docutils literal notranslate"><span class="pre">element</span></code> of a list can be of a different <code class="docutils literal notranslate"><span class="pre">type</span></code>. <code class="docutils literal notranslate"><span class="pre">List</span></code>s are among the <code class="docutils literal notranslate"><span class="pre">data</span> <span class="pre">types</span></code> and <code class="docutils literal notranslate"><span class="pre">structures</span></code> you’ll work with almost every time you do something in <code class="docutils literal notranslate"><span class="pre">python</span></code>. They are super handy and comparably to <code class="docutils literal notranslate"><span class="pre">strings</span></code>, have a lot of “in-built” functionality.</p>
 </br>
 <center><img src="https://raw.githubusercontent.com/PeerHerholz/Python_for_Psychologists_Winter2021/master/lecture/static/python_data_types_2.png"></center><p>The basic <code class="docutils literal notranslate"><span class="pre">syntax</span></code> for creating <code class="docutils literal notranslate"><span class="pre">list</span></code>s in <code class="docutils literal notranslate"><span class="pre">python</span></code> is <code class="docutils literal notranslate"><span class="pre">[...]</span></code>:</p>
@@ -3514,7 +3501,7 @@ The unique responses regarding animals were:  [&#39;barred owl&#39; &#39;cat&#39
 </div>
 </div>
 <section id="in-built-functions">
-<h4>In-built functions<a class="headerlink" href="#in-built-functions" title="Permalink to this heading">#</a></h4>
+<h4>In-built functions<a class="headerlink" href="#in-built-functions" title="Link to this heading">#</a></h4>
 <p>As indicated before, <code class="docutils literal notranslate"><span class="pre">list</span></code>s have a great set of in-built functions that allow to perform various <code class="docutils literal notranslate"><span class="pre">operations</span></code>/<code class="docutils literal notranslate"><span class="pre">transformations</span></code> on them: <code class="docutils literal notranslate"><span class="pre">sort</span></code>, <code class="docutils literal notranslate"><span class="pre">append</span></code>, <code class="docutils literal notranslate"><span class="pre">insert</span></code> and <code class="docutils literal notranslate"><span class="pre">remove</span></code>. Please note, as these <code class="docutils literal notranslate"><span class="pre">function</span></code>s are part of the <code class="docutils literal notranslate"><span class="pre">data</span> <span class="pre">type</span></code> “<code class="docutils literal notranslate"><span class="pre">list</span></code>”, you don’t prepend (<code class="docutils literal notranslate"><span class="pre">sort(list)</span></code>) but append them: <code class="docutils literal notranslate"><span class="pre">list.sort()</span></code>, <code class="docutils literal notranslate"><span class="pre">list.append()</span></code>, <code class="docutils literal notranslate"><span class="pre">list.insert()</span></code> and <code class="docutils literal notranslate"><span class="pre">list.remove()</span></code>.</p>
 <p>Lets start with <code class="docutils literal notranslate"><span class="pre">sort</span></code> which, as you might have expected, will <code class="docutils literal notranslate"><span class="pre">sort</span></code> our <code class="docutils literal notranslate"><span class="pre">list</span></code>.</p>
 <div class="cell docutils container">
@@ -3848,7 +3835,7 @@ It is now Harry Potter and the Python-Prince
 <p>This can be very handy if you want to create <code class="docutils literal notranslate"><span class="pre">participant</span> <span class="pre">list</span></code>s and/or <code class="docutils literal notranslate"><span class="pre">condition</span> <span class="pre">list</span></code>s for your experiment and/or analyzes.</p>
 </section>
 <section id="exercise-6-1">
-<h4>Exercise 6.1<a class="headerlink" href="#exercise-6-1" title="Permalink to this heading">#</a></h4>
+<h4>Exercise 6.1<a class="headerlink" href="#exercise-6-1" title="Link to this heading">#</a></h4>
 <p>Create a <code class="docutils literal notranslate"><span class="pre">variable</span></code> called <code class="docutils literal notranslate"><span class="pre">rare_animals</span></code> that stores the following <code class="docutils literal notranslate"><span class="pre">values</span></code>: ‘Addax’, ‘Black-footed Ferret’, ‘Northern Bald Ibis’, ‘Cross River Gorilla’, ‘Saola’, ‘Amur Leopard’, ‘Philippine Crocodile’, ‘Sumatran Rhino’, ‘South China Tiger’, ‘Vaquita’. After that, please count how many <code class="docutils literal notranslate"><span class="pre">elements</span></code> the <code class="docutils literal notranslate"><span class="pre">list</span></code> has and provide the info within the following statement: “There are [insert number of elements here] animals in the list.”</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -3867,7 +3854,7 @@ It is now Harry Potter and the Python-Prince
 </div>
 </section>
 <section id="exercise-6-2">
-<h4>Exercise 6.2<a class="headerlink" href="#exercise-6-2" title="Permalink to this heading">#</a></h4>
+<h4>Exercise 6.2<a class="headerlink" href="#exercise-6-2" title="Link to this heading">#</a></h4>
 <p>Please add ‘Manatee’ to the list and subsequently evaluate how many unique <code class="docutils literal notranslate"><span class="pre">elements</span></code> the list has.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -3886,7 +3873,7 @@ It is now Harry Potter and the Python-Prince
 </div>
 </section>
 <section id="exercise-6-3">
-<h4>Exercise 6.3<a class="headerlink" href="#exercise-6-3" title="Permalink to this heading">#</a></h4>
+<h4>Exercise 6.3<a class="headerlink" href="#exercise-6-3" title="Link to this heading">#</a></h4>
 <p>Learning that the <code class="docutils literal notranslate"><span class="pre">manatee</span></code> is not endangered anymore, please remove it from the list. Unfortunately, we have to add “Giant Panda”. Could you please do that at <code class="docutils literal notranslate"><span class="pre">index</span></code> <code class="docutils literal notranslate"><span class="pre">3</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -3907,7 +3894,7 @@ It is now Harry Potter and the Python-Prince
 </section>
 </section>
 <section id="tuples">
-<h3>Tuples<a class="headerlink" href="#tuples" title="Permalink to this heading">#</a></h3>
+<h3>Tuples<a class="headerlink" href="#tuples" title="Link to this heading">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">Tuples</span></code> are like <code class="docutils literal notranslate"><span class="pre">lists</span></code>, except that they cannot be modified once created, that is they are <strong>immutable</strong>.</p>
 </br>
 <center><img src="https://raw.githubusercontent.com/PeerHerholz/Python_for_Psychologists_Winter2021/master/lecture/static/python_data_types_2.png"></center>
@@ -3964,7 +3951,7 @@ Whoa another thing
 </div>
 <p>Thus, <code class="docutils literal notranslate"><span class="pre">tuples</span></code> also don’t have the set of <code class="docutils literal notranslate"><span class="pre">functions</span></code> to modify <code class="docutils literal notranslate"><span class="pre">elements</span></code> <code class="docutils literal notranslate"><span class="pre">lists</span></code> do.</p>
 <section id="exercise-7-1">
-<h4>Exercise 7.1<a class="headerlink" href="#exercise-7-1" title="Permalink to this heading">#</a></h4>
+<h4>Exercise 7.1<a class="headerlink" href="#exercise-7-1" title="Link to this heading">#</a></h4>
 <p>Please create a <code class="docutils literal notranslate"><span class="pre">tuple</span></code> called <code class="docutils literal notranslate"><span class="pre">deep_thought</span></code> with the following <code class="docutils literal notranslate"><span class="pre">values</span></code>: ‘answer’, <code class="docutils literal notranslate"><span class="pre">42</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -3984,7 +3971,7 @@ Whoa another thing
 </section>
 </section>
 <section id="dictionaries">
-<h3>Dictionaries<a class="headerlink" href="#dictionaries" title="Permalink to this heading">#</a></h3>
+<h3>Dictionaries<a class="headerlink" href="#dictionaries" title="Link to this heading">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">Dictionaries</span></code> are also like <code class="docutils literal notranslate"><span class="pre">lists</span></code>, except that each element is a <code class="docutils literal notranslate"><span class="pre">key-value</span> <span class="pre">pair</span></code>. That is, <code class="docutils literal notranslate"><span class="pre">elements</span></code> or <code class="docutils literal notranslate"><span class="pre">entries</span></code> of the <code class="docutils literal notranslate"><span class="pre">dictionary</span></code>, the <code class="docutils literal notranslate"><span class="pre">values</span></code>, can only be assessed via their respective <code class="docutils literal notranslate"><span class="pre">key</span></code> and not via <code class="docutils literal notranslate"><span class="pre">indexing</span></code>, <code class="docutils literal notranslate"><span class="pre">slicing</span></code>, etc. .</p>
 </br>
 <center><img src="https://raw.githubusercontent.com/PeerHerholz/Python_for_Psychologists_Winter2021/master/lecture/static/python_data_types_2.png"></center>
@@ -4217,7 +4204,7 @@ If you’re uncertain about the <code class="docutils literal notranslate"><span
 </div>
 </div>
 <section id="exercise-8-1">
-<h4>Exercise 8.1<a class="headerlink" href="#exercise-8-1" title="Permalink to this heading">#</a></h4>
+<h4>Exercise 8.1<a class="headerlink" href="#exercise-8-1" title="Link to this heading">#</a></h4>
 <p>Oh damn, we completely forgot to create a comparable <code class="docutils literal notranslate"><span class="pre">dictionary</span></code> for our <code class="docutils literal notranslate"><span class="pre">snacks</span></code> <code class="docutils literal notranslate"><span class="pre">list</span></code>. How would create one that follows the example from the <code class="docutils literal notranslate"><span class="pre">movie</span></code> <code class="docutils literal notranslate"><span class="pre">list</span></code>? NB: you can skip the <code class="docutils literal notranslate"><span class="pre">p</span> <span class="pre">value</span></code> right away:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -4241,7 +4228,7 @@ If you’re uncertain about the <code class="docutils literal notranslate"><span
 </div>
 </section>
 <section id="exercise-8-2">
-<h4>Exercise 8.2<a class="headerlink" href="#exercise-8-2" title="Permalink to this heading">#</a></h4>
+<h4>Exercise 8.2<a class="headerlink" href="#exercise-8-2" title="Link to this heading">#</a></h4>
 <p>Obviously, we would love to do the same thing for our <code class="docutils literal notranslate"><span class="pre">list</span></code> of <code class="docutils literal notranslate"><span class="pre">animals</span></code> again!</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -4266,7 +4253,7 @@ If you’re uncertain about the <code class="docutils literal notranslate"><span
 </section>
 </section>
 <section id="everything-is-an-object-in-python">
-<h3>Everything is an object in Python<a class="headerlink" href="#everything-is-an-object-in-python" title="Permalink to this heading">#</a></h3>
+<h3>Everything is an object in Python<a class="headerlink" href="#everything-is-an-object-in-python" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>All of these <code class="docutils literal notranslate"><span class="pre">data</span> <span class="pre">types</span></code> are actually just <code class="docutils literal notranslate"><span class="pre">objects</span></code> in <code class="docutils literal notranslate"><span class="pre">python</span></code></p></li>
 <li><p><em>Everything</em> is an object in <code class="docutils literal notranslate"><span class="pre">python</span></code>!</p></li>
@@ -4278,9 +4265,9 @@ If you’re uncertain about the <code class="docutils literal notranslate"><span
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="introduction-to-python-iii">
-<h1>Introduction to Python III<a class="headerlink" href="#introduction-to-python-iii" title="Permalink to this heading">#</a></h1>
+<h1>Introduction to Python III<a class="headerlink" href="#introduction-to-python-iii" title="Link to this heading">#</a></h1>
 <section id="recap-of-the-prior-session">
-<h2>Recap of the prior session<a class="headerlink" href="#recap-of-the-prior-session" title="Permalink to this heading">#</a></h2>
+<h2>Recap of the prior session<a class="headerlink" href="#recap-of-the-prior-session" title="Link to this heading">#</a></h2>
 <p>Before we dive into new endeavors, it might be important to briefly recap the things we’ve talked about so far. Specifically, we will do this to evaluate if everyone’s roughly on the same page. Thus, if some of the aspects within the recap are either new or fuzzy to you, please have a quick look at the respective part of the first section and second section again and as usual: ask questions wherever something is not clear.</p>
 <p>This recap will cover the following topics from the last sessions:</p>
 <ul class="simple">
@@ -4289,7 +4276,7 @@ If you’re uncertain about the <code class="docutils literal notranslate"><span
 <li><p><code class="docutils literal notranslate"><span class="pre">strings</span></code>, <code class="docutils literal notranslate"><span class="pre">lists</span></code> and <code class="docutils literal notranslate"><span class="pre">dictionaries</span></code></p></li>
 </ul>
 <section id="id6">
-<h3>Variables and data types<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h3>
+<h3>Variables and data types<a class="headerlink" href="#id6" title="Link to this heading">#</a></h3>
 <p>Two session ago we declared several variables. Could you here create a variable for the following:</p>
 <ul class="simple">
 <li><p>a variable random_number with a number between 0 and 10</p></li>
@@ -4313,7 +4300,7 @@ If you’re uncertain about the <code class="docutils literal notranslate"><span
 </div>
 </section>
 <section id="operators-and-comparison">
-<h3>operators and comparison<a class="headerlink" href="#operators-and-comparison" title="Permalink to this heading">#</a></h3>
+<h3>operators and comparison<a class="headerlink" href="#operators-and-comparison" title="Link to this heading">#</a></h3>
 <p>Please calculate the following and <code class="docutils literal notranslate"><span class="pre">assign</span></code> them to the <code class="docutils literal notranslate"><span class="pre">variables</span></code> <code class="docutils literal notranslate"><span class="pre">a</span></code>, <code class="docutils literal notranslate"><span class="pre">b</span></code>, <code class="docutils literal notranslate"><span class="pre">c</span></code>, etc., if needed:</p>
 <ul class="simple">
 <li><p>10 divided by 3</p></li>
@@ -4348,7 +4335,7 @@ If you’re uncertain about the <code class="docutils literal notranslate"><span
 </div>
 </section>
 <section id="strings-lists-and-dictionaries">
-<h3>strings, lists and dictionaries<a class="headerlink" href="#strings-lists-and-dictionaries" title="Permalink to this heading">#</a></h3>
+<h3>strings, lists and dictionaries<a class="headerlink" href="#strings-lists-and-dictionaries" title="Link to this heading">#</a></h3>
 <p>You just did an experiment asking 10 people for a random number between 0 and 100. What data structure would you use to store these values within python?
 Assume the values were: 1; 50; 23; 77; 91; 3; 34; 81; 55; 49. How would you define a variable of your selected data type to store these values?</p>
 <div class="cell docutils container">
@@ -4510,7 +4497,7 @@ Split the lord of the stones string into a list of words, sort it and print the 
 </section>
 </section>
 <section id="id7">
-<h2>Objectives 📍<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h2>
+<h2>Objectives 📍<a class="headerlink" href="#id7" title="Link to this heading">#</a></h2>
 <br>
 <ul class="simple">
 <li><p>learn about indentation (some form of code structuring)</p></li>
@@ -4523,9 +4510,9 @@ Split the lord of the stones string into a list of words, sort it and print the 
 </ul>
 </section>
 <section id="indentation-control-flow">
-<h2>Indentation &amp; Control Flow<a class="headerlink" href="#indentation-control-flow" title="Permalink to this heading">#</a></h2>
+<h2>Indentation &amp; Control Flow<a class="headerlink" href="#indentation-control-flow" title="Link to this heading">#</a></h2>
 <section id="indentation">
-<h3>Indentation<a class="headerlink" href="#indentation" title="Permalink to this heading">#</a></h3>
+<h3>Indentation<a class="headerlink" href="#indentation" title="Link to this heading">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">Python</span></code> uses <code class="docutils literal notranslate"><span class="pre">whitespaces</span></code> to define <code class="docutils literal notranslate"><span class="pre">code</span> <span class="pre">blocks</span></code>. Using <code class="docutils literal notranslate"><span class="pre">whitespaces</span></code> at the beginning of a line is the <code class="docutils literal notranslate"><span class="pre">indentation</span></code>. This means that a <code class="docutils literal notranslate"><span class="pre">codeblock</span></code> that is <code class="docutils literal notranslate"><span class="pre">indented</span></code> with the same number of leading <code class="docutils literal notranslate"><span class="pre">whitespaces</span></code> or <code class="docutils literal notranslate"><span class="pre">tabs</span></code> should be run together. In other words: the <code class="docutils literal notranslate"><span class="pre">indentation</span></code> is part of the <code class="docutils literal notranslate"><span class="pre">syntax</span></code> in <code class="docutils literal notranslate"><span class="pre">python</span></code> and one of the major distinctions regarding other programming languages like, e.g. <code class="docutils literal notranslate"><span class="pre">Matlab</span></code>.</p>
 <p>Usually in <code class="docutils literal notranslate"><span class="pre">Python</span></code> we use <code class="docutils literal notranslate"><span class="pre">four</span> <span class="pre">whitespaces</span></code> for <code class="docutils literal notranslate"><span class="pre">indentation</span></code> of <code class="docutils literal notranslate"><span class="pre">codeblocks</span></code>.</p>
 <p>Let’s see what that means:</p>
@@ -4557,7 +4544,7 @@ Split the lord of the stones string into a list of words, sort it and print the 
 <p>One thing you should remember is that a wrong <code class="docutils literal notranslate"><span class="pre">indentation</span></code> raises an <code class="docutils literal notranslate"><span class="pre">IndentationError</span></code>.</p>
 </section>
 <section id="control-flow-structures">
-<h3>Control Flow &amp; structures<a class="headerlink" href="#control-flow-structures" title="Permalink to this heading">#</a></h3>
+<h3>Control Flow &amp; structures<a class="headerlink" href="#control-flow-structures" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>programming language, i.e. <code class="docutils literal notranslate"><span class="pre">python</span></code>, features that allow us to <code class="docutils literal notranslate"><span class="pre">control</span></code> how code is <code class="docutils literal notranslate"><span class="pre">executed</span></code></p></li>
 <li><p>Conditionals (<code class="docutils literal notranslate"><span class="pre">if</span></code> - <code class="docutils literal notranslate"><span class="pre">else</span></code> statements statements)</p></li>
@@ -4565,7 +4552,7 @@ Split the lord of the stones string into a list of words, sort it and print the 
 <li><p><a class="reference external" href="https://docs.python.org/3/tutorial/controlflow.html">Read more here</a></p></li>
 </ul>
 <section id="conditional-statements-if-elif-else">
-<h4>Conditional statements: if, elif, else<a class="headerlink" href="#conditional-statements-if-elif-else" title="Permalink to this heading">#</a></h4>
+<h4>Conditional statements: if, elif, else<a class="headerlink" href="#conditional-statements-if-elif-else" title="Link to this heading">#</a></h4>
 <p>The <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">syntax</span></code> for <code class="docutils literal notranslate"><span class="pre">conditional</span> <span class="pre">execution</span></code> of <code class="docutils literal notranslate"><span class="pre">code</span></code> use the keywords <code class="docutils literal notranslate"><span class="pre">if</span></code>, <code class="docutils literal notranslate"><span class="pre">elif</span></code> (else if), <code class="docutils literal notranslate"><span class="pre">else</span></code>:</p>
 <center><img src="https://www.learnbyexample.org/wp-content/uploads/python/Python-elif-Statement-Syntax.png" width=600></center>
 <center><small><small><small>https://www.learnbyexample.org/wp-content/uploads/python/Python-elif-Statement-Syntax.png</small></small></small></center>
@@ -4675,7 +4662,7 @@ Split the lord of the stones string into a list of words, sort it and print the 
 </div>
 </div>
 <section id="id8">
-<h5>Exercise 1.1<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h5>
+<h5>Exercise 1.1<a class="headerlink" href="#id8" title="Link to this heading">#</a></h5>
 <p>You want to go to the cinema, but you first need to check whether you have enough money. First define a variable indicating the amount of money in your wallet <code class="docutils literal notranslate"><span class="pre">money_in_wallet</span></code> as 6 EUR and the ticket price for the cinema <code class="docutils literal notranslate"><span class="pre">ticket_price</span></code> as 10 EUR. Indicate with a print statement if you can go to the cinema</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -4701,7 +4688,7 @@ Split the lord of the stones string into a list of words, sort it and print the 
 </section>
 </section>
 <section id="id9">
-<h4>Exercise 1.2<a class="headerlink" href="#id9" title="Permalink to this heading">#</a></h4>
+<h4>Exercise 1.2<a class="headerlink" href="#id9" title="Link to this heading">#</a></h4>
 <p>Different films cost different amounts of money. Use if statements to tests which films you can afford and print them. The films cost:</p>
 <ul class="simple">
 <li><p>James Bond: 15 EUR</p></li>
@@ -4755,7 +4742,7 @@ Split the lord of the stones string into a list of words, sort it and print the 
 </div>
 </section>
 <section id="id10">
-<h4>Exercise 1.3<a class="headerlink" href="#id10" title="Permalink to this heading">#</a></h4>
+<h4>Exercise 1.3<a class="headerlink" href="#id10" title="Link to this heading">#</a></h4>
 <p>It’s your lucky day! You happen to find 34 EUR right in front of your house. You want to celebrate this by inviting as many of your 5 friends as possible to the cinema. How many friends can you invite, while also paying for yourself? First update your money in your wallet and then test this using if statements.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -4788,7 +4775,7 @@ Split the lord of the stones string into a list of words, sort it and print the 
 </div>
 </section>
 <section id="exercise-1-4-last-one-i-promise">
-<h4>Exercise 1.4 - Last one, I promise!<a class="headerlink" href="#exercise-1-4-last-one-i-promise" title="Permalink to this heading">#</a></h4>
+<h4>Exercise 1.4 - Last one, I promise!<a class="headerlink" href="#exercise-1-4-last-one-i-promise" title="Link to this heading">#</a></h4>
 <p>This year you want to treat your dog with a holiday present but obviously only if it was a good dog. Depending on the money in your wallet, you can either buy a new toy for 10 EUR or go on a nice long walk if you don’t have any money. Write a nested if statement to test which present you can buy if your dog was a good dog. Your current endowment is 11 EUR.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -4817,7 +4804,7 @@ Split the lord of the stones string into a list of words, sort it and print the 
 <p>Wait no more. We have a solution (at least for some situations)</p>
 </section>
 <section id="loops">
-<h4>Loops<a class="headerlink" href="#loops" title="Permalink to this heading">#</a></h4>
+<h4>Loops<a class="headerlink" href="#loops" title="Link to this heading">#</a></h4>
 <p>In <code class="docutils literal notranslate"><span class="pre">python</span></code>, loops can be programmed in a number of different ways. The most common is the <code class="docutils literal notranslate"><span class="pre">for</span></code> loop, which is used together with <code class="docutils literal notranslate"><span class="pre">iterable</span> <span class="pre">objects</span></code>, such as <code class="docutils literal notranslate"><span class="pre">list</span></code>s. The <code class="docutils literal notranslate"><span class="pre">basic</span> <span class="pre">syntax</span></code> is:</p>
 <center><img src="https://www.learnbyexample.org/wp-content/uploads/python/Python-for-Loop-Syntax.png" width=600></center>
 <center><small><small><small>https://www.learnbyexample.org/wp-content/uploads/python/Python-for-Loop-Syntax.png</small></small></small></center><div class="cell docutils container">
@@ -4932,7 +4919,7 @@ parameter4 = D
 </div>
 </section>
 <section id="break-continue-and-pass">
-<h4><code class="docutils literal notranslate"><span class="pre">break</span></code>, <code class="docutils literal notranslate"><span class="pre">continue</span></code> and <code class="docutils literal notranslate"><span class="pre">pass</span></code><a class="headerlink" href="#break-continue-and-pass" title="Permalink to this heading">#</a></h4>
+<h4><code class="docutils literal notranslate"><span class="pre">break</span></code>, <code class="docutils literal notranslate"><span class="pre">continue</span></code> and <code class="docutils literal notranslate"><span class="pre">pass</span></code><a class="headerlink" href="#break-continue-and-pass" title="Link to this heading">#</a></h4>
 <p>To control the flow of a certain loop you can also use <code class="docutils literal notranslate"><span class="pre">break</span></code>, <code class="docutils literal notranslate"><span class="pre">continue</span></code> and <code class="docutils literal notranslate"><span class="pre">pass</span></code>.</p>
 </br>
 <center><img src="https://raw.githubusercontent.com/PeerHerholz/Python_for_Psychologists_Winter2021/master/lecture/static/python_break_continue_pass.png" width=900></center>
@@ -4973,7 +4960,7 @@ parameter4 = D
 </div>
 </section>
 <section id="id11">
-<h4>Exercise 2.1<a class="headerlink" href="#id11" title="Permalink to this heading">#</a></h4>
+<h4>Exercise 2.1<a class="headerlink" href="#id11" title="Link to this heading">#</a></h4>
 <p>Use a for loop to print every <strong>even</strong> number from 0 to 10</p>
 <p>Hint: you can check if a number is even with <code class="docutils literal notranslate"><span class="pre">number</span> <span class="pre">%</span> <span class="pre">2</span> <span class="pre">==</span> <span class="pre">0</span></code></p>
 <div class="cell docutils container">
@@ -4996,7 +4983,7 @@ parameter4 = D
 </div>
 </section>
 <section id="id12">
-<h4>Exercise 2.2<a class="headerlink" href="#id12" title="Permalink to this heading">#</a></h4>
+<h4>Exercise 2.2<a class="headerlink" href="#id12" title="Link to this heading">#</a></h4>
 <p>Use a for loop that iterates over all days in december (31) and always prints the number of days left until christmas. This loop should break once christmas is reached and should wish you a merry christmas.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -5020,7 +5007,7 @@ parameter4 = D
 </div>
 </section>
 <section id="id13">
-<h4>Exercise 2.3<a class="headerlink" href="#id13" title="Permalink to this heading">#</a></h4>
+<h4>Exercise 2.3<a class="headerlink" href="#id13" title="Link to this heading">#</a></h4>
 <p>create a list of your three most favourite foods and iterate over it. In each iteration print the position and the food. For example:</p>
 <ul class="simple">
 <li><ol class="arabic simple">
@@ -5116,7 +5103,7 @@ parameter4 = D
 </div>
 </section>
 <section id="exercise-2-4">
-<h4>Exercise 2.4<a class="headerlink" href="#exercise-2-4" title="Permalink to this heading">#</a></h4>
+<h4>Exercise 2.4<a class="headerlink" href="#exercise-2-4" title="Link to this heading">#</a></h4>
 <p>Use list comprehension to create a list containing all letters that are in the word ‘human’</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -5135,7 +5122,7 @@ parameter4 = D
 </div>
 </section>
 <section id="exercise-2-5">
-<h4>Exercise 2.5<a class="headerlink" href="#exercise-2-5" title="Permalink to this heading">#</a></h4>
+<h4>Exercise 2.5<a class="headerlink" href="#exercise-2-5" title="Link to this heading">#</a></h4>
 <p>Use list comprehension to create a list with all <strong>even</strong> numbers from 0 to 19</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -5154,7 +5141,7 @@ parameter4 = D
 </div>
 </section>
 <section id="exercise-2-6">
-<h4>Exercise 2.6<a class="headerlink" href="#exercise-2-6" title="Permalink to this heading">#</a></h4>
+<h4>Exercise 2.6<a class="headerlink" href="#exercise-2-6" title="Link to this heading">#</a></h4>
 <p>Use list comprehension to create a list with all <strong>uneven</strong> numbers from 0 to 19 and set all even numbers to zero</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -5173,7 +5160,7 @@ parameter4 = D
 </div>
 </section>
 <section id="while-loops">
-<h4><code class="docutils literal notranslate"><span class="pre">while</span></code> loops:<a class="headerlink" href="#while-loops" title="Permalink to this heading">#</a></h4>
+<h4><code class="docutils literal notranslate"><span class="pre">while</span></code> loops:<a class="headerlink" href="#while-loops" title="Link to this heading">#</a></h4>
 <p>A <code class="docutils literal notranslate"><span class="pre">while</span> <span class="pre">loop</span></code> is used when you want to perform a task <code class="docutils literal notranslate"><span class="pre">indefinitely</span></code>, until a particular <code class="docutils literal notranslate"><span class="pre">condition</span></code> is met. It is s a <code class="docutils literal notranslate"><span class="pre">condition-controlled</span> <span class="pre">loop</span></code>.</p>
 <center><img src="https://www.learnbyexample.org/wp-content/uploads/python/Python-while-Loop-Syntax.png" width=600></center>
 <center><small><small><small><small><small><small><small>https://www.learnbyexample.org/wp-content/uploads/python/Python-while-Loop-Syntax.png</small></small></small></small></small></small></small></center><center><img src="https://media.geeksforgeeks.org/wp-content/uploads/20191101170515/while-loop.jpg" width=600></center>
@@ -5237,7 +5224,7 @@ Inside else
 </div>
 </section>
 <section id="exercise-2-7">
-<h4>Exercise 2.7<a class="headerlink" href="#exercise-2-7" title="Permalink to this heading">#</a></h4>
+<h4>Exercise 2.7<a class="headerlink" href="#exercise-2-7" title="Link to this heading">#</a></h4>
 <p>Calculate the number of friends that you can invite to the cinema using a <code class="docutils literal notranslate"><span class="pre">while</span></code>-loop</p>
 <p>Remember:</p>
 <ul class="simple">
@@ -5275,7 +5262,7 @@ Inside else
 </section>
 </section>
 <section id="functions">
-<h2>Functions<a class="headerlink" href="#functions" title="Permalink to this heading">#</a></h2>
+<h2>Functions<a class="headerlink" href="#functions" title="Link to this heading">#</a></h2>
 <p>Rule of thumb for great <code class="docutils literal notranslate"><span class="pre">programming</span></code>: “Whenever you copy-paste while coding, you do something wrong.’</p>
 <p>We use <code class="docutils literal notranslate"><span class="pre">functions</span></code> to solve problems that are <code class="docutils literal notranslate"><span class="pre">repetitive</span></code>.</p>
 <p>What should you put into a <code class="docutils literal notranslate"><span class="pre">function</span></code>:</p>
@@ -5517,7 +5504,7 @@ func_with_docstring(s)
 </div>
 </div>
 <section id="positional-vs-keyword-arguments">
-<h3>Positional vs. keyword arguments<a class="headerlink" href="#positional-vs-keyword-arguments" title="Permalink to this heading">#</a></h3>
+<h3>Positional vs. keyword arguments<a class="headerlink" href="#positional-vs-keyword-arguments" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">Positional</span> <span class="pre">arguments</span></code> are defined by <code class="docutils literal notranslate"><span class="pre">position</span></code> and must be passed</p>
 <ul>
@@ -5598,7 +5585,7 @@ We can increase readability by calling the <code class="docutils literal notrans
 <li><p>don’t have to be called in order</p></li>
 </ul>
 <section id="let-s-quickly-talk-about-function-names">
-<h4>Let’s quickly talk about function names…<a class="headerlink" href="#let-s-quickly-talk-about-function-names" title="Permalink to this heading">#</a></h4>
+<h4>Let’s quickly talk about function names…<a class="headerlink" href="#let-s-quickly-talk-about-function-names" title="Link to this heading">#</a></h4>
 <p><code class="docutils literal notranslate"><span class="pre">Function</span> <span class="pre">names</span></code> are very important. They will allow you to tell the story of your code. Time spent on naming is never wasted time in <code class="docutils literal notranslate"><span class="pre">coding</span></code>.</p>
 <p>The ‘pythonic’ way to write <code class="docutils literal notranslate"><span class="pre">functions</span></code> is to also imply in the name what the <code class="docutils literal notranslate"><span class="pre">function</span></code> will do.</p>
 <p>Some examples:</p>
@@ -5609,7 +5596,7 @@ We can increase readability by calling the <code class="docutils literal notrans
 </ul>
 </section>
 <section id="id14">
-<h4>Exercise 3.1<a class="headerlink" href="#id14" title="Permalink to this heading">#</a></h4>
+<h4>Exercise 3.1<a class="headerlink" href="#id14" title="Link to this heading">#</a></h4>
 <p>Define a <code class="docutils literal notranslate"><span class="pre">function</span></code> called <code class="docutils literal notranslate"><span class="pre">get_longest_string</span></code> that takes two <code class="docutils literal notranslate"><span class="pre">strings</span></code> as <code class="docutils literal notranslate"><span class="pre">input</span></code> and <code class="docutils literal notranslate"><span class="pre">returns</span></code> the <code class="docutils literal notranslate"><span class="pre">longer</span> <span class="pre">string</span></code>. If the <code class="docutils literal notranslate"><span class="pre">strings</span></code> have the same <code class="docutils literal notranslate"><span class="pre">length</span></code>, the <code class="docutils literal notranslate"><span class="pre">first</span></code> one should be <code class="docutils literal notranslate"><span class="pre">returned</span></code>.</p>
 <p>Call your <code class="docutils literal notranslate"><span class="pre">function</span></code> once, using <code class="docutils literal notranslate"><span class="pre">positional</span> <span class="pre">arguments</span></code> and once using <code class="docutils literal notranslate"><span class="pre">keyword</span> <span class="pre">arguments</span></code>.</p>
 <div class="cell docutils container">
@@ -5635,7 +5622,7 @@ We can increase readability by calling the <code class="docutils literal notrans
 </div>
 </section>
 <section id="id15">
-<h4>Exercise 3.2<a class="headerlink" href="#id15" title="Permalink to this heading">#</a></h4>
+<h4>Exercise 3.2<a class="headerlink" href="#id15" title="Link to this heading">#</a></h4>
 <p>Define a <code class="docutils literal notranslate"><span class="pre">function</span></code> <code class="docutils literal notranslate"><span class="pre">happy_holidays</span></code> that wishes the user happy holidays. It takes the name of the <code class="docutils literal notranslate"><span class="pre">user</span></code> as <code class="docutils literal notranslate"><span class="pre">input</span></code> <code class="docutils literal notranslate"><span class="pre">argument</span></code>. When the <code class="docutils literal notranslate"><span class="pre">user</span></code> does not define a name, your <code class="docutils literal notranslate"><span class="pre">function</span></code> should use a <code class="docutils literal notranslate"><span class="pre">default</span> <span class="pre">value</span></code>.
 Then call it once, <code class="docutils literal notranslate"><span class="pre">inputting</span></code> a <code class="docutils literal notranslate"><span class="pre">user</span> <span class="pre">name</span></code> and once without.</p>
 <div class="cell docutils container">
@@ -5711,7 +5698,8 @@ Then call it once, <code class="docutils literal notranslate"><span class="pre">
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
   <div class="sidebar-secondary-item">
@@ -5922,8 +5910,8 @@ By Neuromatch Impact Scholars team
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
-<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <script defer src="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
 
   <footer class="bd-footer">
   </footer>

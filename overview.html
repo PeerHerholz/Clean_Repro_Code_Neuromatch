@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="./" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Overview &#8212; Code formatting &amp; testing</title>
   
@@ -17,52 +16,51 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
 
-  
-  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
-
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/myfile.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/myfile.css?v=3437f865" />
   
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
-  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
 
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/clipboard.min.js"></script>
-    <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'overview';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -70,6 +68,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="prev" title="Welcome" href="intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -85,19 +84,8 @@ const thebe_selector_output = ".output, .cell_output"
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-primary-sidebar-checkbox"/>
-  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-secondary-sidebar-checkbox"/>
-  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="search.html"
       method="get">
@@ -105,7 +93,6 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -113,8 +100,8 @@ const thebe_selector_output = ".output, .cell_output"
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -130,7 +117,8 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -160,11 +148,18 @@ const thebe_selector_output = ".output, .cell_output"
     
     
     <img src="https://impact-scholars.neuromatch.io/_static/Sciencematch.png" class="logo__image only-light" alt="Code formatting & testing - Home"/>
-    <script>document.write(`<img src="https://impact-scholars.neuromatch.io/_static/Sciencematch.png" class="logo__image only-dark" alt="Code formatting & testing - Home"/>`);</script>
+    <img src="https://impact-scholars.neuromatch.io/_static/Sciencematch.png" class="logo__image only-dark pst-js-only" alt="Code formatting & testing - Home"/>
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -231,9 +226,9 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -356,27 +351,19 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
-    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
-    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
-  </button>
-`);
-</script>
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -424,7 +411,7 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="overview">
-<h1>Overview<a class="headerlink" href="#overview" title="Permalink to this heading">#</a></h1>
+<h1>Overview<a class="headerlink" href="#overview" title="Link to this heading">#</a></h1>
 <p>Often overlooked but tremendously important: clean and reproducible code is the basis for any type of computational work, no matter if in academia or industry. But what does this actually refer to, what does it entail and what tools can be used to make it easier/ensure quality?</p>
 <p>In this short <a class="reference external" href="https://neuromatch.io/">Neuromatch</a> <a class="reference external" href="https://impact-scholars.neuromatch.io/impact-scholars/intro.html">Impact Scholars</a> workshop, we will explore the respective basis, including:</p>
 <ul class="simple">
@@ -437,11 +424,11 @@ document.write(`
 <p>All materials are published as a <a class="reference external" href="https://peerherholz.github.io/Clean_Repro_Code_Neuromatch">JupyterBook</a>.</p>
 <p>We will further explain the aspects, as well as the <code class="docutils literal notranslate"><span class="pre">setup</span></code>, etc. below. For a precise outline of this winter school, please consult the respective <a class="reference external" href="https://peerherholz.github.io/Clean_Repro_Code_Neuromatch/outline.html">page</a>.</p>
 <section id="the-framework-and-setup">
-<h2>The framework and setup<a class="headerlink" href="#the-framework-and-setup" title="Permalink to this heading">#</a></h2>
-<p>The entire workshop will be conducted via the <a class="reference external" href="https://jupyter.org/">Jupyter ecosystem</a>, utilizing the <a class="reference external" href="https://www.python.org/">python programming language</a> for all examples. All materials will be provided within the <a class="reference external" href="https://jupyterbook.org/intro.html">Jupyter Book</a> format you’re currently look, free for everyone to check and try out, as well as utilize further. To help folks that don’t have any experience with these resources, we compiled a set of tutorials that participants can go through within the <span class="xref myst">prerequisite section</span>. While this won’t be enough to go past basic skills, we still hope it will be useful to familiarize yourself with core aspects that will help during the workshop. Each of these tutorials, as well as “main” materials will be in <a class="reference external" href="https://jupyter.org/">jupyter notebooks</a> and contain a mixture of explanations and code and presented as a “slide show” during the workshop. They can be just viewed, or either run interactively via cloud instances (via <a class="reference external" href="https://mybinder.org/">mybinder</a>) or locally. Depending on a given participant’s computational resources and infrastructure, we provide multiple ways to participate in the winter school as outlined in the <a class="reference external" href="https://peerherholz.github.io/Clean_Repro_Code_Neuromatch/setup.html">Setup</a> section.</p>
+<h2>The framework and setup<a class="headerlink" href="#the-framework-and-setup" title="Link to this heading">#</a></h2>
+<p>The entire workshop will be conducted via the <a class="reference external" href="https://jupyter.org/">Jupyter ecosystem</a>, utilizing the <a class="reference external" href="https://www.python.org/">python programming language</a> for all examples. All materials will be provided within the <a class="reference external" href="https://jupyterbook.org/intro.html">Jupyter Book</a> format you’re currently look, free for everyone to check and try out, as well as utilize further. To help folks that don’t have any experience with these resources, we compiled a set of tutorials that participants can go through within the <a class="reference internal" href="#"><span class="xref myst">prerequisite section</span></a>. While this won’t be enough to go past basic skills, we still hope it will be useful to familiarize yourself with core aspects that will help during the workshop. Each of these tutorials, as well as “main” materials will be in <a class="reference external" href="https://jupyter.org/">jupyter notebooks</a> and contain a mixture of explanations and code and presented as a “slide show” during the workshop. They can be just viewed, or either run interactively via cloud instances (via <a class="reference external" href="https://mybinder.org/">mybinder</a>) or locally. Depending on a given participant’s computational resources and infrastructure, we provide multiple ways to participate in the winter school as outlined in the <a class="reference external" href="https://peerherholz.github.io/Clean_Repro_Code_Neuromatch/setup.html">Setup</a> section.</p>
 </section>
 <section id="instructors">
-<h2>Instructors<a class="headerlink" href="#instructors" title="Permalink to this heading">#</a></h2>
+<h2>Instructors<a class="headerlink" href="#instructors" title="Link to this heading">#</a></h2>
 <p>You can find the main team below and get further information via clicking on the respective names.</p>
 <table>
   <tr>
@@ -458,10 +445,10 @@ document.write(`
 <p>When contacting us, please refrain from using titles when addressing us and super formal language, using our first names is fine and it’s way more important that the content is respectful, fair and constructive (We aim for the same when we reply). However, please let us know if you have a preferred way of interacting with other folks, including how you would liked to be addressed, your pronouns and the level of formality.</p>
 </div>
 <section id="the-details">
-<h3>The details<a class="headerlink" href="#the-details" title="Permalink to this heading">#</a></h3>
+<h3>The details<a class="headerlink" href="#the-details" title="Link to this heading">#</a></h3>
 <p>Below you will find important details regarding the winter school, summarized in a compact form. Please consult and familiarize yourself with the information presented there prior to and/or within the first few days of the winter school.</p>
 <section id="when-and-where">
-<h4>When and where<a class="headerlink" href="#when-and-where" title="Permalink to this heading">#</a></h4>
+<h4>When and where<a class="headerlink" href="#when-and-where" title="Link to this heading">#</a></h4>
 <p><strong>November, 11th-12th 2024</strong>, virtual via zoom.</p>
 <p><strong>Schedule:</strong></p>
 <div class="pst-scrollable-table-container"><table class="table">
@@ -479,34 +466,34 @@ document.write(`
 </div>
 </section>
 <section id="can-i-use-my-calculator">
-<h4>Can I use my calculator?<a class="headerlink" href="#can-i-use-my-calculator" title="Permalink to this heading">#</a></h4>
+<h4>Can I use my calculator?<a class="headerlink" href="#can-i-use-my-calculator" title="Link to this heading">#</a></h4>
 <p>For this class you will need frequent access to a computer. None of the analyses that we will be doing will be very intensive, so this does not need to be a modern or “fast” computer. Still, it will need to be running a standard operating system like <code class="docutils literal notranslate"><span class="pre">Windows</span></code>, <code class="docutils literal notranslate"><span class="pre">Mac</span> <span class="pre">OS</span> <span class="pre">X</span></code>, or <code class="docutils literal notranslate"><span class="pre">Linux</span></code>. Unfortunately, tablets running mobile operating systems (<code class="docutils literal notranslate"><span class="pre">iOS</span></code>, <code class="docutils literal notranslate"><span class="pre">Android</span></code>) probably won’t work for this purpose. If this is an issue for you, please get in touch with the instructor as soon as possible so that we can try to figure out a solution. Regarding software and installation thereof, please check the next section.</p>
 <p align="center"><iframe src="https://giphy.com/embed/DHqth0hVQoIzS" width="240" height="103" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><p align="center"><a href="https://giphy.com/gifs/maths-DHqth0hVQoIzS">via GIPHY</a></p></p>
 </section>
 <section id="how-do-i-get-all-the-software-and-do-i-have-to-apply-for-a-loan-to-get-it">
-<h4>How do I get all the software and do I have to apply for a loan to get it?<a class="headerlink" href="#how-do-i-get-all-the-software-and-do-i-have-to-apply-for-a-loan-to-get-it" title="Permalink to this heading">#</a></h4>
+<h4>How do I get all the software and do I have to apply for a loan to get it?<a class="headerlink" href="#how-do-i-get-all-the-software-and-do-i-have-to-apply-for-a-loan-to-get-it" title="Link to this heading">#</a></h4>
 <p>Don’t worry at all. First, in order to help you get all the software required for the course, a <a class="reference external" href="https://peerherholz.github.io/Clean_Repro_Code_Neuromatch/setup.html">comprehensive installation instruction</a> was compiled. In a step-by-step manner it guides you through the installation process, covering several <code class="docutils literal notranslate"><span class="pre">OS</span></code>: <code class="docutils literal notranslate"><span class="pre">Windows</span></code>, <code class="docutils literal notranslate"><span class="pre">Mac</span> <span class="pre">OS</span> <span class="pre">X</span></code> and <code class="docutils literal notranslate"><span class="pre">Linux</span></code>. Second, everything will be completely free of charge as we will only use publicly available <a class="reference external" href="https://en.wikipedia.org/wiki/Open-source_software">open-source software</a>. Why? Because teaching participants via <a class="reference external" href="https://en.wikipedia.org/wiki/Proprietary_software">proprietary software</a> is just not fair and won’t help anyone: participants have to obtain licenses or use those from the university (which usually doesn’t have enough for everyone), leading to tremendous problems regarding inequity now and in the future. Additionally, <a class="reference external" href="https://en.wikipedia.org/wiki/Open-source_software">opens-source software</a> can do everything, if not more, what <a class="reference external" href="https://en.wikipedia.org/wiki/Proprietary_software">proprietary software</a> can and is furthermore usually better supported, tested and documented, creating a fantastic sense of community.</p>
 <p align="center"><iframe src="https://giphy.com/embed/CTX0ivSQbI78A" width="240" height="177" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><p align="center"><a href="https://giphy.com/gifs/internet-computer-technology-CTX0ivSQbI78A">via GIPHY</a></p></p>
 </section>
 <section id="where-is-everything">
-<h4>Where is everything?<a class="headerlink" href="#where-is-everything" title="Permalink to this heading">#</a></h4>
+<h4>Where is everything?<a class="headerlink" href="#where-is-everything" title="Link to this heading">#</a></h4>
 <p>All materials (slides, lecture demo notebooks, etc.) will be available on the <a class="reference external" href="https://peerherholz.github.io/Clean_Repro_Code_Neuromatch/intro.html">workshop’s website</a>, i.e. the one you’re looking at right now. Everything will be completely open and free to use, thus constituting an <a class="reference external" href="https://en.wikipedia.org/wiki/Open_educational_resources">open educational resource</a> you are free to explore, enhance and share. Thus, this website and all materials will also remain up for the entire duration of the workshop and beyond, ideally to the end of the internet. The usage of this resource and the materials therein will be explained at the beginning and throughout the workshop.</p>
 <p align="center"><iframe src="https://giphy.com/embed/c20UV66B7zCWA" width="240" height="155" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><p align="center"><a href="https://giphy.com/gifs/superman-phone-looking-c20UV66B7zCWA">via GIPHY</a></p></p>
 </section>
 <section id="syllabus-and-text">
-<h4>Syllabus and Text<a class="headerlink" href="#syllabus-and-text" title="Permalink to this heading">#</a></h4>
+<h4>Syllabus and Text<a class="headerlink" href="#syllabus-and-text" title="Link to this heading">#</a></h4>
 <p>As noted above, this page serves as the syllabus for this course, with the precise outline indicated in the <a class="reference external" href="https://peerherholz.github.io/Clean_Repro_Code_Neuromatch/outline.html">respective section</a>. This syllabus is subject to change; please check-in frequently for learning about any changes to the syllabus.</p>
 <p>Additional reading material might be added but will always be open &amp; free with participants being informed about any addition.</p>
 <p align="center"><iframe src="https://giphy.com/embed/9dFvgd4ID6ne0" width="240" height="135" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><p align="center"><a href="https://giphy.com/gifs/community-nbc-ken-jeong-9dFvgd4ID6ne0">via GIPHY</a></p></p>
 </section>
 </section>
 <section id="code-of-conduct">
-<h3>Code of conduct<a class="headerlink" href="#code-of-conduct" title="Permalink to this heading">#</a></h3>
+<h3>Code of conduct<a class="headerlink" href="#code-of-conduct" title="Link to this heading">#</a></h3>
 <p>This course has a <code class="docutils literal notranslate"><span class="pre">Code</span> <span class="pre">of</span> <span class="pre">conduct</span></code>. Please inform yourself about the specifics by carefully reading through the <a class="reference external" href="https://peerherholz.github.io/Clean_Repro_Code_Neuromatch/CoC.html">respective section</a>.</p>
 <p align="center"><iframe src="https://giphy.com/embed/l5s71uAp3CzKwxwkoZ" width="240" height="200" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><p align="center"><a href="https://giphy.com/gifs/theoffice-nbc-the-office-tv-l5s71uAp3CzKwxwkoZ">via GIPHY</a></p></p>
 </section>
 <section id="how-to-get-your-question-s-answered-and-or-provide-feedback">
-<h3>How to Get Your Question(s) Answered and/or Provide Feedback<a class="headerlink" href="#how-to-get-your-question-s-answered-and-or-provide-feedback" title="Permalink to this heading">#</a></h3>
+<h3>How to Get Your Question(s) Answered and/or Provide Feedback<a class="headerlink" href="#how-to-get-your-question-s-answered-and-or-provide-feedback" title="Link to this heading">#</a></h3>
 <p>It’s great that we have so many ways to communicate, but it can get tricky to figure out who to contact or where your question belongs or when to expect a response. These guidelines are to help you get your question answered as quickly as possible and to ensure that we’re able to get to everyone’s questions.</p>
 <p>That said, to ensure that we’re respecting everyone’s time and thus will mainly answer questions between normal working hours (M-F 9AM-5PM). The instructors are also going to do their best to stick to these working hours. However, they know that’s not when you may be doing your work. So, please feel free to post messages whenever is best for you while knowing that if you post late at night or on a weekend, you may not get a response until the next weekday. As such, do your best not to wait until the last minute to ask a question.</p>
 <p>If you have:</p>
@@ -521,7 +508,7 @@ document.write(`
 <p>*This form can be taken down at any time if it’s not being used for its intended purpose; however, you will be notified should that happen.</p>
 </section>
 <section id="acknowledgements">
-<h3>Acknowledgements<a class="headerlink" href="#acknowledgements" title="Permalink to this heading">#</a></h3>
+<h3>Acknowledgements<a class="headerlink" href="#acknowledgements" title="Link to this heading">#</a></h3>
 <p>Several parts of this section are directly taken or adapted from <a class="reference external" href="https://github.com/alexhuth/ndap-fa2020">Alexander Huth’s Neuro Data Analysis in Python syllabus</a> licensed under a <a class="reference external" href="https://github.com/alexhuth/ndap-fa2020/blob/master/LICENSE">BSD-3-Clause License</a> and <a class="reference external" href="https://cogs18.github.io/assets/intro/syllabus.html">Shannon Ellis’ COGS 18: Introduction to Python</a>.</p>
 </section>
 </section>
@@ -582,7 +569,8 @@ document.write(`
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
   <div class="sidebar-secondary-item">
@@ -654,8 +642,8 @@ By Neuromatch Impact Scholars team
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <script defer src="_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
 
   <footer class="bd-footer">
   </footer>

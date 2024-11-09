@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="../../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Introduction to the (unix) command line: bash &#8212; Code formatting &amp; testing</title>
   
@@ -17,52 +16,51 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
 
-  
-  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
-
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/myfile.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/myfile.css?v=3437f865" />
   
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
-  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
 
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/clipboard.min.js"></script>
-    <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'materials/prerequisites/intro_to_shell';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -70,6 +68,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="prev" title="Course prerequisites" href="../../prerequisites.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -85,19 +84,8 @@ const thebe_selector_output = ".output, .cell_output"
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-primary-sidebar-checkbox"/>
-  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-secondary-sidebar-checkbox"/>
-  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="../../search.html"
       method="get">
@@ -105,7 +93,6 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -113,8 +100,8 @@ const thebe_selector_output = ".output, .cell_output"
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -130,7 +117,8 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -160,11 +148,18 @@ const thebe_selector_output = ".output, .cell_output"
     
     
     <img src="https://impact-scholars.neuromatch.io/_static/Sciencematch.png" class="logo__image only-light" alt="Code formatting & testing - Home"/>
-    <script>document.write(`<img src="https://impact-scholars.neuromatch.io/_static/Sciencematch.png" class="logo__image only-dark" alt="Code formatting & testing - Home"/>`);</script>
+    <img src="https://impact-scholars.neuromatch.io/_static/Sciencematch.png" class="logo__image only-dark pst-js-only" alt="Code formatting & testing - Home"/>
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -231,9 +226,9 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -356,27 +351,19 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
-    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
-    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
-  </button>
-`);
-</script>
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -499,10 +486,10 @@ document.write(`
                 <article class="bd-article">
                   
   <section id="introduction-to-the-unix-command-line-bash">
-<h1>Introduction to the (unix) command line: bash<a class="headerlink" href="#introduction-to-the-unix-command-line-bash" title="Permalink to this heading">#</a></h1>
+<h1>Introduction to the (unix) command line: bash<a class="headerlink" href="#introduction-to-the-unix-command-line-bash" title="Link to this heading">#</a></h1>
 </section>
 <section id="before-we-get-started-1">
-<h1>Before we get started 1…<a class="headerlink" href="#before-we-get-started-1" title="Permalink to this heading">#</a></h1>
+<h1>Before we get started 1…<a class="headerlink" href="#before-we-get-started-1" title="Link to this heading">#</a></h1>
 <br>
 <ul class="simple">
 <li><p>most of what you’ll see within this lecture was prepared by Ross Markello and further adapted by Peer Herholz</p></li>
@@ -510,12 +497,12 @@ document.write(`
 </ul>
 </section>
 <section id="before-we-get-started-2">
-<h1>Before we get started 2…<a class="headerlink" href="#before-we-get-started-2" title="Permalink to this heading">#</a></h1>
+<h1>Before we get started 2…<a class="headerlink" href="#before-we-get-started-2" title="Link to this heading">#</a></h1>
 <p>We’re going to be working with a dataset from <a class="reference external" href="https://swcarpentry.github.io/shell-novice/data/shell-lesson-data.zip">https://swcarpentry.github.io/shell-novice/data/shell-lesson-data.zip</a>.</p>
 <p>Download that file and unzip it on your Desktop!</p>
 </section>
 <section id="goals">
-<h1>Goals<a class="headerlink" href="#goals" title="Permalink to this heading">#</a></h1>
+<h1>Goals<a class="headerlink" href="#goals" title="Link to this heading">#</a></h1>
 <ul class="simple">
 <li><p>learn basic and efficient usage of the shell for various tasks</p>
 <ul>
@@ -526,7 +513,7 @@ document.write(`
 </ul>
 </section>
 <section id="what-is-the-shell">
-<h1>What is the “shell”?<a class="headerlink" href="#what-is-the-shell" title="Permalink to this heading">#</a></h1>
+<h1>What is the “shell”?<a class="headerlink" href="#what-is-the-shell" title="Link to this heading">#</a></h1>
 <ul class="simple">
 <li><p>The shell is a <strong>command-line interface</strong> (CLI) to your computer</p>
 <ul>
@@ -536,7 +523,7 @@ document.write(`
 <li><p>The shell is <em>also</em> a scripting language that can be used to automate repetitive tasks</p></li>
 </ul>
 <section id="but-what-s-this-bash-shell">
-<h2>But what’s this “bash shell”?<a class="headerlink" href="#but-what-s-this-bash-shell" title="Permalink to this heading">#</a></h2>
+<h2>But what’s this “bash shell”?<a class="headerlink" href="#but-what-s-this-bash-shell" title="Link to this heading">#</a></h2>
 <p>It’s one of many available shells!</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">sh</span></code> - Bourne <strong>SH</strong>ell</p></li>
@@ -549,7 +536,7 @@ document.write(`
 </ul>
 </section>
 <section id="why-so-many">
-<h2>WHY so many?<a class="headerlink" href="#why-so-many" title="Permalink to this heading">#</a></h2>
+<h2>WHY so many?<a class="headerlink" href="#why-so-many" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>They all have different strengths / weaknesses</p></li>
 <li><p>You will see many of them throughout much of neuroimaging software, too!</p>
@@ -561,7 +548,7 @@ document.write(`
 </ul>
 </section>
 <section id="so-we-re-going-to-focus-on-the-bash-shell">
-<h2>So we’re going to focus on the bash shell?<a class="headerlink" href="#so-we-re-going-to-focus-on-the-bash-shell" title="Permalink to this heading">#</a></h2>
+<h2>So we’re going to focus on the bash shell?<a class="headerlink" href="#so-we-re-going-to-focus-on-the-bash-shell" title="Link to this heading">#</a></h2>
 <p>Yes! It’s perhaps <strong>the most common</strong> shell, available on almost every OS:</p>
 <ul class="simple">
 <li><p>It’s the default shell on most Linux systems</p></li>
@@ -575,7 +562,7 @@ document.write(`
 </ul>
 </section>
 <section id="alright-but-why-use-the-shell-at-all">
-<h2>Alright, but why use the shell at all?<a class="headerlink" href="#alright-but-why-use-the-shell-at-all" title="Permalink to this heading">#</a></h2>
+<h2>Alright, but why use the shell at all?<a class="headerlink" href="#alright-but-why-use-the-shell-at-all" title="Link to this heading">#</a></h2>
 <p>Isn’t the GUI good enough?</p>
 <ul class="simple">
 <li><p>Yes, but the shell is <strong>very powerful</strong></p></li>
@@ -587,7 +574,7 @@ document.write(`
 </section>
 </section>
 <section id="the-bash-shell">
-<h1>The (bash) shell<a class="headerlink" href="#the-bash-shell" title="Permalink to this heading">#</a></h1>
+<h1>The (bash) shell<a class="headerlink" href="#the-bash-shell" title="Link to this heading">#</a></h1>
 <p>Now, let’s open up your terminal!</p>
 <ul class="simple">
 <li><p><strong>Windows</strong>: Open the Ubuntu application</p></li>
@@ -600,7 +587,7 @@ document.write(`
 <p>The shell typically uses <code class="docutils literal notranslate"><span class="pre">$</span></code> as the prompt, but may use a different symbol.</p>
 <p><strong>IMPORTANT:</strong> When typing commands, either in this lesson or from other sources, <strong>do not type the prompt</strong>, only the commands that follow it!</p>
 <section id="am-i-using-bash">
-<h2>Am I using bash?<a class="headerlink" href="#am-i-using-bash" title="Permalink to this heading">#</a></h2>
+<h2>Am I using bash?<a class="headerlink" href="#am-i-using-bash" title="Link to this heading">#</a></h2>
 <p>Let’s check! You can use the following command to determine what shell you’re using:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -618,7 +605,7 @@ document.write(`
 <p>(It’s like <code class="docutils literal notranslate"><span class="pre">print</span></code> in Python / R or <code class="docutils literal notranslate"><span class="pre">disp</span></code> in MATLAB or <code class="docutils literal notranslate"><span class="pre">printf</span></code> in C or …)</p>
 </section>
 <section id="what-s-with-the-shell">
-<h2>What’s with the <code class="docutils literal notranslate"><span class="pre">$SHELL</span></code>?<a class="headerlink" href="#what-s-with-the-shell" title="Permalink to this heading">#</a></h2>
+<h2>What’s with the <code class="docutils literal notranslate"><span class="pre">$SHELL</span></code>?<a class="headerlink" href="#what-s-with-the-shell" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Things prefixed with <code class="docutils literal notranslate"><span class="pre">$</span></code> in bash are (mostly) <strong>environmental variables</strong></p>
 <ul>
@@ -653,7 +640,7 @@ document.write(`
 <p>Nope! But you will get a (moderately) helpful error message 😁</p>
 </section>
 <section id="the-cons-of-the-cli">
-<h2>The cons of the CLI<a class="headerlink" href="#the-cons-of-the-cli" title="Permalink to this heading">#</a></h2>
+<h2>The cons of the CLI<a class="headerlink" href="#the-cons-of-the-cli" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>You need to know the names of the commands you want to run!</p></li>
 <li><p>Sometimes, commands are not immediately obvious</p>
@@ -664,7 +651,7 @@ document.write(`
 </ul>
 </section>
 <section id="key-points">
-<h2>Key Points<a class="headerlink" href="#key-points" title="Permalink to this heading">#</a></h2>
+<h2>Key Points<a class="headerlink" href="#key-points" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>A shell is a program whose primary purpose is to accept commands and run programs</p></li>
 <li><p>The shell’s main advantages are its high action-to-keystroke ratio, its support for automating repetitive tasks, and its capacity to access remote machines</p></li>
@@ -673,7 +660,7 @@ document.write(`
 </section>
 </section>
 <section id="navigating-files-and-directories">
-<h1>Navigating Files and Directories<a class="headerlink" href="#navigating-files-and-directories" title="Permalink to this heading">#</a></h1>
+<h1>Navigating Files and Directories<a class="headerlink" href="#navigating-files-and-directories" title="Link to this heading">#</a></h1>
 <ul class="simple">
 <li><p>The <strong>file system</strong> is the part of our operating system for managing files and directories</p></li>
 <li><p>There are a lot of commands to create/inspect/rename/delete files + directories</p>
@@ -683,7 +670,7 @@ document.write(`
 </li>
 </ul>
 <section id="so-where-are-we-right-now">
-<h2>So where are we right now?<a class="headerlink" href="#so-where-are-we-right-now" title="Permalink to this heading">#</a></h2>
+<h2>So where are we right now?<a class="headerlink" href="#so-where-are-we-right-now" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>When we open our terminal we are placed <em>somewhere</em> in the file system!</p>
 <ul>
@@ -709,7 +696,7 @@ document.write(`
 </ul>
 </section>
 <section id="os-dependent-paths">
-<h2>OS-dependent paths<a class="headerlink" href="#os-dependent-paths" title="Permalink to this heading">#</a></h2>
+<h2>OS-dependent paths<a class="headerlink" href="#os-dependent-paths" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>The printed directory may look different depending on your operating system</p>
 <ul>
@@ -724,7 +711,7 @@ document.write(`
 </ul>
 </section>
 <section id="the-file-system">
-<h2>The file system<a class="headerlink" href="#the-file-system" title="Permalink to this heading">#</a></h2>
+<h2>The file system<a class="headerlink" href="#the-file-system" title="Link to this heading">#</a></h2>
 <p>Let’s take a look at an example file-system:
 <img src="http://swcarpentry.github.io/shell-novice/fig/filesystem.svg" width="400px" style="margin-bottom: 10px;float: right"></p>
 <ul class="simple">
@@ -741,11 +728,11 @@ document.write(`
 </ul>
 </section>
 <section id="id1">
-<h2>The file system<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
+<h2>The file system<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
 <p>Let’s take a look at an example file-system:
 <img src="http://swcarpentry.github.io/shell-novice/fig/filesystem.svg" width="400px" style="margin-bottom: 10px;float: right"></p>
 <section id="the-character">
-<h3>The <code class="docutils literal notranslate"><span class="pre">/</span></code> character<a class="headerlink" href="#the-character" title="Permalink to this heading">#</a></h3>
+<h3>The <code class="docutils literal notranslate"><span class="pre">/</span></code> character<a class="headerlink" href="#the-character" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Refers to the root directory when it appears at the start of a path</p></li>
 <li><p>Is used as a separator between directories when it appears inside a path</p></li>
@@ -753,7 +740,7 @@ document.write(`
 </section>
 </section>
 <section id="inside-users">
-<h2>Inside <code class="docutils literal notranslate"><span class="pre">Users</span></code><a class="headerlink" href="#inside-users" title="Permalink to this heading">#</a></h2>
+<h2>Inside <code class="docutils literal notranslate"><span class="pre">Users</span></code><a class="headerlink" href="#inside-users" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>The <code class="docutils literal notranslate"><span class="pre">Users</span></code> directory contains different folders for the different users on your computer</p></li>
 <li><p>If you are the only user on your computer then there is likely only one!</p>
@@ -799,7 +786,7 @@ document.write(`
 <p>Note: our home directory contains only <strong>sub-directories</strong>.</p>
 </section>
 <section id="general-syntax-of-a-shell-command">
-<h2>General syntax of a shell command<a class="headerlink" href="#general-syntax-of-a-shell-command" title="Permalink to this heading">#</a></h2>
+<h2>General syntax of a shell command<a class="headerlink" href="#general-syntax-of-a-shell-command" title="Link to this heading">#</a></h2>
 <p>Consider this command as a general example:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -815,7 +802,7 @@ document.write(`
 <li><p>An <strong>argument</strong> (<code class="docutils literal notranslate"><span class="pre">/</span></code>)</p></li>
 </ol>
 <section id="options-a-k-a-flags-switches">
-<h3>Options (a.k.a. flags, switches)<a class="headerlink" href="#options-a-k-a-flags-switches" title="Permalink to this heading">#</a></h3>
+<h3>Options (a.k.a. flags, switches)<a class="headerlink" href="#options-a-k-a-flags-switches" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Options change the behavior of a command</p></li>
 <li><p>They generally start with either a <code class="docutils literal notranslate"><span class="pre">-</span></code> or <code class="docutils literal notranslate"><span class="pre">--</span></code></p></li>
@@ -840,7 +827,7 @@ ls<span class="w"> </span>-s<span class="w"> </span>/Users/peerherholz/Desktop/s
 </div>
 </section>
 <section id="options-cont-d">
-<h3>Options (cont’d)<a class="headerlink" href="#options-cont-d" title="Permalink to this heading">#</a></h3>
+<h3>Options (cont’d)<a class="headerlink" href="#options-cont-d" title="Link to this heading">#</a></h3>
 <p>What happens if I type an invalid option?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -852,7 +839,7 @@ ls<span class="w"> </span>-s<span class="w"> </span>/Users/peerherholz/Desktop/s
 <p>Again, we get a (somewhat) helpful error message!</p>
 </section>
 <section id="arguments-a-k-a-parameters">
-<h3>Arguments (a.k.a parameters)<a class="headerlink" href="#arguments-a-k-a-parameters" title="Permalink to this heading">#</a></h3>
+<h3>Arguments (a.k.a parameters)<a class="headerlink" href="#arguments-a-k-a-parameters" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>These tell the command what to operate on!</p></li>
 <li><p>They are only <em>sometimes</em> optional (as with <code class="docutils literal notranslate"><span class="pre">ls</span></code>)</p>
@@ -877,7 +864,7 @@ ls<span class="w"> </span>-s<span class="w"> </span>/Users/peerherholz/Desktop/s
 </div>
 </section>
 <section id="getting-help">
-<h3>Getting help<a class="headerlink" href="#getting-help" title="Permalink to this heading">#</a></h3>
+<h3>Getting help<a class="headerlink" href="#getting-help" title="Link to this heading">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">ls</span></code> has <strong>lots</strong> of options. How can we find out about them?</p>
 <p>Either <code class="docutils literal notranslate"><span class="pre">man</span> <span class="pre">ls</span></code> or <code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">--help</span></code>!<br />
 This will vary depending on: (1) the command and (2) your operating system!<br />
@@ -899,7 +886,7 @@ Generally try <code class="docutils literal notranslate"><span class="pre">man</
 </section>
 </section>
 <section id="combining-options">
-<h2>Combining options<a class="headerlink" href="#combining-options" title="Permalink to this heading">#</a></h2>
+<h2>Combining options<a class="headerlink" href="#combining-options" title="Link to this heading">#</a></h2>
 <p>You can use multiple options at the same time! If the options are single letters (like most of those with <code class="docutils literal notranslate"><span class="pre">ls</span></code>), you can combine them with the same <code class="docutils literal notranslate"><span class="pre">-</span></code> flag:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -910,7 +897,7 @@ Generally try <code class="docutils literal notranslate"><span class="pre">man</
 </div>
 </section>
 <section id="exercise">
-<h2>Exercise:<a class="headerlink" href="#exercise" title="Permalink to this heading">#</a></h2>
+<h2>Exercise:<a class="headerlink" href="#exercise" title="Link to this heading">#</a></h2>
 <ol class="arabic simple">
 <li><p>Using the <code class="docutils literal notranslate"><span class="pre">man</span> <span class="pre">ls</span></code>, find out how the <code class="docutils literal notranslate"><span class="pre">-l</span></code> option should change the behavior of <code class="docutils literal notranslate"><span class="pre">ls</span></code>.</p></li>
 </ol>
@@ -923,7 +910,7 @@ Generally try <code class="docutils literal notranslate"><span class="pre">man</
 </div>
 </section>
 <section id="id2">
-<h2>Exercise:<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
+<h2>Exercise:<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
 <ol class="arabic simple" start="2">
 <li><p>Now, find out how the <code class="docutils literal notranslate"><span class="pre">-h</span></code> option should change the behavior of <code class="docutils literal notranslate"><span class="pre">ls</span></code>.</p></li>
 </ol>
@@ -936,7 +923,7 @@ Generally try <code class="docutils literal notranslate"><span class="pre">man</
 </div>
 </section>
 <section id="id3">
-<h2>Exercise:<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
+<h2>Exercise:<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
 <ol class="arabic simple" start="3">
 <li><p>What will happen when we use them <em>together</em>?</p></li>
 </ol>
@@ -949,7 +936,7 @@ Generally try <code class="docutils literal notranslate"><span class="pre">man</
 </div>
 </section>
 <section id="id4">
-<h2>Exercise:<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h2>
+<h2>Exercise:<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">ls</span></code> lists contents in alphabetical order by default.</p></li>
 <li><p>The <code class="docutils literal notranslate"><span class="pre">-t</span></code> option lists items by the time they were last modified (instead of alphabetically)</p></li>
@@ -966,7 +953,7 @@ Generally try <code class="docutils literal notranslate"><span class="pre">man</
 <p><strong>Answer</strong>: The most recently changed file is listed last!</p>
 </section>
 <section id="exploring-other-directories">
-<h2>Exploring other directories<a class="headerlink" href="#exploring-other-directories" title="Permalink to this heading">#</a></h2>
+<h2>Exploring other directories<a class="headerlink" href="#exploring-other-directories" title="Link to this heading">#</a></h2>
 <p>Providing an argument to <code class="docutils literal notranslate"><span class="pre">ls</span></code> lets us list the content of other directories (besides our current working directory):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1018,7 +1005,7 @@ Generally try <code class="docutils literal notranslate"><span class="pre">man</
 <p>Note the lack of output! This is normal for <code class="docutils literal notranslate"><span class="pre">cd</span></code>.</p>
 </section>
 <section id="where-are-we-now">
-<h2>Where are we now?<a class="headerlink" href="#where-are-we-now" title="Permalink to this heading">#</a></h2>
+<h2>Where are we now?<a class="headerlink" href="#where-are-we-now" title="Link to this heading">#</a></h2>
 <p>Let’s check our <strong>current working directory</strong>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1037,7 +1024,7 @@ Generally try <code class="docutils literal notranslate"><span class="pre">man</
 </div>
 </section>
 <section id="how-do-i-get-out-of-here">
-<h2>How do I get out of here?<a class="headerlink" href="#how-do-i-get-out-of-here" title="Permalink to this heading">#</a></h2>
+<h2>How do I get out of here?<a class="headerlink" href="#how-do-i-get-out-of-here" title="Link to this heading">#</a></h2>
 <p>We can go “down” into directories, but what about reversing that? What if I want to go back to <code class="docutils literal notranslate"><span class="pre">data-shell</span></code>?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1066,7 +1053,7 @@ Generally try <code class="docutils literal notranslate"><span class="pre">man</
 </div>
 </section>
 <section id="seeing-the-unseen">
-<h2>Seeing the unseen<a class="headerlink" href="#seeing-the-unseen" title="Permalink to this heading">#</a></h2>
+<h2>Seeing the unseen<a class="headerlink" href="#seeing-the-unseen" title="Link to this heading">#</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">ls</span></code> is supposed to list the contents of our directory, but we didn’t see <code class="docutils literal notranslate"><span class="pre">..</span></code> anywhere in the listings from before, right?</p>
 <p><code class="docutils literal notranslate"><span class="pre">..</span></code> is a special directory that is normally hidden. We can provide an additional argument to <code class="docutils literal notranslate"><span class="pre">ls</span></code> to make it appear:</p>
 <div class="cell docutils container">
@@ -1083,7 +1070,7 @@ Generally try <code class="docutils literal notranslate"><span class="pre">man</
 </ul>
 </section>
 <section id="hidden-files">
-<h2>Hidden files<a class="headerlink" href="#hidden-files" title="Permalink to this heading">#</a></h2>
+<h2>Hidden files<a class="headerlink" href="#hidden-files" title="Link to this heading">#</a></h2>
 <p>The last command also revealed a <code class="docutils literal notranslate"><span class="pre">.bash_profile</span></code> file:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1095,7 +1082,7 @@ Generally try <code class="docutils literal notranslate"><span class="pre">man</
 <p>The <code class="docutils literal notranslate"><span class="pre">.</span></code> prefix is usually reserved for configuration files, and prevents them from cluttering the terminal when you use <code class="docutils literal notranslate"><span class="pre">ls</span></code>.</p>
 </section>
 <section id="pwd-cd-and-ls">
-<h2><code class="docutils literal notranslate"><span class="pre">pwd</span></code>, <code class="docutils literal notranslate"><span class="pre">cd</span></code>, and <code class="docutils literal notranslate"><span class="pre">ls</span></code><a class="headerlink" href="#pwd-cd-and-ls" title="Permalink to this heading">#</a></h2>
+<h2><code class="docutils literal notranslate"><span class="pre">pwd</span></code>, <code class="docutils literal notranslate"><span class="pre">cd</span></code>, and <code class="docutils literal notranslate"><span class="pre">ls</span></code><a class="headerlink" href="#pwd-cd-and-ls" title="Link to this heading">#</a></h2>
 <p>These are some of <strong>the most</strong> common commands you’ll use in the shell! So let’s learn a little more about them.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1131,7 +1118,7 @@ Generally try <code class="docutils literal notranslate"><span class="pre">man</
 <p>We can string together paths with the <code class="docutils literal notranslate"><span class="pre">/</span></code> separator instead of changing one directory at a time!</p>
 </section>
 <section id="relative-versus-absolute-paths">
-<h2>Relative versus absolute paths<a class="headerlink" href="#relative-versus-absolute-paths" title="Permalink to this heading">#</a></h2>
+<h2>Relative versus absolute paths<a class="headerlink" href="#relative-versus-absolute-paths" title="Link to this heading">#</a></h2>
 <p>We’ve been using <strong>relative</strong> paths to change directories and list their contents.</p>
 <p>Relative here indicates that the path is <strong>relative to your current working directory</strong>.</p>
 <p>The alternative is an <strong>absolute</strong> path, which includes the entire path starting at the root directory (<code class="docutils literal notranslate"><span class="pre">/</span></code>).</p>
@@ -1167,9 +1154,9 @@ Generally try <code class="docutils literal notranslate"><span class="pre">man</
 </div>
 </section>
 <section id="some-helpful-shortcuts">
-<h2>Some helpful shortcuts<a class="headerlink" href="#some-helpful-shortcuts" title="Permalink to this heading">#</a></h2>
+<h2>Some helpful shortcuts<a class="headerlink" href="#some-helpful-shortcuts" title="Link to this heading">#</a></h2>
 <section id="id5">
-<h3><code class="docutils literal notranslate"><span class="pre">~</span></code><a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">~</span></code><a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
 <p>The shell will interpret the <code class="docutils literal notranslate"><span class="pre">~</span></code> tilde character as “your home directory”.</p>
 <p>That is, <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">~</span></code>, <code class="docutils literal notranslate"><span class="pre">cd</span></code>, and <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">/Users/peerherholz</span></code> will all get me to the same place!</p>
 <div class="cell docutils container">
@@ -1196,7 +1183,7 @@ Generally try <code class="docutils literal notranslate"><span class="pre">man</
 </div>
 </section>
 <section id="id6">
-<h3><code class="docutils literal notranslate"><span class="pre">-</span></code><a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">-</span></code><a class="headerlink" href="#id6" title="Link to this heading">#</a></h3>
 <p>The shell will interpret the <code class="docutils literal notranslate"><span class="pre">-</span></code> character as “wherever you were last”.</p>
 <p>Unlike <code class="docutils literal notranslate"><span class="pre">..</span></code>, which moves us “up” one directory, <code class="docutils literal notranslate"><span class="pre">-</span></code> will bring you BACK.</p>
 <p>We were just in <code class="docutils literal notranslate"><span class="pre">/Users/peerherholz/Desktop/data-shell</span></code> and then changed to <code class="docutils literal notranslate"><span class="pre">/Users/peerherholz</span></code> so <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">-</span></code> should bring us back:</p>
@@ -1210,7 +1197,7 @@ Generally try <code class="docutils literal notranslate"><span class="pre">man</
 </section>
 </section>
 <section id="absolute-vs-relative-paths">
-<h2>Absolute vs Relative Paths:<a class="headerlink" href="#absolute-vs-relative-paths" title="Permalink to this heading">#</a></h2>
+<h2>Absolute vs Relative Paths:<a class="headerlink" href="#absolute-vs-relative-paths" title="Link to this heading">#</a></h2>
 <p>Starting from <code class="docutils literal notranslate"><span class="pre">/Users/amanda/data</span></code>, which of the following commands could Amanda use to navigate to her home directory, which is <code class="docutils literal notranslate"><span class="pre">/Users/amanda</span></code>?</p>
 <ol class="arabic simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">.</span></code></p></li>
@@ -1236,7 +1223,7 @@ Generally try <code class="docutils literal notranslate"><span class="pre">man</
 </ol>
 </section>
 <section id="relative-path-resolution">
-<h2>Relative Path Resolution:<a class="headerlink" href="#relative-path-resolution" title="Permalink to this heading">#</a></h2>
+<h2>Relative Path Resolution:<a class="headerlink" href="#relative-path-resolution" title="Link to this heading">#</a></h2>
 <p>Based on the following diagram, if <code class="docutils literal notranslate"><span class="pre">pwd</span></code> displays <code class="docutils literal notranslate"><span class="pre">/Users/thing</span></code>, what will <code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">-F</span> <span class="pre">../backup</span></code> display?</p>
 <ol class="arabic simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">../backup:</span> <span class="pre">No</span> <span class="pre">such</span> <span class="pre">file</span> <span class="pre">or</span> <span class="pre">directory</span></code></p></li>
@@ -1258,7 +1245,7 @@ Generally try <code class="docutils literal notranslate"><span class="pre">man</
 </ol>
 </section>
 <section id="ls-reading-comprehension">
-<h2><code class="docutils literal notranslate"><span class="pre">ls</span></code> Reading Comprehension<a class="headerlink" href="#ls-reading-comprehension" title="Permalink to this heading">#</a></h2>
+<h2><code class="docutils literal notranslate"><span class="pre">ls</span></code> Reading Comprehension<a class="headerlink" href="#ls-reading-comprehension" title="Link to this heading">#</a></h2>
 <p>Using the filesystem diagram below, if <code class="docutils literal notranslate"><span class="pre">pwd</span></code> displays <code class="docutils literal notranslate"><span class="pre">/Users/backup</span></code>, and <code class="docutils literal notranslate"><span class="pre">-r</span></code> tells <code class="docutils literal notranslate"><span class="pre">ls</span></code> to display things in reverse (alphabetical) order, what command(s) will result in the following output:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pnas_sub</span><span class="o">/</span> <span class="n">pnas_final</span><span class="o">/</span> <span class="n">original</span><span class="o">/</span>
 </pre></div>
@@ -1279,7 +1266,7 @@ Generally try <code class="docutils literal notranslate"><span class="pre">man</
 </ol>
 </section>
 <section id="id7">
-<h2>Key points<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h2>
+<h2>Key points<a class="headerlink" href="#id7" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>The file system is responsible for managing information on the disk</p></li>
 <li><p>Information is stored in files, which are stored in directories (folders)</p></li>
@@ -1296,7 +1283,7 @@ Generally try <code class="docutils literal notranslate"><span class="pre">man</
 </section>
 </section>
 <section id="working-with-files-and-directories">
-<h1>Working with Files and Directories<a class="headerlink" href="#working-with-files-and-directories" title="Permalink to this heading">#</a></h1>
+<h1>Working with Files and Directories<a class="headerlink" href="#working-with-files-and-directories" title="Link to this heading">#</a></h1>
 <p>How do we actually <em>make</em> new files and directories from the command line?</p>
 <p>First, let’s remind ourselves of where we are:</p>
 <div class="cell docutils container">
@@ -1316,7 +1303,7 @@ Generally try <code class="docutils literal notranslate"><span class="pre">man</
 </div>
 </section>
 <section id="creating-a-directory">
-<h1>Creating a directory<a class="headerlink" href="#creating-a-directory" title="Permalink to this heading">#</a></h1>
+<h1>Creating a directory<a class="headerlink" href="#creating-a-directory" title="Link to this heading">#</a></h1>
 <p>We can create new directories with the <code class="docutils literal notranslate"><span class="pre">mkdir</span></code> (<strong>m</strong>a<strong>k</strong>e <strong>dir</strong>ectory) command:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1335,7 +1322,7 @@ Generally try <code class="docutils literal notranslate"><span class="pre">man</
 </div>
 <p>(You could have also opened up the file explorer and made a new folder that way, too!)</p>
 <section id="good-naming-conventions">
-<h2>Good naming conventions<a class="headerlink" href="#good-naming-conventions" title="Permalink to this heading">#</a></h2>
+<h2>Good naming conventions<a class="headerlink" href="#good-naming-conventions" title="Link to this heading">#</a></h2>
 <ol class="arabic simple">
 <li><p>Don’t use spaces</p></li>
 <li><p>Don’t begin the name with <code class="docutils literal notranslate"><span class="pre">-</span></code></p></li>
@@ -1347,7 +1334,7 @@ Generally try <code class="docutils literal notranslate"><span class="pre">man</
 </ol>
 </section>
 <section id="creating-a-text-file">
-<h2>Creating a text file<a class="headerlink" href="#creating-a-text-file" title="Permalink to this heading">#</a></h2>
+<h2>Creating a text file<a class="headerlink" href="#creating-a-text-file" title="Link to this heading">#</a></h2>
 <p>Let’s navigate into our (empty) <code class="docutils literal notranslate"><span class="pre">thesis</span></code> directory and create a new file:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1374,7 +1361,7 @@ Generally try <code class="docutils literal notranslate"><span class="pre">man</
 </div>
 </section>
 <section id="moving-files-and-directories">
-<h2>Moving files and directories<a class="headerlink" href="#moving-files-and-directories" title="Permalink to this heading">#</a></h2>
+<h2>Moving files and directories<a class="headerlink" href="#moving-files-and-directories" title="Link to this heading">#</a></h2>
 <p>Let’s start by going back to the <code class="docutils literal notranslate"><span class="pre">data-shell</span></code> directory:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1404,7 +1391,7 @@ Generally try <code class="docutils literal notranslate"><span class="pre">man</
 <p>Also note: <code class="docutils literal notranslate"><span class="pre">mv</span></code> is <strong>quite dangerous</strong>, because it will silently overwrite files if the destination already exists! Refer to the <code class="docutils literal notranslate"><span class="pre">-i</span></code> flag for “interactive” moving (with warnings!).</p>
 </section>
 <section id="more-on-mv">
-<h2>More on <code class="docutils literal notranslate"><span class="pre">mv</span></code><a class="headerlink" href="#more-on-mv" title="Permalink to this heading">#</a></h2>
+<h2>More on <code class="docutils literal notranslate"><span class="pre">mv</span></code><a class="headerlink" href="#more-on-mv" title="Link to this heading">#</a></h2>
 <p>Note that we use <code class="docutils literal notranslate"><span class="pre">mv</span></code> to change files to a different directory (rather than just re-naming):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1432,7 +1419,7 @@ Generally try <code class="docutils literal notranslate"><span class="pre">man</
 <p>(Note: providing a filename to <code class="docutils literal notranslate"><span class="pre">ls</span></code> instead of a directory will list only that filename <strong>if it exists</strong>. Otherwise, it will throw an error.)</p>
 </section>
 <section id="exercise-moving-files-to-a-new-folder">
-<h2>Exercise: Moving files to a new folder<a class="headerlink" href="#exercise-moving-files-to-a-new-folder" title="Permalink to this heading">#</a></h2>
+<h2>Exercise: Moving files to a new folder<a class="headerlink" href="#exercise-moving-files-to-a-new-folder" title="Link to this heading">#</a></h2>
 <p>After running the following commands, Jamie realizes that she put the files <code class="docutils literal notranslate"><span class="pre">sucrose.dat</span></code> and <code class="docutils literal notranslate"><span class="pre">maltose.dat</span></code> into the wrong folder. The files should have been placed in the <code class="docutils literal notranslate"><span class="pre">raw</span></code> folder.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>ls<span class="w"> </span>-F
 <span class="w"> </span>analyzed/<span class="w"> </span>raw/
@@ -1451,7 +1438,7 @@ $<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>analy
 <p>Remember, the <code class="docutils literal notranslate"><span class="pre">..</span></code> refers to the parent directory (i.e., one above the current directory)</p>
 </section>
 <section id="copying-files-and-directories">
-<h2>Copying files and directories<a class="headerlink" href="#copying-files-and-directories" title="Permalink to this heading">#</a></h2>
+<h2>Copying files and directories<a class="headerlink" href="#copying-files-and-directories" title="Link to this heading">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">cp</span></code> (<strong>c</strong>o<strong>p</strong>y) command is like <code class="docutils literal notranslate"><span class="pre">mv</span></code>, but copies instead of moving!</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1484,7 +1471,7 @@ $<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>analy
 </div>
 </section>
 <section id="exercise-renaming-files">
-<h2>Exercise: Renaming files<a class="headerlink" href="#exercise-renaming-files" title="Permalink to this heading">#</a></h2>
+<h2>Exercise: Renaming files<a class="headerlink" href="#exercise-renaming-files" title="Link to this heading">#</a></h2>
 <p>Suppose that you created a plain-text file in your current directory to contain a list of the statistical tests you will need to do to analyze your data, and named it: <code class="docutils literal notranslate"><span class="pre">statstics.txt</span></code></p>
 <p>After creating and saving this file you realize you misspelled the filename! You want to correct the mistake and remove the incorrectly named file. Which of the following commands could you use to do so?</p>
 <ol class="arabic simple">
@@ -1507,7 +1494,7 @@ $<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>analy
 </ol>
 </section>
 <section id="moving-and-copying">
-<h2>Moving and Copying<a class="headerlink" href="#moving-and-copying" title="Permalink to this heading">#</a></h2>
+<h2>Moving and Copying<a class="headerlink" href="#moving-and-copying" title="Link to this heading">#</a></h2>
 <p>What is the output of the closing <code class="docutils literal notranslate"><span class="pre">ls</span></code> command in the aequence shown below:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">pwd</span>
 /Users/jamie/data
@@ -1539,7 +1526,7 @@ $<span class="w"> </span>ls
 </ol>
 </section>
 <section id="removing-files">
-<h2>Removing files<a class="headerlink" href="#removing-files" title="Permalink to this heading">#</a></h2>
+<h2>Removing files<a class="headerlink" href="#removing-files" title="Link to this heading">#</a></h2>
 <p>Let’s go back to <code class="docutils literal notranslate"><span class="pre">data-shell</span></code> and <strong>r</strong>e<strong>m</strong>ove the <code class="docutils literal notranslate"><span class="pre">quotes.txt</span></code> file we created:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1565,7 +1552,7 @@ $<span class="w"> </span>ls
 </div>
 </section>
 <section id="deleting-is-forever">
-<h2>Deleting is <strong>FOREVER</strong> 💀💀<a class="headerlink" href="#deleting-is-forever" title="Permalink to this heading">#</a></h2>
+<h2>Deleting is <strong>FOREVER</strong> 💀💀<a class="headerlink" href="#deleting-is-forever" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>The shell DOES NOT HAVE A TRASH BIN.</p></li>
 <li><p>You CANNOT recover files that have been deleted with <code class="docutils literal notranslate"><span class="pre">rm</span></code></p></li>
@@ -1577,7 +1564,7 @@ $<span class="w"> </span>ls
 </ul>
 </section>
 <section id="removing-directories">
-<h2>Removing directories<a class="headerlink" href="#removing-directories" title="Permalink to this heading">#</a></h2>
+<h2>Removing directories<a class="headerlink" href="#removing-directories" title="Link to this heading">#</a></h2>
 <p>Let’s try and remove the <code class="docutils literal notranslate"><span class="pre">thesis</span></code> directory:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1597,10 +1584,10 @@ $<span class="w"> </span>ls
 <p>Because <strong>deleting is forever 💀💀</strong>, the <code class="docutils literal notranslate"><span class="pre">rm</span> <span class="pre">-r</span></code> command should be used with GREAT CAUTION.</p>
 </section>
 <section id="operations-with-multiple-files-and-directories">
-<h2>Operations with multiple files and directories<a class="headerlink" href="#operations-with-multiple-files-and-directories" title="Permalink to this heading">#</a></h2>
+<h2>Operations with multiple files and directories<a class="headerlink" href="#operations-with-multiple-files-and-directories" title="Link to this heading">#</a></h2>
 <p>Oftentimes you need to copy or move several files at once. You can do this by specifiying a list of filenames</p>
 <section id="exercise-copy-with-multiple-filenames">
-<h3>Exercise: Copy with Multiple Filenames<a class="headerlink" href="#exercise-copy-with-multiple-filenames" title="Permalink to this heading">#</a></h3>
+<h3>Exercise: Copy with Multiple Filenames<a class="headerlink" href="#exercise-copy-with-multiple-filenames" title="Link to this heading">#</a></h3>
 <p>(Work through these in the <code class="docutils literal notranslate"><span class="pre">data-shell/data</span></code> directory.)</p>
 <p>In the example below, what does <code class="docutils literal notranslate"><span class="pre">cp</span></code> do when given several filenames and a directory name?</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>mkdir<span class="w"> </span>backup
@@ -1624,7 +1611,7 @@ $<span class="w"> </span>cp<span class="w"> </span>amino-acids.txt<span class="w
 </div>
 </section>
 <section id="using-wildcards-for-accessing-multiple-files-at-once">
-<h3>Using wildcards for accessing multiple files at once<a class="headerlink" href="#using-wildcards-for-accessing-multiple-files-at-once" title="Permalink to this heading">#</a></h3>
+<h3>Using wildcards for accessing multiple files at once<a class="headerlink" href="#using-wildcards-for-accessing-multiple-files-at-once" title="Link to this heading">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">*</span></code> is a wildcard which matches zero or more characters.</p>
 <p>Consider the <code class="docutils literal notranslate"><span class="pre">data-shell/molecules</span></code> directory:</p>
 <div class="cell docutils container">
@@ -1653,7 +1640,7 @@ $<span class="w"> </span>cp<span class="w"> </span>amino-acids.txt<span class="w
 <p>This matches all files in the <code class="docutils literal notranslate"><span class="pre">molecules</span></code> directory starting with <code class="docutils literal notranslate"><span class="pre">p</span></code> and ending with <code class="docutils literal notranslate"><span class="pre">.pdb</span></code></p>
 </section>
 <section id="using-wildcards-for-accessing-multiple-files-at-once-cont-d">
-<h3>Using wildcards for accessing multiple files at once (cont’d)<a class="headerlink" href="#using-wildcards-for-accessing-multiple-files-at-once-cont-d" title="Permalink to this heading">#</a></h3>
+<h3>Using wildcards for accessing multiple files at once (cont’d)<a class="headerlink" href="#using-wildcards-for-accessing-multiple-files-at-once-cont-d" title="Link to this heading">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">?</span></code> is a wildcard matching exactly one character.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1673,7 +1660,7 @@ $<span class="w"> </span>cp<span class="w"> </span>amino-acids.txt<span class="w
 <p>Which matches any file in <code class="docutils literal notranslate"><span class="pre">molecules</span></code> that ends in <code class="docutils literal notranslate"><span class="pre">ethane.pdb</span></code>.</p>
 </section>
 <section id="id8">
-<h3>Using wildcards for accessing multiple files at once (cont’d)<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h3>
+<h3>Using wildcards for accessing multiple files at once (cont’d)<a class="headerlink" href="#id8" title="Link to this heading">#</a></h3>
 <p>You can string wildcards together, too!</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1693,7 +1680,7 @@ $<span class="w"> </span>cp<span class="w"> </span>amino-acids.txt<span class="w
 </div>
 </section>
 <section id="exercise-list-filenames-matching-a-pattern">
-<h3>Exercise: List filenames matching a pattern<a class="headerlink" href="#exercise-list-filenames-matching-a-pattern" title="Permalink to this heading">#</a></h3>
+<h3>Exercise: List filenames matching a pattern<a class="headerlink" href="#exercise-list-filenames-matching-a-pattern" title="Link to this heading">#</a></h3>
 <p>When run in the <code class="docutils literal notranslate"><span class="pre">molecules</span></code> directory, which <code class="docutils literal notranslate"><span class="pre">ls</span></code> command(s) will produce this output?</p>
 <p><code class="docutils literal notranslate"><span class="pre">ethane.pdb</span> <span class="pre">methane.pdb</span></code></p>
 <ol class="arabic simple">
@@ -1717,7 +1704,7 @@ $<span class="w"> </span>cp<span class="w"> </span>amino-acids.txt<span class="w
 </section>
 </section>
 <section id="id9">
-<h2>Key points<a class="headerlink" href="#id9" title="Permalink to this heading">#</a></h2>
+<h2>Key points<a class="headerlink" href="#id9" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">cp</span> <span class="pre">old</span> <span class="pre">new</span></code> copies a file</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">mkdir</span> <span class="pre">path</span></code> creates a new directory</p></li>
@@ -1730,7 +1717,7 @@ $<span class="w"> </span>cp<span class="w"> </span>amino-acids.txt<span class="w
 </section>
 </section>
 <section id="summary">
-<h1>Summary<a class="headerlink" href="#summary" title="Permalink to this heading">#</a></h1>
+<h1>Summary<a class="headerlink" href="#summary" title="Link to this heading">#</a></h1>
 <ul class="simple">
 <li><p>The bash shell is very powerful!</p></li>
 <li><p>It offers a command-line interface to your computer and file system</p></li>
@@ -1739,7 +1726,7 @@ $<span class="w"> </span>cp<span class="w"> </span>amino-acids.txt<span class="w
 </ul>
 </section>
 <section id="soapbox">
-<h1>Soapbox<a class="headerlink" href="#soapbox" title="Permalink to this heading">#</a></h1>
+<h1>Soapbox<a class="headerlink" href="#soapbox" title="Link to this heading">#</a></h1>
 <ul class="simple">
 <li><p>Bash is <em>fantastic</em> and you will (likely) find yourself using it a lot!</p></li>
 <li><p>However, for complex pipelines and programs we would <em>strongly</em> encourage you to use a “newer” programming lanuage</p>
@@ -1751,7 +1738,7 @@ $<span class="w"> </span>cp<span class="w"> </span>amino-acids.txt<span class="w
 </ul>
 </section>
 <section id="references">
-<h1>References<a class="headerlink" href="#references" title="Permalink to this heading">#</a></h1>
+<h1>References<a class="headerlink" href="#references" title="Link to this heading">#</a></h1>
 <p>There are lots of excellent resources online for learning more about bash:</p>
 <ul class="simple">
 <li><p>The GNU Manual is <em>the</em> reference for all bash commands: <a class="reference external" href="http://www.gnu.org/manual/manual.html">http://www.gnu.org/manual/manual.html</a></p></li>
@@ -1760,7 +1747,7 @@ $<span class="w"> </span>cp<span class="w"> </span>amino-acids.txt<span class="w
 </ul>
 </section>
 <section id="finding-things">
-<h1>Finding Things<a class="headerlink" href="#finding-things" title="Permalink to this heading">#</a></h1>
+<h1>Finding Things<a class="headerlink" href="#finding-things" title="Link to this heading">#</a></h1>
 <p>Oftentimes, our file system can be quite complex, with sub-directories inside sub-directories inside sub-directories.</p>
 <p>What happens in we want to find one (or several) files, without having to type <code class="docutils literal notranslate"><span class="pre">ls</span></code> hundreds or thousands of times?</p>
 <p>First, let’s navigate to the <code class="docutils literal notranslate"><span class="pre">data-shell/writing</span></code> directory:</p>
@@ -1790,7 +1777,7 @@ $<span class="w"> </span>cp<span class="w"> </span>amino-acids.txt<span class="w
 </div>
 <p>Remember, <code class="docutils literal notranslate"><span class="pre">.</span></code> means “the current working directory”. Here, <code class="docutils literal notranslate"><span class="pre">find</span></code> provides us a full list of the entire directory structure!</p>
 <section id="filtering-find">
-<h2>Filtering <code class="docutils literal notranslate"><span class="pre">find</span></code><a class="headerlink" href="#filtering-find" title="Permalink to this heading">#</a></h2>
+<h2>Filtering <code class="docutils literal notranslate"><span class="pre">find</span></code><a class="headerlink" href="#filtering-find" title="Link to this heading">#</a></h2>
 <p>We can add some helpful options to <code class="docutils literal notranslate"><span class="pre">find</span></code> to filter things a bit:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1827,7 +1814,7 @@ $<span class="w"> </span>cp<span class="w"> </span>amino-acids.txt<span class="w
 </div>
 </section>
 <section id="executing-with-find">
-<h2>Executing with <code class="docutils literal notranslate"><span class="pre">find</span></code><a class="headerlink" href="#executing-with-find" title="Permalink to this heading">#</a></h2>
+<h2>Executing with <code class="docutils literal notranslate"><span class="pre">find</span></code><a class="headerlink" href="#executing-with-find" title="Link to this heading">#</a></h2>
 <p>What if we want to perform some operation on the output of our <code class="docutils literal notranslate"><span class="pre">find</span></code> command? Say, list the file sizes for each file (as in <code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">-lh</span></code>)?</p>
 <p>We can do that with a bit of extra work:</p>
 <div class="cell docutils container">
@@ -1911,7 +1898,8 @@ $<span class="w"> </span>cp<span class="w"> </span>amino-acids.txt<span class="w
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
   <div class="sidebar-secondary-item">
@@ -2058,8 +2046,8 @@ By Neuromatch Impact Scholars team
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
-<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <script defer src="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
 
   <footer class="bd-footer">
   </footer>

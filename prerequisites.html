@@ -1,0 +1,682 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Course prerequisites &#8212; Code formatting &amp; testing</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/myfile.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'prerequisites';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Introduction to the (unix) command line: bash" href="materials/prerequisites/intro_to_shell.html" />
+    <link rel="prev" title="Code formatting, styling and linting" href="materials/code_form_test_CI/code_formatting.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="https://impact-scholars.neuromatch.io/_static/Sciencematch.png" class="logo__image only-light" alt="Code formatting & testing - Home"/>
+    <script>document.write(`<img src="https://impact-scholars.neuromatch.io/_static/Sciencematch.png" class="logo__image only-dark" alt="Code formatting & testing - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Welcome
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CoC.html">Code of Conduct</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dei.html">Diversity, Equity and Inclusion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="setup.html">Setup</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="materials/code_form_test_CI/overview_code_form_test.html">Code formatting and testing</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="materials/code_form_test_CI/code_formatting.html">Code formatting, styling and linting</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Course prerequisites</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="materials/prerequisites/intro_to_shell.html">Introduction to the (unix) command line: bash</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="materials/prerequisites/intro_python.html">Introduction to Python</a></li>
+
+
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/peerherholz/Clean_Repro_Code_Neuromatch" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/peerherholz/Clean_Repro_Code_Neuromatch/issues/new?title=Issue%20on%20page%20%2Fprerequisites.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/prerequisites.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Course prerequisites</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ain-t-no-one-week-school-good-enough">Ain’t no one-week school good enough</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#let-there-be-pre-winter-schools-training">Let there be pre-winter schools training</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#guis-vs-clis">GUIs vs CLIs</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#objectives">Objectives 📍</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#materials">Materials 📓</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-the-unix-command-line-bash">Introduction to the (unix) command line: bash</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Objectives 📍</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Materials 📓</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-computational-environments">Introduction to Computational Environments</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Objectives 📍</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Materials 📓</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-python">Introduction to Python</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Objectives 📍</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Materials 📓</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hakuna-matata">Hakuna matata</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="course-prerequisites">
+<h1>Course prerequisites<a class="headerlink" href="#course-prerequisites" title="Permalink to this heading">#</a></h1>
+<section id="ain-t-no-one-week-school-good-enough">
+<h2>Ain’t no one-week school good enough<a class="headerlink" href="#ain-t-no-one-week-school-good-enough" title="Permalink to this heading">#</a></h2>
+<p>The reality of winter schools like these is that they really don’t teach attending folks all they need to know to subsequently apply the respective content sufficiently, not to mention the training aspect. At best, winter schoolss provide folks with the materials, overview and pointers necessary to continue and actually dive into the taught topics (the truth hurts sometimes, doesn’t it?). Another important aspect that is frequently overlooked is that attendees usually need a certain set of skills and experience to really benefit from a given winter school, especially considering the diverse backgrounds folks have. We want to be fair, open and welcoming to everyone and while we know that we unfortunately can’t achieve and assume a truly similar level of training and experience across all participants, we can at least do our best to work towards certain opportunities. That being said, winter schoolss like the one you’re currently looking at, by default (should) require basic to advanced programming skills and knowledge about file handling/input/output, signal processing, statistics and linear algebra (vectors much?). Tough stuff, eh?</p>
+<p><img alt="logo" src="https://c.tenor.com/MsuBYU4-fI0AAAAM/confused-math.gif" /><br />
+<sub><sup><sub><sup><a class="reference external" href="https://c.tenor.com/MsuBYU4-fI0AAAAM/confused-math.gif">https://c.tenor.com/MsuBYU4-fI0AAAAM/confused-math.gif</a>
+</sup></sub></sup></sub></p>
+</section>
+<section id="let-there-be-pre-winter-schools-training">
+<h2>Let there be pre-winter schools training<a class="headerlink" href="#let-there-be-pre-winter-schools-training" title="Permalink to this heading">#</a></h2>
+<p>So what can we actually do to provide the entire attending gang with the chance to get up to speed for the winter schools and ideally beyond? Unfortunately, we can’t hold pre-winter-school winter schools and various consultations. Instead we decided to utilize the fantastic <a class="reference external" href="https://jupyter.org/">jupyter</a>-<a class="reference external" href="https://www.python.org/">python</a>-open science world and build upon the framework of <a class="reference external" href="https://jupyterbook.org/intro.html">jupyter books</a> employed to host this winter schools and its materials. In other words, we assembled a stack of short tutorials that cover most of the aspects mentioned above. As the rest of the content, they are <a class="reference external" href="https://jupyter-notebook.readthedocs.io/en/stable/">jupyter notebooks</a> that can be run interactively (via the little rocket on the top right) or locally (via the download button on the top right) and mix theoretical background with actual code so that folks can familiarize themselves with the corresponding topics.
+<strong>Important</strong>: we know that everyone has a lot of stuff to do and that not everyone will be able to go through the stuff we collected here. Y’all: don’t worry about that, it’s chilli-milli. We will try our best to bring the core points across, even if you don’t have a substantial amount of experience. Please just make sure that you ask <strong>all</strong> the questions that might pop up, the same holds true for any problems you might encounter. Long story short, here are the topics organized from basic to advanced skills and concepts.</p>
+</section>
+<section id="guis-vs-clis">
+<h2>GUIs vs CLIs<a class="headerlink" href="#guis-vs-clis" title="Permalink to this heading">#</a></h2>
+<p>How do you interact with your computer? In general, you as a user provide some <code class="docutils literal notranslate"><span class="pre">input</span></code> that contains a <code class="docutils literal notranslate"><span class="pre">task</span></code> that your <code class="docutils literal notranslate"><span class="pre">computer</span></code> should perform in order to obtain a desired <code class="docutils literal notranslate"><span class="pre">outcome</span></code>. However, there are different ways you can approach this, each with advantages and disadvantages. More precisely this refers to the distinction between <code class="docutils literal notranslate"><span class="pre">GUI</span></code>s and <code class="docutils literal notranslate"><span class="pre">CLI</span></code>s. Within this part of the session we’ll discuss both a bit and also talk about different options to utilize <code class="docutils literal notranslate"><span class="pre">programming</span> <span class="pre">languages</span></code>.</p>
+<section id="objectives">
+<h3>Objectives 📍<a class="headerlink" href="#objectives" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Learn about different ways of interacting with computers</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">GUI</span></code>, <code class="docutils literal notranslate"><span class="pre">CLI</span></code>, <code class="docutils literal notranslate"><span class="pre">IDE</span></code>s</p></li>
+<li><p>test different options on your machines</p></li>
+<li><p>Ask and answer questions</p></li>
+<li><p>Have a great time</p></li>
+</ul>
+</section>
+<section id="materials">
+<h3>Materials 📓<a class="headerlink" href="#materials" title="Permalink to this heading">#</a></h3>
+<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vTgfLD29SRwTJE030mrXGYb0GKhZyqOZIyULeWO6Y_viRPwz8TgXXuY1Pxl3FUXGyphhawBV4JfkxBe/embed?start=false&loop=false&delayms=60000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+</section>
+</section>
+<section id="introduction-to-the-unix-command-line-bash">
+<h2>Introduction to the (unix) command line: bash<a class="headerlink" href="#introduction-to-the-unix-command-line-bash" title="Permalink to this heading">#</a></h2>
+<section id="id1">
+<h3>Objectives 📍<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>learn basic and efficient usage of the shell for various tasks</p>
+<ul>
+<li><p>navigating directories</p></li>
+<li><p>file handling: copy, paste, create, delete</p></li>
+</ul>
+</li>
+<li><p>Ask and answer questions</p></li>
+<li><p>Have a great time</p></li>
+</ul>
+</section>
+<section id="id2">
+<h3>Materials 📓<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h3>
+<p>Please download the <a class="reference external" href="https://swcarpentry.github.io/shell-novice/data/shell-lesson-data.zip">example dataset provided here</a>.</p>
+<p>Please see the rendered version of the <code class="docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">notebook</span></code> <a class="reference external" href="https://julia-pfarr.gitlab.io/nowaschool/materials/prerequisites/intro_to_shell.html">Introduction to the (unix) command line: bash</a> in the <code class="docutils literal notranslate"><span class="pre">ToC</span></code> on the left.</p>
+<p>You can either run the respective <code class="docutils literal notranslate"><span class="pre">commands</span></code> in your <code class="docutils literal notranslate"><span class="pre">terminal</span></code> or in the <code class="docutils literal notranslate"><span class="pre">Jupyter</span> <span class="pre">Notebook</span></code> via following the steps outlined <a class="reference external" href="https://julia-pfarr.gitlab.io/nowaschool/setup.html#getting-the-course-content">here</a> and then selecting/opening the <code class="docutils literal notranslate"><span class="pre">materials/prerequisites/intro_to_shell.ipynb</span></code> file.</p>
+</section>
+</section>
+<section id="introduction-to-computational-environments">
+<h2>Introduction to Computational Environments<a class="headerlink" href="#introduction-to-computational-environments" title="Permalink to this heading">#</a></h2>
+<p>You might think: “why do we have to talk about computing environments &amp; reproducibility? I just want to code.”.
+Fair enough but as hinted at during the introduction, knowing a bit more about this thing called the “computer” and how your code is run will be tremendously helpful and important going further. The sooner you can utilize the respective tools/resources the better as quite a bit, actually all, of your coding will depend on it. We usually trust our machines to do what we ask them to do and while quite often we get the desired output, there’s a fair chance that the same task will lead to a different outcome on a different OS, using a different version, etc. . However, what outcomes do we “trust” and why does it converge? All of this relates to “reproducibility” and within this section we’ll briefly explore underlying problems and potential (partial) solutions via <code class="docutils literal notranslate"><span class="pre">python</span></code>.</p>
+<section id="id3">
+<h3>Objectives 📍<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>get to know problems wrt <code class="docutils literal notranslate"><span class="pre">computational</span> <span class="pre">analysis</span></code> &amp; <code class="docutils literal notranslate"><span class="pre">reproducibility</span></code></p></li>
+<li><p>learn about <code class="docutils literal notranslate"><span class="pre">virtualization</span></code> and its different options</p></li>
+<li><p>experiment with <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">virtualization</span></code> options</p></li>
+<li><p>Ask and answer questions</p></li>
+<li><p>Have a great time</p></li>
+</ul>
+</section>
+<section id="id4">
+<h3>Materials 📓<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
+<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vS__8p1DpNvPJG-LqjzrqJEffXUMMSifjMk3PANmtD9Lt64BXeOv1fltVJAR6MWKAcWPxw5qhBM1-02/embed?start=false&loop=false&delayms=60000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+</section>
+</section>
+<section id="introduction-to-python">
+<h2>Introduction to Python<a class="headerlink" href="#introduction-to-python" title="Permalink to this heading">#</a></h2>
+<p>The big moment is finally here: after spending quite a bit of time exploring important concepts adjacent to/around <code class="docutils literal notranslate"><span class="pre">python</span></code>, with the intention to provide a holistic understanding and situate components accordingly, we will start exploring <code class="docutils literal notranslate"><span class="pre">python</span></code> itself. Within the first block of programming with <code class="docutils literal notranslate"><span class="pre">python</span></code> we will go through basics of the <code class="docutils literal notranslate"><span class="pre">python</span></code> programming language, its central aspects and building blocks, as well as its benefits generally speaking and within the context of research.</p>
+<section id="id5">
+<h3>Objectives 📍<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>learn basic and efficient usage of the <code class="docutils literal notranslate"><span class="pre">python</span></code> programming language</p>
+<ul>
+<li><p>what is <code class="docutils literal notranslate"><span class="pre">python</span></code> &amp; how to utilize it</p></li>
+<li><p>building blocks of &amp; <code class="docutils literal notranslate"><span class="pre">operations</span></code> in <code class="docutils literal notranslate"><span class="pre">python</span></code></p></li>
+</ul>
+</li>
+<li><p>Ask and answer questions</p></li>
+<li><p>Have a great time</p></li>
+</ul>
+</section>
+<section id="id6">
+<h3>Materials 📓<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h3>
+<p>Please see the rendered version of the <code class="docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">notebook</span></code> <a class="reference external" href="https://julia-pfarr.gitlab.io/nowaschool/prerequisites/intro_python.html">Introduction to Python</a>
+in the <code class="docutils literal notranslate"><span class="pre">ToC</span></code> on the left.</p>
+<p>You can either run the respective <code class="docutils literal notranslate"><span class="pre">commands</span></code> in your <code class="docutils literal notranslate"><span class="pre">ipython</span> <span class="pre">terminal</span></code> or in the <code class="docutils literal notranslate"><span class="pre">Jupyter</span> <span class="pre">Notebook</span></code> via following the steps outlined <a class="reference external" href="https://julia-pfarr.gitlab.io/nowaschool/setup.html#getting-the-course-content">here</a> and then selecting/opening the <code class="docutils literal notranslate"><span class="pre">materials/prerequisites/intro_to_python.ipynb</span></code> file.</p>
+</section>
+</section>
+<section id="hakuna-matata">
+<h2>Hakuna matata<a class="headerlink" href="#hakuna-matata" title="Permalink to this heading">#</a></h2>
+<p>We can’t stress this enough: it’s all ok, don’t let the imposter syndrome get the better of you.</p>
+<p><img alt="logo" src="https://c.tenor.com/yfDp5K_0_LMAAAAC/you-got-this-thumbs-up.gif" /><br />
+<sub><sup><sub><sup><a class="reference external" href="https://c.tenor.com/yfDp5K_0_LMAAAAC/you-got-this-thumbs-up.gif">https://c.tenor.com/yfDp5K_0_LMAAAAC/you-got-this-thumbs-up.gif</a>
+</sup></sub></sup></sub></p>
+</section>
+<div class="toctree-wrapper compound">
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="materials/code_form_test_CI/code_formatting.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Code formatting, styling and linting</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="materials/prerequisites/intro_to_shell.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Introduction to the (unix) command line: bash</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ain-t-no-one-week-school-good-enough">Ain’t no one-week school good enough</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#let-there-be-pre-winter-schools-training">Let there be pre-winter schools training</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#guis-vs-clis">GUIs vs CLIs</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#objectives">Objectives 📍</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#materials">Materials 📓</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-the-unix-command-line-bash">Introduction to the (unix) command line: bash</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Objectives 📍</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Materials 📓</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-computational-environments">Introduction to Computational Environments</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Objectives 📍</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Materials 📓</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-python">Introduction to Python</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Objectives 📍</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Materials 📓</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hakuna-matata">Hakuna matata</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Neuromatch Impact Scholars team
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024-.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,924 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Code formatting, styling and linting &#8212; Code formatting &amp; testing</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/myfile.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'materials/code_form_test_CI/code_formatting';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Course prerequisites" href="../../prerequisites.html" />
+    <link rel="prev" title="Code formatting and testing" href="overview_code_form_test.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="https://impact-scholars.neuromatch.io/_static/Sciencematch.png" class="logo__image only-light" alt="Code formatting & testing - Home"/>
+    <script>document.write(`<img src="https://impact-scholars.neuromatch.io/_static/Sciencematch.png" class="logo__image only-dark" alt="Code formatting & testing - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Welcome
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../CoC.html">Code of Conduct</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dei.html">Diversity, Equity and Inclusion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../setup.html">Setup</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="overview_code_form_test.html">Code formatting and testing</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Code formatting, styling and linting</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../prerequisites.html">Course prerequisites</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../prerequisites/intro_to_shell.html">Introduction to the (unix) command line: bash</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../prerequisites/intro_python.html">Introduction to Python</a></li>
+
+
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/peerherholz/Clean_Repro_Code_Neuromatch" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/peerherholz/Clean_Repro_Code_Neuromatch/issues/new?title=Issue%20on%20page%20%2Fmaterials/code_form_test_CI/code_formatting.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/materials/code_form_test_CI/code_formatting.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Code formatting, styling and linting</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#guidelines-for-code-styling">Guidelines for Code Styling</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#file-naming">File Naming</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variable-naming">Variable Naming</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#naming-exceptions">Naming exceptions</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#naming-conventions">Naming conventions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#writing-human-readable-code">Writing Human Readable Code</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#line-length">Line Length</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#commenting">Commenting</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#indentation">Indentation</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code-styling-tools">Code Styling Tools</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#automatic-formatting-tools">Automatic formatting tools</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spell-checks-in-ides">Spell-checks in IDEs</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-and-task-s">Summary and task(s)</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="code-formatting-styling-and-linting">
+<h1>Code formatting, styling and linting<a class="headerlink" href="#code-formatting-styling-and-linting" title="Permalink to this heading">#</a></h1>
+<p>Here’s one scenario all of us have been in before, most likely countless times: we want to run an anlysis and get a script from a colleague that should exactly what we want. Sounds great, eh? However, upon opening it your joy starts to drastically diminish: the entire script, many hundreds of lines long, is basically unintelligable. There are no comments, a fast number of apparently random variables, huge blocks of code, etc. . Long story short: re-using and/or adapting this script will be a lot of work and maybe not even possible.</p>
+<p>The same holds true for code you might find online in repositories or even tutorials, as well as the worst case: your own code from a while ago. You wrote this once and now you don’t understand a single thing that’s going on. How is anyone supposed to understand the content of files like <code class="docutils literal notranslate"><span class="pre">finalanalysis_final_2.py</span></code> or <code class="docutils literal notranslate"><span class="pre">runthisbefore_monday.py</span></code>?</p>
+<p>It’s just annoying, frustrating and not <code class="docutils literal notranslate"><span class="pre">FAIR</span></code>. So, isn’t there anything one can do about that?</p>
+<p>Say no more and join us for a basic introduction into what’s called <code class="docutils literal notranslate"><span class="pre">code</span> <span class="pre">hygiene</span></code> or <code class="docutils literal notranslate"><span class="pre">linting</span></code>, ie <code class="docutils literal notranslate"><span class="pre">formatting</span></code> and <code class="docutils literal notranslate"><span class="pre">styling</span></code> your <code class="docutils literal notranslate"><span class="pre">code</span></code> to address the above-outlined challenges.</p>
+<p>However, before we start, here’s a little glimpse into how deep these principles are baked into <code class="docutils literal notranslate"><span class="pre">python</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">this</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The Zen of Python, by Tim Peters
+
+Beautiful is better than ugly.
+Explicit is better than implicit.
+Simple is better than complex.
+Complex is better than complicated.
+Flat is better than nested.
+Sparse is better than dense.
+Readability counts.
+Special cases aren&#39;t special enough to break the rules.
+Although practicality beats purity.
+Errors should never pass silently.
+Unless explicitly silenced.
+In the face of ambiguity, refuse the temptation to guess.
+There should be one-- and preferably only one --obvious way to do it.
+Although that way may not be obvious at first unless you&#39;re Dutch.
+Now is better than never.
+Although never is often better than *right* now.
+If the implementation is hard to explain, it&#39;s a bad idea.
+If the implementation is easy to explain, it may be a good idea.
+Namespaces are one honking great idea -- let&#39;s do more of those!
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here’s what we will explore in this session:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#code-styling"><span class="std std-ref">Guidelines for Code Styling</span></a></p></li>
+<li><p><a class="reference internal" href="#human-readable-code"><span class="std std-ref">Writing Human Readable Code</span></a></p></li>
+<li><p><a class="reference internal" href="#code-styling-tools"><span class="std std-ref">Code Styling Tools</span></a></p></li>
+</ul>
+<p>and we’re going to start with a short practice!</p>
+<div class="admonition-task-for-y-all admonition">
+<p class="admonition-title">Task for y’all!</p>
+<p>Within the <code class="docutils literal notranslate"><span class="pre">materials</span></code> you downloaded, ie <code class="docutils literal notranslate"><span class="pre">materials/CI_CD</span></code>, you will find a <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">script</span></code> called <code class="docutils literal notranslate"><span class="pre">emd_clust_cont_loss_sim.py</span></code> (you can also directly download it <span class="xref myst">here</span>). Open it in <code class="docutils literal notranslate"><span class="pre">VScode</span></code>, go through it and write down any problems you notice and/or might run into. Please make sure to save your notes!</p>
+<p>You have 10 min.</p>
+<p>After the 10 min are over, please head over to this <a class="reference external" href="https://app.sli.do/event/3Wi75hjeQYh8UY5Z7oBSWi">slido poll</a> and add a few of your notes.</p>
+<iframe src="https://wall.sli.do/event/3Wi75hjeQYh8UY5Z7oBSWi?section=cf5690c7-b847-44fb-910e-f301992d0d1c" width="650" height="400"></iframe>
+</div>
+<section id="guidelines-for-code-styling">
+<span id="code-styling"></span><h2>Guidelines for Code Styling<a class="headerlink" href="#guidelines-for-code-styling" title="Permalink to this heading">#</a></h2>
+<p>Style guidelines differ between organisations, languages, and over time. Even, the <code class="docutils literal notranslate"><span class="pre">Python</span> <span class="pre">style</span> <span class="pre">guide</span></code> <a class="reference external" href="https://www.python.org/dev/peps/pep-0008/">Python Enhancement Proposal 8 (PEP 8)</a> has had numerous revisions since it was released in 2001. You must choose a framework that is best for your purposes: be they for your benefit or the benefit of others. It is also important to remain consistent (and not consistently inconsistent)!</p>
+<p>Style guidelines include advice for <code class="docutils literal notranslate"><span class="pre">file</span> <span class="pre">naming</span></code>, <code class="docutils literal notranslate"><span class="pre">variable</span> <span class="pre">naming</span></code>, <code class="docutils literal notranslate"><span class="pre">use</span> <span class="pre">of</span> <span class="pre">comments</span></code>, and <code class="docutils literal notranslate"><span class="pre">whitespace</span></code> and <code class="docutils literal notranslate"><span class="pre">bracketing</span></code>.</p>
+<p>In the following, we will explore some basics of the <a class="reference external" href="https://www.python.org/dev/peps/pep-0008/">Python Enhancement Proposal 8 (PEP 8)</a>. You can browse the full set of <code class="docutils literal notranslate"><span class="pre">guidelines</span></code> on the <code class="docutils literal notranslate"><span class="pre">PEP8</span> <span class="pre">website</span></code>:</p>
+<iframe src="https://peps.python.org/pep-0008/" width="650" height="500"></iframe><section id="file-naming">
+<h3>File Naming<a class="headerlink" href="#file-naming" title="Permalink to this heading">#</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">Centre</span> <span class="pre">for</span> <span class="pre">Open</span> <span class="pre">Science</span></code> has some useful suggestions for the <code class="docutils literal notranslate"><span class="pre">naming</span></code> of files, particularly ensuring that they are <strong>readable for both humans and machines</strong>. This includes avoiding the use of <code class="docutils literal notranslate"><span class="pre">wildcard</span> <span class="pre">characters</span></code> (<code class="docutils literal notranslate"><span class="pre">&#64;£$%</span></code>) and using <code class="docutils literal notranslate"><span class="pre">underscores</span></code> (“<code class="docutils literal notranslate"><span class="pre">_</span></code>”) to delimit information, and <code class="docutils literal notranslate"><span class="pre">dashes</span></code> (“<code class="docutils literal notranslate"><span class="pre">-</span></code>”) to conjunct information or spaces. They also suggest <code class="docutils literal notranslate"><span class="pre">dating</span></code> or <code class="docutils literal notranslate"><span class="pre">numbering</span> <span class="pre">files</span></code> and avoiding words like <code class="docutils literal notranslate"><span class="pre">FINAL</span></code> (or <code class="docutils literal notranslate"><span class="pre">FINAL-FINAL</span></code>). Does any of those things sound familiar?</p>
+<p>The dating suggestion is the long format <code class="docutils literal notranslate"><span class="pre">YYYY-MM-DD</span></code>, followed by the <code class="docutils literal notranslate"><span class="pre">name</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">file</span></code>, and the <code class="docutils literal notranslate"><span class="pre">version</span> <span class="pre">number</span></code>. This results in <code class="docutils literal notranslate"><span class="pre">automatic</span></code>, <code class="docutils literal notranslate"><span class="pre">chronological</span> <span class="pre">order</span></code>. For example, have a quick look at the difference between these files:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Final</span> <span class="n">analysis</span> <span class="o">@</span> <span class="n">home</span><span class="o">.</span><span class="n">py</span>
+
+<span class="mi">2024</span><span class="o">-</span><span class="mi">02</span><span class="o">-</span><span class="mi">12</span><span class="n">_myproject_analysis</span><span class="o">-</span><span class="n">descriptive</span><span class="o">-</span><span class="n">statistics</span><span class="o">.</span><span class="n">py</span>
+</pre></div>
+</div>
+<p>One clearly has more information and <code class="docutils literal notranslate"><span class="pre">FAIR</span></code>-ness than the other, with the “workload” of naming the file being actually the same.</p>
+<p>And here’s another fun fact to motivate you: <code class="docutils literal notranslate"><span class="pre">spaces</span></code> in <code class="docutils literal notranslate"><span class="pre">file</span> <span class="pre">names</span></code> can create hugh problems regarding finding and accessing them (e.g. you wouldn’t be able to work with the first file in <code class="docutils literal notranslate"><span class="pre">bash</span></code> as there <code class="docutils literal notranslate"><span class="pre">spaces</span></code> differentiate <code class="docutils literal notranslate"><span class="pre">arguments</span></code>).</p>
+<p>A note on version control: while it definitely won’t hurt to add some form of <code class="docutils literal notranslate"><span class="pre">versioning</span></code> to the <code class="docutils literal notranslate"><span class="pre">file</span> <span class="pre">name</span></code>, it is generally recommended to use a dedicated <code class="docutils literal notranslate"><span class="pre">version</span> <span class="pre">control</span> <span class="pre">system</span></code> like <a class="reference external" href="https://git-scm.com/">git</a> and ideally a form of <code class="docutils literal notranslate"><span class="pre">continuous</span> <span class="pre">integration</span></code>, which we will explore a bit in the <a class="reference external" href="https://peerherholz.github.io/Clean_Repro_Code_Neuromatch/materials/code_form_test_CI/CI_CD.html">last session of this workshop</a>.</p>
+</section>
+<section id="variable-naming">
+<h3>Variable Naming<a class="headerlink" href="#variable-naming" title="Permalink to this heading">#</a></h3>
+<p>Remember your math classes? There <code class="docutils literal notranslate"><span class="pre">variables</span></code> are often unimaginatively named “x”, “y”, and “z”. This brevity is probably because teachers (understandably) do not want to repeatedly write long <code class="docutils literal notranslate"><span class="pre">variable</span> <span class="pre">names</span></code> on the board. In <code class="docutils literal notranslate"><span class="pre">coding</span></code>, however, you have the freedom to name your <code class="docutils literal notranslate"><span class="pre">variables</span></code> anything you like. This can be useful for representing the flow of your <code class="docutils literal notranslate"><span class="pre">script</span></code>.</p>
+<p>For example, instead of using</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;my_df.csv&quot;</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">x</span><span class="p">[[</span><span class="s2">&quot;my_column_1&quot;</span><span class="p">,</span> <span class="s2">&quot;my_column_2&quot;</span><span class="p">]]</span>
+</pre></div>
+</div>
+<p>to indicate a <code class="docutils literal notranslate"><span class="pre">loaded</span> <span class="pre">DataFrame</span></code>, ie <code class="docutils literal notranslate"><span class="pre">x</span></code>, and a <code class="docutils literal notranslate"><span class="pre">subset</span></code> of that <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>, ie <code class="docutils literal notranslate"><span class="pre">y</span></code>, you could (and should) use:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df_loaded</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;my_df.csv&quot;</span><span class="p">)</span>
+<span class="n">df_loaded_sub</span> <span class="o">=</span> <span class="n">x</span><span class="p">[[</span><span class="s2">&quot;my_column_1&quot;</span><span class="p">,</span> <span class="s2">&quot;my_column_2&quot;</span><span class="p">]]</span>
+</pre></div>
+</div>
+<p>to have much more intelligible <code class="docutils literal notranslate"><span class="pre">variable</span> <span class="pre">names</span></code> that also indicate the processing flow.</p>
+<p>Furthermore, while you could name <code class="docutils literal notranslate"><span class="pre">variables</span></code> whatever you want, there are also a few exceptions and guidelines, which we will explore next.</p>
+<section id="naming-exceptions">
+<h4>Naming exceptions<a class="headerlink" href="#naming-exceptions" title="Permalink to this heading">#</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">Variable</span> <span class="pre">names</span></code> in <code class="docutils literal notranslate"><span class="pre">Python</span></code> can contain <strong>alphanumerical characters</strong> <code class="docutils literal notranslate"><span class="pre">a-z</span></code>, <code class="docutils literal notranslate"><span class="pre">A-Z</span></code>, <code class="docutils literal notranslate"><span class="pre">0-9</span></code> and some <strong>special characters</strong> such as <code class="docutils literal notranslate"><span class="pre">_</span></code>. Normal <code class="docutils literal notranslate"><span class="pre">variable</span> <span class="pre">names</span></code> <strong>must</strong> start with a <code class="docutils literal notranslate"><span class="pre">letter</span></code>.</p>
+<p>By convention, <code class="docutils literal notranslate"><span class="pre">variable</span> <span class="pre">names</span></code> start with a <code class="docutils literal notranslate"><span class="pre">lower-case</span> <span class="pre">letter</span></code>, and <code class="docutils literal notranslate"><span class="pre">Class</span> <span class="pre">names</span></code> start with a <code class="docutils literal notranslate"><span class="pre">capital</span> <span class="pre">letter</span></code>.</p>
+<p>Thus, <code class="docutils literal notranslate"><span class="pre">variable</span> <span class="pre">names</span></code> like</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span><span class="n">DF</span>
+<span class="n">DF</span> <span class="n">clean</span>
+</pre></div>
+</div>
+<p>are not possible and instead should be</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df_1</span>
+<span class="n">df_clean</span>
+</pre></div>
+</div>
+<p>In addition, there are a number of <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">keywords</span></code> that <strong>cannot</strong> be used as <code class="docutils literal notranslate"><span class="pre">variable</span> <span class="pre">names</span></code>. These keywords are:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="ow">and</span><span class="p">,</span> <span class="k">as</span><span class="p">,</span> <span class="k">assert</span><span class="p">,</span> <span class="k">break</span><span class="p">,</span> <span class="n">class</span><span class="p">,</span> <span class="k">continue</span><span class="p">,</span> <span class="n">def</span><span class="p">,</span> <span class="k">del</span><span class="p">,</span> <span class="k">elif</span><span class="p">,</span> <span class="k">else</span><span class="p">,</span> <span class="k">except</span><span class="p">,</span> <span class="n">exec</span><span class="p">,</span> <span class="k">finally</span><span class="p">,</span> <span class="k">for</span><span class="p">,</span> <span class="n">from</span><span class="p">,</span> <span class="k">global</span><span class="p">,</span> <span class="k">if</span><span class="p">,</span> <span class="n">import</span><span class="p">,</span> <span class="ow">in</span><span class="p">,</span> <span class="ow">is</span><span class="p">,</span> <span class="k">lambda</span><span class="p">,</span> <span class="ow">not</span><span class="p">,</span> <span class="ow">or</span><span class="p">,</span> <span class="k">pass</span><span class="p">,</span> <span class="nb">print</span><span class="p">,</span> <span class="k">raise</span><span class="p">,</span> <span class="k">return</span><span class="p">,</span> <span class="k">try</span><span class="p">,</span> <span class="k">while</span><span class="p">,</span> <span class="k">with</span><span class="p">,</span> <span class="k">yield</span>
+</pre></div>
+</div>
+</section>
+<section id="naming-conventions">
+<h4>Naming conventions<a class="headerlink" href="#naming-conventions" title="Permalink to this heading">#</a></h4>
+<p>For clarity and readability, choosing a set of <code class="docutils literal notranslate"><span class="pre">naming</span> <span class="pre">conventions</span></code> for your <code class="docutils literal notranslate"><span class="pre">variables</span></code> is useful. There is a large variety, and some people can be quite vocal about which one is ‘correct’ (pick one that is right for you!). These include:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">CamelCase</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">lowerCamelCase</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Underscore_Methods</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Mixed_Case_with_Underscores</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">lowercase</span></code></p></li>
+</ul>
+<p>However, it is important to choose one style and stick to it. For example,</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ThisIs</span> <span class="n">Because_SwitchingbetweenDifferentformats</span> <span class="ow">is</span><span class="o">.</span><span class="n">difficult</span> <span class="n">to</span> <span class="n">read</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>is rather suboptimal and hard to parse, while</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>Where_as if_you stick_to one_style, your_code will_be easier_to_follow!
+WhereAs IfYou StickTo OneStyle, YourCodeWillBeEasierToFollow!
+</pre></div>
+</div>
+<p>is much more intelligible and easier to follow.</p>
+</section>
+</section>
+</section>
+<section id="writing-human-readable-code">
+<span id="human-readable-code"></span><h2>Writing Human Readable Code<a class="headerlink" href="#writing-human-readable-code" title="Permalink to this heading">#</a></h2>
+<p>Writing <strong>clear, well commented, readable and re-usable</strong> <code class="docutils literal notranslate"><span class="pre">code</span></code> benefits not only you but the community (or audience) that you are developing it for. This may be your lab, external collaborators, stakeholders, or you might be writing open source software for global distribution! Whatever scale you work at, readability counts!</p>
+<p>Here are a few aspects to consider when making your code easy to read by others.</p>
+<section id="line-length">
+<h3>Line Length<a class="headerlink" href="#line-length" title="Permalink to this heading">#</a></h3>
+<p>There is some agreement on the length of the <code class="docutils literal notranslate"><span class="pre">coding</span> <span class="pre">lines</span></code>. <code class="docutils literal notranslate"><span class="pre">PEP8</span></code> suggests a maximum of <code class="docutils literal notranslate"><span class="pre">79</span> <span class="pre">characters</span></code> per line. This means that the lines can easily fit on a <code class="docutils literal notranslate"><span class="pre">screen</span></code>, and multiple <code class="docutils literal notranslate"><span class="pre">coding</span> <span class="pre">windows</span></code> can be opened. It is argued that if your line is any longer than this, then your function is too complex and should be separated! For example:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">columns_select</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;participant_id&#39;</span><span class="p">,</span> <span class="s1">&#39;age&#39;</span><span class="p">,</span> <span class="s1">&#39;group&#39;</span><span class="p">,</span> <span class="s1">&#39;left-handed&#39;</span><span class="p">,</span> <span class="s1">&#39;session&#39;</span><span class="p">,</span> <span class="s1">&#39;TargetImage&#39;</span><span class="p">,</span> <span class="s1">&#39;rating&#39;</span><span class="p">,</span> <span class="s1">&#39;feedback&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>would be too long and should be changed to:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">columns_select</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;participant_id&#39;</span><span class="p">,</span> <span class="s1">&#39;age&#39;</span><span class="p">,</span> <span class="s1">&#39;group&#39;</span><span class="p">,</span> <span class="s1">&#39;left-handed&#39;</span><span class="p">,</span>  <span class="s1">&#39;session&#39;</span><span class="p">,</span> 
+                  <span class="s1">&#39;TargetImage&#39;</span><span class="p">,</span> <span class="s1">&#39;rating&#39;</span><span class="p">,</span> <span class="s1">&#39;feedback&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="commenting">
+<h3>Commenting<a class="headerlink" href="#commenting" title="Permalink to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">Comments</span></code> have been described as “Love letters to your future self” by Jon Peirce, creator of <a class="reference external" href="https://workshops.psychopy.org/index.html">PsychoPy</a>. <code class="docutils literal notranslate"><span class="pre">Comments</span></code> can be <code class="docutils literal notranslate"><span class="pre">single/multi-line</span></code>, <code class="docutils literal notranslate"><span class="pre">blocked</span></code> or <code class="docutils literal notranslate"><span class="pre">inline</span></code>. The <code class="docutils literal notranslate"><span class="pre">PEP8</span> <span class="pre">guidelines</span></code> have firm suggestions that <code class="docutils literal notranslate"><span class="pre">block</span> <span class="pre">comments</span></code> should be <code class="docutils literal notranslate"><span class="pre">full</span> <span class="pre">sentences</span></code>, have <code class="docutils literal notranslate"><span class="pre">two</span> <span class="pre">spaces</span></code> following a period, and follow a dated style guide (Strunk and White). Fortunately the <code class="docutils literal notranslate"><span class="pre">Elements</span> <span class="pre">of</span> <span class="pre">Style</span></code> no longer ‘requires’ an unfair emphasis on masculine pronouns. Whereas <code class="docutils literal notranslate"><span class="pre">inline</span> <span class="pre">comments</span></code> should be used sparingly, keeping <code class="docutils literal notranslate"><span class="pre">clear</span></code> and <code class="docutils literal notranslate"><span class="pre">concise</span> <span class="pre">comments</span></code> not only allows you to keep track of the decisions you have made, what particular <code class="docutils literal notranslate"><span class="pre">functions</span></code> do, and what <code class="docutils literal notranslate"><span class="pre">variables</span></code> are used, it also allows other people to see your thought processes. The <code class="docutils literal notranslate"><span class="pre">syntax</span></code> for <code class="docutils literal notranslate"><span class="pre">comments</span></code> varies with programming languages.
+In <code class="docutils literal notranslate"><span class="pre">python</span></code>, a hashtag <code class="docutils literal notranslate"><span class="pre">#</span></code> is used for <code class="docutils literal notranslate"><span class="pre">single/multi-line</span></code> and <code class="docutils literal notranslate"><span class="pre">inline</span></code> and <code class="docutils literal notranslate"><span class="pre">'''</span></code> for <code class="docutils literal notranslate"><span class="pre">blocked</span></code> comments.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Comment Type</p></th>
+<th class="head"><p>Syntax Example</p></th>
+<th class="head"><p>Use Case</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Single-Line</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">#</span> <span class="pre">This</span> <span class="pre">is</span> <span class="pre">a</span> <span class="pre">comment</span></code></p></td>
+<td><p>Brief explanations</p></td>
+</tr>
+<tr class="row-odd"><td><p>Multi-Line</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">#</span> <span class="pre">Line</span> <span class="pre">1\n</span> <span class="pre">#</span> <span class="pre">Line</span> <span class="pre">2</span></code></p></td>
+<td><p>Longer comments, block explanations</p></td>
+</tr>
+<tr class="row-even"><td><p>Triple-Quote</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">&quot;&quot;&quot;Multi-line</span> <span class="pre">comment&quot;&quot;&quot;</span></code></p></td>
+<td><p>Block explanations</p></td>
+</tr>
+<tr class="row-odd"><td><p>Docstring</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">def</span> <span class="pre">func():</span> <span class="pre">&quot;&quot;&quot;Docstring&quot;&quot;&quot;</span></code></p></td>
+<td><p>Documentation for classes/functions</p></td>
+</tr>
+<tr class="row-even"><td><p>Inline</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">10</span>&#160; <span class="pre">#</span> <span class="pre">Inline</span> <span class="pre">comment</span></code></p></td>
+<td><p>Clarifying specific code lines</p></td>
+</tr>
+<tr class="row-odd"><td><p>Commenting Code</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">#</span> <span class="pre">code</span> <span class="pre">to</span> <span class="pre">disable</span></code></p></td>
+<td><p>Temporarily disable code lines</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Just compare these two examples, at first without <code class="docutils literal notranslate"><span class="pre">comments</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">dpgmm</span> <span class="o">=</span> <span class="n">BayesianGaussianMixture</span><span class="p">(</span><span class="n">n_components</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">covariance_type</span><span class="o">=</span><span class="s1">&#39;full&#39;</span><span class="p">,</span> 
+        <span class="n">weight_concentration_prior_type</span><span class="o">=</span><span class="s2">&quot;dirichlet_process&quot;</span><span class="p">,</span> <span class="n">weight_concentration_prior</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> 
+        <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+<span class="n">dpgmm</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">representations_during_training</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+<span class="n">dump</span><span class="p">(</span><span class="n">dpgmm</span><span class="p">,</span> <span class="s1">&#39;./outputs/models/dpgmm.joblib&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>and now with <code class="docutils literal notranslate"><span class="pre">comments</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># The subsequent block define a Bayesian Gaussian Mixture clustering,</span>
+<span class="c1"># fits it to the test data and then saves the fitted estimator.</span>
+<span class="n">dpgmm</span> <span class="o">=</span> <span class="n">BayesianGaussianMixture</span><span class="p">(</span><span class="n">n_components</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">covariance_type</span><span class="o">=</span><span class="s1">&#39;full&#39;</span><span class="p">,</span> 
+        <span class="n">weight_concentration_prior_type</span><span class="o">=</span><span class="s2">&quot;dirichlet_process&quot;</span><span class="p">,</span> <span class="n">weight_concentration_prior</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> 
+        <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span> <span class="c1"># define Bayesian Gaussian Mixture clustering</span>
+<span class="n">dpgmm</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">representations_during_training</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span> <span class="c1"># fit it to the test data</span>
+<span class="n">dump</span><span class="p">(</span><span class="n">dpgmm</span><span class="p">,</span> <span class="s1">&#39;./outputs/models/dpgmm.joblib&#39;</span><span class="p">)</span> <span class="c1"># save the fitted estimator</span>
+</pre></div>
+</div>
+<p>Immediately more clear, eh? While it might seem like extra workload, adding a few descriptive <code class="docutils literal notranslate"><span class="pre">comments</span></code> to describe what’s going on (and why), will make all the difference later on.</p>
+</section>
+<section id="indentation">
+<h3>Indentation<a class="headerlink" href="#indentation" title="Permalink to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">Python</span></code> uses <code class="docutils literal notranslate"><span class="pre">whitespaces</span></code> to define <code class="docutils literal notranslate"><span class="pre">code</span> <span class="pre">blocks</span></code>. Using <code class="docutils literal notranslate"><span class="pre">whitespaces</span></code> at the beginning of a <code class="docutils literal notranslate"><span class="pre">line</span></code> is the <code class="docutils literal notranslate"><span class="pre">indentation</span></code>. This means that a <code class="docutils literal notranslate"><span class="pre">codeblock</span></code> that is <code class="docutils literal notranslate"><span class="pre">indented</span></code> with the same number of leading <code class="docutils literal notranslate"><span class="pre">whitespaces</span></code> or <code class="docutils literal notranslate"><span class="pre">tabs</span></code> should be run together. In other words: the <code class="docutils literal notranslate"><span class="pre">indentation</span></code> is part of the <code class="docutils literal notranslate"><span class="pre">syntax</span></code> in <code class="docutils literal notranslate"><span class="pre">python</span></code> and one of the major distinctions regarding other programming languages like, e.g. <code class="docutils literal notranslate"><span class="pre">Matlab</span></code>.</p>
+<p>Usually in <code class="docutils literal notranslate"><span class="pre">python</span></code> we use four <code class="docutils literal notranslate"><span class="pre">whitespaces</span></code> for <code class="docutils literal notranslate"><span class="pre">indentation</span></code> of <code class="docutils literal notranslate"><span class="pre">codeblocks</span></code>.</p>
+<p>Let’s see what that means:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">i_hope_this_is_over_soon</span> <span class="o">=</span> <span class="s2">&quot;yes&quot;</span>
+<span class="n">n_sections_left</span> <span class="o">=</span> <span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Each such set of statements is called a <code class="docutils literal notranslate"><span class="pre">block</span></code>, meaning that the <code class="docutils literal notranslate"><span class="pre">lines</span></code>/<code class="docutils literal notranslate"><span class="pre">variable</span> <span class="pre">assignments</span></code> will be run together.<br />
+What happens when we introduce a “wrong” indentation?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">i_hope_this_is_over_soon</span> <span class="o">=</span> <span class="s2">&quot;yes&quot;</span>
+    <span class="n">n_sections_left</span> <span class="o">=</span> <span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+    <span class="n">n_sections_left</span> <span class="o">=</span> <span class="mi">2</span>
+    <span class="o">^</span>
+<span class="ne">IndentationError</span>: unexpected indent
+</pre></div>
+</div>
+</div>
+</div>
+<p>NB: you have most likely seen this already when applying any form of <code class="docutils literal notranslate"><span class="pre">loops</span></code> within which the parts inside the <code class="docutils literal notranslate"><span class="pre">loop</span></code>(s) have to have the right <code class="docutils literal notranslate"><span class="pre">indentation</span></code> as you otherwise will run into erros. The same holds true for splitting <code class="docutils literal notranslate"><span class="pre">code</span></code> across <code class="docutils literal notranslate"><span class="pre">lines</span></code>.</p>
+</section>
+</section>
+<section id="code-styling-tools">
+<span id="id1"></span><h2>Code Styling Tools<a class="headerlink" href="#code-styling-tools" title="Permalink to this heading">#</a></h2>
+<p>As mentioned earlier, there are some automatic tools that you can use to <code class="docutils literal notranslate"><span class="pre">lint</span></code> your <code class="docutils literal notranslate"><span class="pre">code</span></code> to existing guidelines. These range from plugins for <code class="docutils literal notranslate"><span class="pre">IDE</span></code>s packages that <code class="docutils literal notranslate"><span class="pre">&quot;spell-check&quot;</span></code> your style, and <code class="docutils literal notranslate"><span class="pre">scripts</span></code> that automatically <code class="docutils literal notranslate"><span class="pre">lint</span></code> for you.</p>
+<p>You can use one or the other or both, that’s up to you. Just make sure you use at least one.
+However, we definitely recommend giving the <code class="docutils literal notranslate"><span class="pre">&quot;spell-check&quot;</span></code> approach a try, as it teaches you a lot of <code class="docutils literal notranslate"><span class="pre">code</span> <span class="pre">formatting</span></code> and <code class="docutils literal notranslate"><span class="pre">styling</span></code> and thus helps you to incorporate these guidelines into your everyday <code class="docutils literal notranslate"><span class="pre">coding</span></code>.</p>
+<section id="automatic-formatting-tools">
+<h3>Automatic formatting tools<a class="headerlink" href="#automatic-formatting-tools" title="Permalink to this heading">#</a></h3>
+<p>There are a few common <code class="docutils literal notranslate"><span class="pre">automatic</span> <span class="pre">formatting</span> <span class="pre">tools</span></code> for <code class="docutils literal notranslate"><span class="pre">python</span></code>. Most likely, you will see:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://black.readthedocs.io/en/stable/">Black</a></p></li>
+<li><p><a class="reference external" href="https://pypi.org/project/autopep8/">Autopep8</a></p></li>
+<li><p><a class="reference external" href="https://flake8.pycqa.org/en/latest/index.html">Flake8</a></p></li>
+</ul>
+<p>These tools will automatically change your <code class="docutils literal notranslate"><span class="pre">code</span></code> to adhere to certain <code class="docutils literal notranslate"><span class="pre">guidelines</span></code>, like <code class="docutils literal notranslate"><span class="pre">spaces</span> <span class="pre">around</span> <span class="pre">operators</span></code> and removing unnecessary <code class="docutils literal notranslate"><span class="pre">whitespace</span></code>. It is also consistent, so that the <code class="docutils literal notranslate"><span class="pre">code</span></code> that you and your collaborators work on, will look the same once formatted it. It does not change what the <code class="docutils literal notranslate"><span class="pre">code</span></code> does. This can reduce the time spent making the above changes to the <code class="docutils literal notranslate"><span class="pre">code</span></code>.</p>
+</section>
+<section id="spell-checks-in-ides">
+<h3>Spell-checks in IDEs<a class="headerlink" href="#spell-checks-in-ides" title="Permalink to this heading">#</a></h3>
+<p>As mentioned before, there’s also the option to have “<code class="docutils literal notranslate"><span class="pre">spell-checks</span></code>” in <code class="docutils literal notranslate"><span class="pre">IDE</span></code>s, which basically indicate <code class="docutils literal notranslate"><span class="pre">guideline</span> <span class="pre">violations</span></code> like a writing tool would indicate typos. The exact way how and what they mark as a <code class="docutils literal notranslate"><span class="pre">guideline</span> <span class="pre">violation</span></code> depends on the “<code class="docutils literal notranslate"><span class="pre">spell-check</span></code>” option of you choice.</p>
+<p>Usually, these “<code class="docutils literal notranslate"><span class="pre">spell-check</span></code>”s are implemented through <code class="docutils literal notranslate"><span class="pre">IDE</span></code> integrations and/or add-ons of the above mentioned formatting tools (and others), e.g. <code class="docutils literal notranslate"><span class="pre">Black</span></code>, <code class="docutils literal notranslate"><span class="pre">Autopep8</span></code> and <code class="docutils literal notranslate"><span class="pre">Flake8</span></code>. As the tools themself, you can set different options and change their configuration concerning what should be considered a <code class="docutils literal notranslate"><span class="pre">guideline</span> <span class="pre">violation</span></code> and thus indicated respectively.</p>
+<p>In order to add them to your <code class="docutils literal notranslate"><span class="pre">IDE</span></code>, just search for the respective integration and/or add-on. <code class="docutils literal notranslate"><span class="pre">VScode</span></code> is of course no exception to that and supports the mentioned tools and others. Just open the <code class="docutils literal notranslate"><span class="pre">Extensions</span></code> tab, enter the search term and then click <code class="docutils literal notranslate"><span class="pre">install</span></code>.</p>
+<img align="center" src="https://github.com/peerherholz/Clean_Repro_Code_Neuromatch/-/raw/main/workshop/materials/static/CI_CD/CI_CD_spell_check_integration.png?ref_type=heads" alt="logo" title="jupyter" width="900" height="400" /> <p>Here’s an example of how the <code class="docutils literal notranslate"><span class="pre">Flake8</span></code> extension in <code class="docutils literal notranslate"><span class="pre">VScode</span></code> would highlight <code class="docutils literal notranslate"><span class="pre">guideline</span> <span class="pre">violations</span></code> in our <code class="docutils literal notranslate"><span class="pre">analysis_pipeline.py</span></code> from the beginning.</p>
+<img align="center" src="https://github.com/peerherholz/Clean_Repro_Code_Neuromatch/-/raw/main/workshop/materials/static/CI_CD/CI_CD_spell_check.png?ref_type=heads" alt="logo" title="jupyter" width="900" height="400" /> </section>
+</section>
+<section id="summary-and-task-s">
+<h2>Summary and task(s)<a class="headerlink" href="#summary-and-task-s" title="Permalink to this heading">#</a></h2>
+<p>Again, there’s much more to linting than what we have discussed here. Just have a look at them and utilize one of the mentioned tools and/or <code class="docutils literal notranslate"><span class="pre">IDE</span></code> integrations to get used to it and you will automatically adapt your <code class="docutils literal notranslate"><span class="pre">code</span></code> writing defaults in no time!</p>
+<p>However, to give you a first idea of how this would work and combine different aspects of what we have discussed so far, we would like to present you with a set of practice tasks.</p>
+<div class="admonition-task-for-y-all admonition">
+<p class="admonition-title">Task for y’all!</p>
+<p>Remember the <code class="docutils literal notranslate"><span class="pre">script</span></code> you checked at the beginning? You already went through it once, but now it’s time to check things again based on the things we have briefly explored. Just imaging that a colleague gave this script to you or you wrote it a year ago and now you want to bring it up to <code class="docutils literal notranslate"><span class="pre">code</span></code> (get it?). Please note that you should of course adhere and integrate the <code class="docutils literal notranslate"><span class="pre">guidelines</span></code> from <code class="docutils literal notranslate"><span class="pre">line</span> <span class="pre">1</span></code> when you start <code class="docutils literal notranslate"><span class="pre">coding</span></code>. However, as our example is quite long and we don’t have too much time, please limit your clean code endeavors to the first 100 lines.</p>
+<ol class="arabic">
+<li><p><code class="docutils literal notranslate"><span class="pre">Version</span> <span class="pre">control</span> <span class="pre">1</span></code>: Create a new <code class="docutils literal notranslate"><span class="pre">GitHub</span> <span class="pre">repository</span></code> called <code class="docutils literal notranslate"><span class="pre">clean_reproducible_code_nm_example</span></code> and add the initial version of the <code class="docutils literal notranslate"><span class="pre">emd_clust_cont_loss_sim.py</span></code> script to it.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Commenting</span></code>: Please add <code class="docutils literal notranslate"><span class="pre">comments</span></code> to all parts of the <code class="docutils literal notranslate"><span class="pre">code</span></code>, <code class="docutils literal notranslate"><span class="pre">blocks</span></code> and <code class="docutils literal notranslate"><span class="pre">in-line</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Guidelines</span></code>: Please adapt the <code class="docutils literal notranslate"><span class="pre">code</span></code> to adhere to <code class="docutils literal notranslate"><span class="pre">PEP8</span></code> <code class="docutils literal notranslate"><span class="pre">guidelines</span></code> via</p>
+<p>3.1 Use a <code class="docutils literal notranslate"><span class="pre">VScode</span></code> extension to find and fix <code class="docutils literal notranslate"><span class="pre">guideline</span></code> violations<br />
+3.2 Use an automatic formatting tool to check if everything is fixed</p>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Version</span> <span class="pre">control</span> <span class="pre">2</span></code>: Please <code class="docutils literal notranslate"><span class="pre">commit</span></code> the changes you have made and <code class="docutils literal notranslate"><span class="pre">push</span></code> them to your <code class="docutils literal notranslate"><span class="pre">GitHub</span></code> repository via a <code class="docutils literal notranslate"><span class="pre">pull</span> <span class="pre">request</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Code</span> <span class="pre">review</span></code>: Please assign one of the other participants as a <code class="docutils literal notranslate"><span class="pre">code</span> <span class="pre">reviewer</span></code> to your <code class="docutils literal notranslate"><span class="pre">pull</span> <span class="pre">request</span></code> and conduct the review for your assigned <code class="docutils literal notranslate"><span class="pre">code</span> <span class="pre">review</span></code>.</p></li>
+</ol>
+<p>You have 40 min.</p>
+</div>
+<p>We included solutions to the task below but please try it yourself first.</p>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Example solutions</p>
+<p>Here’s how you could implement the above outlined tasks. However, there are of course many different solutions to some of the tasks and we just provided some examples.</p>
+<ol class="arabic">
+<li><p><code class="docutils literal notranslate"><span class="pre">Version</span> <span class="pre">control</span> <span class="pre">1</span></code>:</p>
+<p>Go to <code class="docutils literal notranslate"><span class="pre">GitHub</span></code> and click <code class="docutils literal notranslate"><span class="pre">New</span> <span class="pre">Repository</span></code> on the left. Assign it a <code class="docutils literal notranslate"><span class="pre">name</span></code>(as outlined), add a <code class="docutils literal notranslate"><span class="pre">README</span></code> and choose a <code class="docutils literal notranslate"><span class="pre">license</span></code>.</p>
+ <img align="center" src="https://github.com/peerherholz/Clean_Repro_Code_Neuromatch/-/raw/main/workshop/materials/static/CI_CD/create_new_repo.png?ref_type=heads" alt="logo" title="jupyter" width="900" height="400" /> 
+ <img align="center" src="https://github.com/peerherholz/Clean_Repro_Code_Neuromatch/-/raw/main/workshop/materials/static/CI_CD/create_new_repo_done.png?ref_type=heads" alt="logo" title="jupyter" width="900" height="400" /> 
+<p>Clone the repository to your local machine via (don’t forget to exchange <code class="docutils literal notranslate"><span class="pre">your_user_name</span></code> to your respective <code class="docutils literal notranslate"><span class="pre">GitHub</span> <span class="pre">username</span></code>) and <code class="docutils literal notranslate"><span class="pre">cd</span></code> into it:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/your_user_name/clean_reproducible_code_nm_example
+<span class="nb">cd</span><span class="w"> </span>clean_reproducible_code_nm_example
+</pre></div>
+</div>
+<p>Copy/move the original <code class="docutils literal notranslate"><span class="pre">emd_clust_cont_loss_sim.py</span></code> script to the newly created local <code class="docutils literal notranslate"><span class="pre">repository</span></code> (don’t forget to exchange <code class="docutils literal notranslate"><span class="pre">/path/to/script</span></code> to the path where you stored the <code class="docutils literal notranslate"><span class="pre">emd_clust_cont_loss_sim.py</span></code> script on your machine):</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mv<span class="w"> </span>/path/to/script<span class="w"> </span>.
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Commit</span></code> the changes to your <code class="docutils literal notranslate"><span class="pre">repository</span></code> via:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>add<span class="w"> </span>emd_clust_cont_loss_sim.py
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;add initial version of script&quot;</span>
+</pre></div>
+</div>
+<p>and then <code class="docutils literal notranslate"><span class="pre">push</span></code> the changes to your <code class="docutils literal notranslate"><span class="pre">GitHub</span> <span class="pre">repository</span></code>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>push
+</pre></div>
+</div>
+<p>If everything worked out, you should now see the script in your <code class="docutils literal notranslate"><span class="pre">GitHub</span> <span class="pre">repository</span></code>.</p>
+ <img align="center" src="https://github.com/peerherholz/Clean_Repro_Code_Neuromatch/-/raw/main/workshop/materials/static/CI_CD/add_file_GitHub_repo.png?ref_type=heads" alt="logo" title="jupyter" width="900" height="400" />     
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Commenting</span></code>:</p>
+<p>Apply the aspects we briefly talked about in this session.</p>
+ <img align="center" src="https://github.com/peerherholz/Clean_Repro_Code_Neuromatch/-/raw/main/workshop/materials/static/CI_CD/commenting_example.png?ref_type=heads" alt="logo" title="jupyter" width="900" height="400" />     
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Guidelines</span></code>:</p>
+<p>3.1 Install the <code class="docutils literal notranslate"><span class="pre">Flake8</span></code> extension and go through the code searching for marked problems
+and address them.</p>
+ <img align="center" src="https://github.com/peerherholz/Clean_Repro_Code_Neuromatch/-/raw/main/workshop/materials/static/CI_CD/flake8_extension_example.png?ref_type=heads" alt="logo" title="jupyter" width="900" height="400" />     
+<p>3.2 Run <code class="docutils literal notranslate"><span class="pre">autopep8</span></code> and <code class="docutils literal notranslate"><span class="pre">flake8</span></code> to fix and check the code.</p>
+<p>Using <code class="docutils literal notranslate"><span class="pre">autopep8</span></code> you can automatically address some formatting problems automatically:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>autopep8<span class="w"> </span>/path/to/script<span class="w"> </span>--in-place
+</pre></div>
+</div>
+<p>After that, you can use <code class="docutils literal notranslate"><span class="pre">flake8</span></code> to automatically check for all still existing errors:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>flake8<span class="w"> </span>/path/to/script
+</pre></div>
+</div>
+<p>Most likely, you will still get a lot of errors, especially if you only went through the first
+100 lines as suggested. However, that’s no problem for now and we will address this in a later
+session.</p>
+ <img align="center" src="https://github.com/peerherholz/Clean_Repro_Code_Neuromatch/-/raw/main/workshop/materials/static/CI_CD/flake8_extension_example_fixed.png?ref_type=heads" alt="logo" title="jupyter" width="900" height="400" />    
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Verson</span> <span class="pre">control</span> <span class="pre">2</span></code>: Please <code class="docutils literal notranslate"><span class="pre">commit</span></code> the changes you have made and <code class="docutils literal notranslate"><span class="pre">push</span></code> them to your <code class="docutils literal notranslate"><span class="pre">GitHub</span> <span class="pre">repository</span></code> via</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;apply code formatting&quot;</span>
+git<span class="w"> </span>push
+</pre></div>
+</div>
+ <img align="center" src="https://github.com/peerherholz/Clean_Repro_Code_Neuromatch/-/raw/main/workshop/materials/static/CI_CD/update_file_GitHub_repo.png?ref_type=heads" alt="logo" title="jupyter" width="900" height="400" />  
+ <img align="center" src="https://github.com/peerherholz/Clean_Repro_Code_Neuromatch/-/raw/main/workshop/materials/static/CI_CD/update_file_GitHub_repo_detail.png?ref_type=heads" alt="logo" title="jupyter" width="900" height="400" />  
+</li>
+</ol>
+<p>Again, some of these tasks could be addressed in a different manner. The here provided solutions are just examples.</p>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "nowaschool"
+        },
+        kernelOptions: {
+            name: "nowaschool",
+            path: "./materials/code_form_test_CI"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'nowaschool'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="overview_code_form_test.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Code formatting and testing</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../../prerequisites.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Course prerequisites</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#guidelines-for-code-styling">Guidelines for Code Styling</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#file-naming">File Naming</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variable-naming">Variable Naming</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#naming-exceptions">Naming exceptions</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#naming-conventions">Naming conventions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#writing-human-readable-code">Writing Human Readable Code</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#line-length">Line Length</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#commenting">Commenting</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#indentation">Indentation</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code-styling-tools">Code Styling Tools</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#automatic-formatting-tools">Automatic formatting tools</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spell-checks-in-ides">Spell-checks in IDEs</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-and-task-s">Summary and task(s)</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Neuromatch Impact Scholars team
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024-.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

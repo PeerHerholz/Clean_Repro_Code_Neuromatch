@@ -1,0 +1,972 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Setup &#8212; Code formatting &amp; testing</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/myfile.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'setup';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Code formatting and testing" href="materials/code_form_test_CI/overview_code_form_test.html" />
+    <link rel="prev" title="Diversity, Equity and Inclusion" href="dei.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="https://impact-scholars.neuromatch.io/_static/Sciencematch.png" class="logo__image only-light" alt="Code formatting & testing - Home"/>
+    <script>document.write(`<img src="https://impact-scholars.neuromatch.io/_static/Sciencematch.png" class="logo__image only-dark" alt="Code formatting & testing - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Welcome
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CoC.html">Code of Conduct</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dei.html">Diversity, Equity and Inclusion</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Setup</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="materials/code_form_test_CI/overview_code_form_test.html">Code formatting and testing</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="materials/code_form_test_CI/code_formatting.html">Code formatting, styling and linting</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="prerequisites.html">Course prerequisites</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="materials/prerequisites/intro_to_shell.html">Introduction to the (unix) command line: bash</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="materials/prerequisites/intro_python.html">Introduction to Python</a></li>
+
+
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/peerherholz/Clean_Repro_Code_Neuromatch" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/peerherholz/Clean_Repro_Code_Neuromatch/issues/new?title=Issue%20on%20page%20%2Fsetup.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/setup.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Setup</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#general-things">General things</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#required-software">Required software</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#some-quick-general-notes-on-instructions">Some quick general notes on instructions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#os-specific-installation-instructions">OS-specific installation instructions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modern-web-browser">Modern web browser</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-the-course-content">Getting the course content</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#support">Support</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="setup">
+<h1>Setup<a class="headerlink" href="#setup" title="Permalink to this heading">#</a></h1>
+<p>There are a few things you need to get working on your machine in order to easily follow this workshop. However, don’t worry as it’s all gonna be <a class="reference external" href="https://en.wikipedia.org/wiki/Open_source">open source</a>, won’t require a lot of storage and will be explained in detail.</p>
+<p>While same parts and section will be do-able via <code class="docutils literal notranslate"><span class="pre">cloud</span> <span class="pre">computing</span></code>, which is nice and easy to follow in an interactive manner, it’s not recommended as getting <code class="docutils literal notranslate"><span class="pre">Python</span></code> &amp; friends to work reliably on your machine is going to be very beneficial. This holds true for the course and especially beyond. Via installing these tools, you will be equipped to basically continue right away and start using them in your everyday research workflow. This even applies if you won’t continue with <code class="docutils literal notranslate"><span class="pre">python</span></code> (We certainly hope you do.) and instead work with <code class="docutils literal notranslate"><span class="pre">R</span></code> (of course also cool), <code class="docutils literal notranslate"><span class="pre">matlab</span></code> (weeeeeeeell…) or what have you.  Having that in mind and integrating other tools/resources focusing open and reproducible science, you will find a rather comprehensive set of install instructions below. While not all of them might be totally necessary for the workshop, they all will help you a great deal going further and are especially useful/needed if we have to hold the workshop virtually.</p>
+<p>Don’t worry, you got this!</p>
+<p><img alt="logo" src="https://media1.tenor.com/images/f72cb542d6b3e3c3421889e0a3d9628d/tenor.gif?itemid=4533805" /><br />
+<sub><sup><sub><sup><a class="reference external" href="https://media1.tenor.com/images/f72cb542d6b3e3c3421889e0a3d9628d/tenor.gif?itemid=4533805">https://media1.tenor.com/images/f72cb542d6b3e3c3421889e0a3d9628d/tenor.gif?itemid=4533805</a></sup></sub></sup></sub></p>
+<section id="general-things">
+<h2>General things<a class="headerlink" href="#general-things" title="Permalink to this heading">#</a></h2>
+<p>There are a few computing requirements for the course that are absolutely necessary (beyond the few software packages you should install, described below):</p>
+<ol class="arabic simple">
+<li><p>You must have administrator access to your computer (i.e., you must be able to install things yourself without requesting IT approval).</p></li>
+<li><p>You must have at least 20 GB of free disk space on your computer (but we would recommend more, to be safe).</p></li>
+<li><p>If you are using Windows you must be at least using Windows 10; Windows 7 and 8 will not be sufficient for this course.</p></li>
+</ol>
+<p>If you foresee any of these being a problem please reach out to one of the instructors for what steps you can take to ensure you are ready for the workshop start.</p>
+</section>
+<section id="required-software">
+<h2>Required software<a class="headerlink" href="#required-software" title="Permalink to this heading">#</a></h2>
+<p>To get the most out of the course, we ask that you arrive with the following software already installed:</p>
+<ul class="simple">
+<li><p>A command-line shell: <code class="docutils literal notranslate"><span class="pre">Bash</span></code></p></li>
+<li><p>A version control system: <a class="reference external" href="https://git-scm.com/">Git</a></p></li>
+<li><p>A remote-capable text editor: <a class="reference external" href="https://code.visualstudio.com/">VSCode</a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Python</span> <span class="pre">3</span></code> via <code class="docutils literal notranslate"><span class="pre">Miniconda</span></code></p></li>
+<li><p>A <a class="reference external" href="https://github.com/">github.com</a> account with an <a class="reference external" href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account">SSH key connection</a></p></li>
+<li><p>A <code class="docutils literal notranslate"><span class="pre">modern</span> <span class="pre">browser</span></code> (e.g. <a class="reference external" href="https://www.google.com/chrome/index.html">Chrome</a>, or <a class="reference external" href="https://www.mozilla.org/en-CA/firefox/new/">Firefox</a>)</p></li>
+</ul>
+<p>If you already have all of the above software tools/packages installed, or are confident you’ll be able to install them by the time the course starts, you can jump straight to <span class="xref myst">checking your install</span>.
+The rest of this page provides more detail on installation procedures for each of the above elements, with separate instructions for each of the three major operating systems (<code class="docutils literal notranslate"><span class="pre">Windows</span></code>, <code class="docutils literal notranslate"><span class="pre">Mac</span> <span class="pre">OS</span></code>, and <code class="docutils literal notranslate"><span class="pre">Linux</span></code>).</p>
+<section id="some-quick-general-notes-on-instructions">
+<h3>Some quick general notes on instructions<a class="headerlink" href="#some-quick-general-notes-on-instructions" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>There is no difference between <code class="docutils literal notranslate"><span class="pre">Enter</span></code> and <code class="docutils literal notranslate"><span class="pre">Return</span></code> in these instructions, so just press whatever the equivalent on your keyboard is whenever one is stated</p></li>
+<li><p>If you already have some of these things installed on your computer already that should (theoretically) be okay.
+However, you need to make sure that you are able to complete the steps described in <span class="xref myst">checking your install</span> without issue.</p>
+<ul>
+<li><p>For example, having multiple different <code class="docutils literal notranslate"><span class="pre">Python</span></code> installations on your computer can lead to incredibly frustrating issues that are very difficult to debug.
+As such, if you have already installed <code class="docutils literal notranslate"><span class="pre">Python</span></code> via some other application (not <code class="docutils literal notranslate"><span class="pre">Miniconda</span></code>/<code class="docutils literal notranslate"><span class="pre">Anaconda</span></code>), it’s strongly encouraged to uninstall it before following the instructions below.
+You <em>must</em> have <code class="docutils literal notranslate"><span class="pre">Python</span></code> installed via <code class="docutils literal notranslate"><span class="pre">Miniconda</span></code> for this course.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="os-specific-installation-instructions">
+<h3>OS-specific installation instructions<a class="headerlink" href="#os-specific-installation-instructions" title="Permalink to this heading">#</a></h3>
+<p>Select the tab that corresponds to your operating system and follow the instructions therein.</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-0">
+Windows</label><div class="sd-tab-content docutils">
+<p><strong>Windows Subsystem for Linux (WSL)</strong></p>
+<p>NB: The instructors unfortunately didn’t have access to a <code class="docutils literal notranslate"><span class="pre">windows</span> <span class="pre">OS</span></code> and thus couldn’t test the installation instructions directly. Therefore, chances are respective users might run into a few hiccups here and there. If that’s the case, please just let us know and we will try our best to solve it.</p>
+<ol class="arabic">
+<li><p>Search for <code class="docutils literal notranslate"><span class="pre">Windows</span> <span class="pre">Powershell</span></code> in your applications; right click and select <code class="docutils literal notranslate"><span class="pre">Run</span> <span class="pre">as</span> <span class="pre">administrator</span></code>.
+Select <code class="docutils literal notranslate"><span class="pre">Yes</span></code> on the prompt that appears asking if you want to allow the app to make changes to your device.</p></li>
+<li><p>Type the following into the Powershell and then press <code class="docutils literal notranslate"><span class="pre">Enter</span></code>:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span> Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
+</pre></div>
+</div>
+</li>
+<li><p>Press <code class="docutils literal notranslate"><span class="pre">Enter</span></code> again when prompted to reboot your computer.</p></li>
+<li><p>Once your computer has rebooted, open the Microsoft Store and search for “Ubuntu.”
+Install the program labelled “Ubuntu 22.04” (not “Ubuntu 16.04” or “Ubuntu”) by clicking the tile, pressing <code class="docutils literal notranslate"><span class="pre">Get</span></code>, and then <code class="docutils literal notranslate"><span class="pre">Install</span></code>.</p></li>
+<li><p>Search for and open Ubuntu from your applications.
+There will be a slight delay (of a few minutes) while it finishes installing.</p></li>
+<li><p>You will be prompted to <code class="docutils literal notranslate"><span class="pre">Enter</span> <span class="pre">new</span> <span class="pre">UNIX</span> <span class="pre">username</span></code>.
+You can use any combination of alphanumeric characters here for your username, but a good choice is <code class="docutils literal notranslate"><span class="pre">&lt;first_initial&gt;&lt;last_name&gt;</span></code> (e.g., <code class="docutils literal notranslate"><span class="pre">jsmith</span></code> for John Smith).
+You will then be prompted to enter a new password.
+(Choose something easy to remember as you will find yourself using it frequently.)</p></li>
+<li><p>Right click on the top bar of the Ubuntu application and select “Properties”.
+Under the “Options” tab, under the “Edit Options” heading, make sure the box reading “Use Ctrl+Shift+C/V as Copy/Paste” is checked.
+Under the “Terminal” tab, under the “Cursor Shape” heading, make sure the box reading “Vertical Bar” is checked.
+Press “Okay” to save these settings and then exit the application.</p></li>
+</ol>
+<p>(The above step-by-step WSL instructions are distilled from <a class="reference external" href="https://docs.microsoft.com/en-us/windows/wsl/install-win10">here</a> and <a class="reference external" href="https://docs.microsoft.com/en-us/windows/wsl/initialize-distro">here</a>.
+If you have questions during the installation procedure those resources may have answers!)</p>
+<p>From this point on whenever the instructions specify to “open a terminal” please assume you are supposed to open the Ubuntu application.</p>
+<p><strong>Bash shell</strong></p>
+<p>You already have it, now that you’ve installed the WSL!</p>
+<p><strong>Git</strong></p>
+<p>You already have it, now that you’ve installed the WSL!</p>
+<p><strong>VSCode</strong></p>
+<ol class="arabic simple">
+<li><p>Go to <a class="reference external" href="https://code.visualstudio.com/">https://code.visualstudio.com/</a> and click the download button, then run the <code class="docutils literal notranslate"><span class="pre">.exe</span></code> file.</p></li>
+<li><p>Leave all the defaults during the installation with the following exception:</p>
+<ul class="simple">
+<li><p>Please make sure the box labelled “Register Code as an editor for supported file types” is selected</p></li>
+</ul>
+</li>
+</ol>
+<p><strong>VSCode extensions</strong></p>
+<ol class="arabic simple">
+<li><p>Open the Ubuntu application.</p></li>
+<li><p>Type <code class="docutils literal notranslate"><span class="pre">code</span> <span class="pre">.</span></code> into the terminal and press <code class="docutils literal notranslate"><span class="pre">Enter</span></code>.
+You should see a message reading “Installing VS Code Server” and then a new windows will open up.</p></li>
+<li><p>Press <code class="docutils literal notranslate"><span class="pre">Ctrl+Shift+P</span></code> in the new window that opens and type “Extensions: Install extensions” into the search bar that appears at the top of the screen.
+Select the appropriate entry from the dropdown menu that appears (there should be four entries; simply select the one that reads “Extensions: Install extensions”).</p></li>
+<li><p>A new panel should appear on the left-hand side of the screen with a search bar.
+Search for each of the following extensions and press <code class="docutils literal notranslate"><span class="pre">Install</span></code> for the first entry that appears. (The author listed for all of these extensions should be “Microsoft”.)</p>
+<ul class="simple">
+<li><p>Python (n.b., you will need to reload VSCode after installing this)</p></li>
+</ul>
+</li>
+</ol>
+<p><strong>Python</strong></p>
+<ol class="arabic">
+<li><p>Open a new terminal and type the following lines (separately) into the terminal, pressing <code class="docutils literal notranslate"><span class="pre">Enter</span></code> after each one:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span> wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+ bash Miniconda3-latest-Linux-x86_64.sh
+</pre></div>
+</div>
+</li>
+<li><p>A license agreement will be displayed and the bottom of the terminal will read <code class="docutils literal notranslate"><span class="pre">--More--</span></code>.
+Press <code class="docutils literal notranslate"><span class="pre">Enter</span></code> or the space bar until you are prompted with “Do you accept the license terms? [yes|no].”
+Type <code class="docutils literal notranslate"><span class="pre">yes</span></code> and then press <code class="docutils literal notranslate"><span class="pre">Enter</span></code></p></li>
+<li><p>The installation script will inform you that it is going to install into a default directory (e.g., <code class="docutils literal notranslate"><span class="pre">/home/$USER/miniconda3</span></code>).
+Leave this default and press <code class="docutils literal notranslate"><span class="pre">Enter</span></code>.</p></li>
+<li><p>When you are asked “Do you wish the installer to initialize Miniconda3 by running conda init? [yes|no],” type <code class="docutils literal notranslate"><span class="pre">yes</span></code> and press <code class="docutils literal notranslate"><span class="pre">Enter</span></code>.
+Exit the terminal once the installation has finished.</p></li>
+<li><p>Re-open the Ubuntu application.
+Type <code class="docutils literal notranslate"><span class="pre">which</span> <span class="pre">python</span></code> into the terminal and it should return a path (e.g., <code class="docutils literal notranslate"><span class="pre">/home/$USER/miniconda3/bin/python</span></code>).</p>
+<ul class="simple">
+<li><p>If you do not see a path like this then please try typing <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">init</span></code>, closing your terminal, and repeating this step.
+If your issue is still not resolved skip the following step and contact an instructor on the #help-installation channel on the BHS Slack.</p></li>
+</ul>
+</li>
+<li><p>Type the following to remove the installation script that was downloaded:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span> rm ./Miniconda3-latest-Linux-x86_64.sh
+</pre></div>
+</div>
+</li>
+</ol>
+<p><strong>Python packages</strong></p>
+<p>Open a terminal and type the following commands:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    conda config --append channels conda-forge
+    conda config --set channel_priority strict
+</pre></div>
+</div>
+<p><strong>Git configuration</strong></p>
+<p>After installing Git, please run these commands one after another in your terminal (it doesn’t matter in which directory you currently are) to check and complete your setup (you can just copy-paste the commands):</p>
+<p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">--version</span></code></p>
+<p>→ this tells you if the installation was successful by telling you the version number of git you installed.</p>
+<p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">config</span> <span class="pre">--global</span> <span class="pre">user.name</span> <span class="pre">&quot;Example</span> <span class="pre">Name&quot;</span></code></p>
+<p>→ put in your real name. You have to set the quotation marks around your name otherwise git can’t read it.</p>
+<p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">config</span> <span class="pre">--global</span> <span class="pre">user.email</span> <span class="pre">example&#64;example.com</span></code></p>
+<p>→ choose your preferred email.</p>
+<p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">config</span> <span class="pre">--global</span> <span class="pre">init.defaultBranch</span> <span class="pre">main</span></code></p>
+<p>→ this makes sure that your default branch is main, which is currently used by most users as their default branch. Don’t worry about what it means, we will talk about that in the workshop ☺</p>
+<p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">config</span> <span class="pre">--global</span> <span class="pre">core.editor</span> <span class="pre">ExampleEditor</span></code></p>
+<p>→ this sets a default text editor when working with git. Just type in the editor you want to use. My recommendation is to use nano or vim. You don’t have to download anything, it’s already on your machine as it is a command-line editor. So, it’s super convenient for working with git, as
+the git commands are also run in the command-line. It simply means that when writing commit messages you can do it in one window (i.e., your terminal) and you don’t have to bother with a new window opening and making sure it’s really closed etc. But of course, you can use any text editor you want. Just as an example, for making nano your gloab git-editor
+type <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">config</span> <span class="pre">--global</span> <span class="pre">core.editor</span> <span class="pre">nano</span></code>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">config</span> <span class="pre">--global</span> <span class="pre">pull.rebase</span> <span class="pre">false</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">config</span> <span class="pre">--global</span> <span class="pre">pull.merge</span> <span class="pre">true</span></code></p>
+<p>→ this makes sure that your merges are shown in the commit history which is nice if you just start learning to use Git. When you’re more experienced, git rebase is also a very nice command (we’ll learn about that in the course!).</p>
+<p><code class="docutils literal notranslate"><span class="pre">cat</span> <span class="pre">~/.gitconfig</span></code></p>
+<p>→ checks if your configuration was successful. It should give you this output:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>  [user] name = Your Name email = yourname@yourplace.org
+  [core] editor = YourEditor
+  [init] defaultBranch = main
+  [pull] rebase = false merge = true
+</pre></div>
+</div>
+</div>
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-1">
+Linux</label><div class="sd-tab-content docutils">
+<p><strong>Bash shell</strong></p>
+<p>You already have it!
+Depending on which version of Linux you’re running you may need to type <code class="docutils literal notranslate"><span class="pre">bash</span></code> inside the terminal to access it.
+To check whether this is necessary, follow these steps:</p>
+<ol class="arabic simple">
+<li><p>Open a terminal and type <code class="docutils literal notranslate"><span class="pre">echo</span> <span class="pre">$SHELL</span></code>.
+If it reads <code class="docutils literal notranslate"><span class="pre">/bin/bash</span></code> then you are all set!
+If not, whenever the instructions read “open a terminal,” please assume you are to open a terminal, type <code class="docutils literal notranslate"><span class="pre">bash</span></code>, and the proceed with the instructions as specified.</p></li>
+</ol>
+<p><strong>Git</strong></p>
+<p>You may already have it; try typing <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apt-get</span> <span class="pre">install</span> <span class="pre">git</span></code> (Ubuntu, Debian) or <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">yum</span> <span class="pre">install</span> <span class="pre">git</span></code> (Fedora) inside the terminal.
+If you are prompted to install it follow the instructions on-screen to do so.</p>
+<p><strong>VSCode</strong></p>
+<ol class="arabic simple">
+<li><p>Go to <a class="reference external" href="https://code.visualstudio.com/">https://code.visualstudio.com/</a> and click the download button for either the .deb (Ubuntu, Debian) or the .rpm (Fedora, CentOS) file.</p></li>
+<li><p>Double-click the downloaded file to install VSCode.
+(You may be prompted to type your administrator password during the install).</p></li>
+</ol>
+<p><strong>VSCode extensions</strong></p>
+<ol class="arabic simple">
+<li><p>Open the Visual Studio Code application.</p></li>
+<li><p>Press <code class="docutils literal notranslate"><span class="pre">Ctrl+Shift+P</span></code> in the new window that opens and type “Extensions: Install extensions” into the search bar that appears at the top of the screen.
+Select the appropriate entry from the dropdown menu that appears (there should be four entries; simply select the one that reads “Extensions: Install extensions”).</p></li>
+<li><p>A new panel should appear on the left-hand side of the screen with a search bar.
+Search for each of the following extensions and press <code class="docutils literal notranslate"><span class="pre">Install</span></code> for the first entry that appears. (The author listed for all of these extensions should be “Microsoft”.)</p>
+<ul class="simple">
+<li><p>Python (n.b., you will need to reload VSCode after installing this)</p></li>
+</ul>
+</li>
+</ol>
+<p><strong>Python</strong></p>
+<ol class="arabic">
+<li><p>Open a new terminal and type the following lines (separately) into the terminal, pressing <code class="docutils literal notranslate"><span class="pre">Enter</span></code> after each one:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span> wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+ bash Miniconda3-latest-Linux-x86_64.sh
+</pre></div>
+</div>
+</li>
+<li><p>A license agreement will be displayed and the bottom of the terminal will read <code class="docutils literal notranslate"><span class="pre">--More--</span></code>.
+Press <code class="docutils literal notranslate"><span class="pre">Enter</span></code> or the space bar until you are prompted with “Do you accept the license terms? [yes|no].”
+Type <code class="docutils literal notranslate"><span class="pre">yes</span></code> and then press <code class="docutils literal notranslate"><span class="pre">Enter</span></code></p></li>
+<li><p>The installation script will inform you that it is going to install into a default directory (e.g., <code class="docutils literal notranslate"><span class="pre">/home/$USER/miniconda3</span></code>).
+Leave this default and press <code class="docutils literal notranslate"><span class="pre">Enter</span></code>.</p></li>
+<li><p>When you are asked “Do you wish the installer to initialize Miniconda3 by running conda init? [yes|no],” type <code class="docutils literal notranslate"><span class="pre">yes</span></code> and press <code class="docutils literal notranslate"><span class="pre">Enter</span></code>.
+Exit the terminal once the installation has finished.</p></li>
+<li><p>Re-open a new terminal.
+Type <code class="docutils literal notranslate"><span class="pre">which</span> <span class="pre">python</span></code> into the terminal and it should return a path (e.g., <code class="docutils literal notranslate"><span class="pre">/home/$USER/miniconda3/bin/python</span></code>).</p>
+<ul class="simple">
+<li><p>If you do not see a path like this then please try typing <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">init</span></code>, closing your terminal, and repeating this step.
+If your issue is still not resolved skip the following step and contact an instructor on the #help-installation channel of the BHS Slack.</p></li>
+</ul>
+</li>
+<li><p>Type the following to remove the installation script that was downloaded:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span> rm ./Miniconda3-latest-Linux-x86_64.sh
+</pre></div>
+</div>
+</li>
+</ol>
+<p><strong>Python packages</strong></p>
+<p>Open a terminal and type the following commands:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    conda config --append channels conda-forge
+    conda config --set channel_priority strict
+</pre></div>
+</div>
+<p><strong>Git configuration</strong></p>
+<p>After installing Git, please run these commands one after another in your terminal (it doesn’t matter in which directory you currently are) to check and complete your setup (you can just copy-paste the commands):</p>
+<p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">--version</span></code></p>
+<p>→ this tells you if the installation was successful by telling you the version number of git you installed.</p>
+<p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">config</span> <span class="pre">--global</span> <span class="pre">user.name</span> <span class="pre">&quot;Example</span> <span class="pre">Name&quot;</span></code></p>
+<p>→ put in your real name. You have to set the quotation marks around your name otherwise git can’t read it.</p>
+<p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">config</span> <span class="pre">--global</span> <span class="pre">user.email</span> <span class="pre">example&#64;example.com</span></code></p>
+<p>→ choose your preferred email.</p>
+<p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">config</span> <span class="pre">--global</span> <span class="pre">init.defaultBranch</span> <span class="pre">main</span></code></p>
+<p>→ this makes sure that your default branch is main, which is currently used by most users as their default branch. Don’t worry about what it means, we will talk about that in the workshop ☺</p>
+<p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">config</span> <span class="pre">--global</span> <span class="pre">core.editor</span> <span class="pre">ExampleEditor</span></code></p>
+<p>→ this sets a default text editor when working with git. Just type in the editor you want to use. My recommendation is to use nano or vim. You don’t have to download anything, it’s already on your machine as it is a command-line editor. So, it’s super convenient for working with git, as
+the git commands are also run in the command-line. It simply means that when writing commit messages you can do it in one window (i.e., your terminal) and you don’t have to bother with a new window opening and making sure it’s really closed etc. But of course, you can use any text editor you want. Just as an example, for making nano your gloab git-editor
+type <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">config</span> <span class="pre">--global</span> <span class="pre">core.editor</span> <span class="pre">nano</span></code>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">config</span> <span class="pre">--global</span> <span class="pre">pull.rebase</span> <span class="pre">false</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">config</span> <span class="pre">--global</span> <span class="pre">pull.merge</span> <span class="pre">true</span></code></p>
+<p>→ this makes sure that your merges are shown in the commit history which is nice if you just start learning to use Git. When you’re more experienced, git rebase is also a very nice command (we’ll learn about that in the course!).</p>
+<p><code class="docutils literal notranslate"><span class="pre">cat</span> <span class="pre">~/.gitconfig</span></code></p>
+<p>→ checks if your configuration was successful. It should give you this output:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>  [user] name = Your Name email = yourname@yourplace.org
+  [core] editor = YourEditor
+  [init] defaultBranch = main
+  [pull] rebase = false merge = true
+</pre></div>
+</div>
+</div>
+<input id="sd-tab-item-2" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-2">
+MacOs</label><div class="sd-tab-content docutils">
+<p><strong>Bash shell</strong></p>
+<p>You already have it!
+Depending on which version of Mac OS you’re running you may need to type <code class="docutils literal notranslate"><span class="pre">bash</span></code> inside the terminal to access it.
+To check whether this is necessary, follow these steps:</p>
+<ol class="arabic simple">
+<li><p>Open a terminal and type <code class="docutils literal notranslate"><span class="pre">echo</span> <span class="pre">$SHELL</span></code>.
+If it reads <code class="docutils literal notranslate"><span class="pre">/bin/bash</span></code> then you are all set!</p></li>
+</ol>
+<p><strong>Note:</strong> If you are using Mac Catalina (10.15.X) then it is possible your default shell is NOT CORRECT.
+To set the default to bash, type <code class="docutils literal notranslate"><span class="pre">chsh</span> <span class="pre">-s</span> <span class="pre">/bin/bash</span></code> in the terminal, enter your password when prompted, and then close + re-open the terminal.</p>
+<p><strong>Another note:</strong> Every time the instructions say <em>“close terminal and open a new one”</em> you have to make sure that your terminal is <strong>REALLY CLOSED</strong>. If you press the <em>x</em> in the terminal app, your terminal window disappears but it is very likely it is still running in the background (a feature known in MacOS). Go to the terminal icon in your dock and <em>quit</em> the app with a right click on the app icon.</p>
+<p><strong>And a last note:</strong> When downloading apps from the internet and not from the app store, you might get a complaint saying that the app is “not from a verified developer” and will not be able to install it. Don’t worry, of course everything we ask you to install is verified and not harmful. To be able to install the software anyway, you need to do a <em>right click on the app package</em> and then click <em>open with installation program</em>. Then you will see an extra button saying “open anyway” which you need to press. And there you go…</p>
+<p><strong>Git</strong></p>
+<p>You may already have it!
+Try opening a terminal and typing <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">--version</span></code>.
+If you do not see something like “git version X.XX.X” printed out, then follow these steps:</p>
+<ol class="arabic simple">
+<li><p>Follow <a class="reference external" href="https://sourceforge.net/projects/git-osx-installer/files/git-2.23.0-intel-universal-mavericks.dmg/download?use_mirror=autoselect">this link</a> to automatically download an installer.</p></li>
+<li><p>Double click the downloaded file (<code class="docutils literal notranslate"><span class="pre">git-2.23.0-intel-universal-mavericks.dmg</span></code>) and then double click the <code class="docutils literal notranslate"><span class="pre">git-2.23.0-intel-universal-mavericks.pkg</span></code> icon inside the dmg that is opened.</p></li>
+<li><p>Follow the on-screen instructions to install the package.</p></li>
+</ol>
+<p><strong>VSCode</strong></p>
+<ol class="arabic simple">
+<li><p>Go to <a class="reference external" href="https://code.visualstudio.com/">https://code.visualstudio.com/</a> and click the download button.</p></li>
+<li><p>Unzip the downloaded file (e.g., <code class="docutils literal notranslate"><span class="pre">VSCode-darwin-stable.zip</span></code>) and moving the resulting <code class="docutils literal notranslate"><span class="pre">Visual</span> <span class="pre">Studio</span> <span class="pre">Code</span></code> file to your Applications directory.</p></li>
+</ol>
+<p><strong>VSCode extensions</strong></p>
+<ol class="arabic simple">
+<li><p>Open the Visual Studio Code application</p></li>
+<li><p>Type <code class="docutils literal notranslate"><span class="pre">Cmd+Shift+P</span></code> and then enter “Shell command: Install ‘code’ command in PATH” into the search bar that appears at the top of the screen.
+Select the highlighted entry.
+A notification box should appear in the bottom-right corner indicating that the command was installed successfully.</p></li>
+<li><p>Type <code class="docutils literal notranslate"><span class="pre">Cmd+Shift+P</span></code> again and then enter “Extensions: Install extensions” into the search bar.
+Select the appropriate entry from the dropdown menu that appears (there should be four entries; simply select the one that reads “Extensions: Install extensions”).</p></li>
+<li><p>A new panel should appear on the left-hand side of the screen with a search bar.
+Search for each of the following extensions and press <code class="docutils literal notranslate"><span class="pre">Install</span></code> for the first entry that appears. (The author listed for all of these extensions should be “Microsoft”.)</p>
+<ul class="simple">
+<li><p>Python (n.b., you will need to reload VSCode after installing this)</p></li>
+</ul>
+</li>
+</ol>
+<p><strong>Python</strong></p>
+<ol class="arabic">
+<li><p>Open a new terminal and type the following lines (separately) into the terminal, pressing <code class="docutils literal notranslate"><span class="pre">Enter</span></code> after each one:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span> curl -O https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-x86_64.sh
+ bash Miniconda3-latest-MacOSX-x86_64.sh
+</pre></div>
+</div>
+</li>
+<li><p>A license agreement will be displayed and the bottom of the terminal will read <code class="docutils literal notranslate"><span class="pre">--More--</span></code>.
+Press <code class="docutils literal notranslate"><span class="pre">Enter</span></code> or the space bar until you are prompted with “Do you accept the license terms? [yes|no].”
+Type <code class="docutils literal notranslate"><span class="pre">yes</span></code> and then press <code class="docutils literal notranslate"><span class="pre">Enter</span></code></p></li>
+<li><p>The installation script will inform you that it is going to install into a default directory (e.g., <code class="docutils literal notranslate"><span class="pre">/home/$USER/miniconda3</span></code>).
+Leave this default and press <code class="docutils literal notranslate"><span class="pre">Enter</span></code>.</p></li>
+<li><p>When you are asked “Do you wish the installer to initialize Miniconda3 by running conda init? [yes|no],” type <code class="docutils literal notranslate"><span class="pre">yes</span></code> and press <code class="docutils literal notranslate"><span class="pre">Enter</span></code>.
+Exit the terminal once the installation has finished.</p></li>
+<li><p>Re-open a terminal.
+Type <code class="docutils literal notranslate"><span class="pre">which</span> <span class="pre">python</span></code> into the terminal and it should return a path (e.g., <code class="docutils literal notranslate"><span class="pre">/home/$USER/miniconda3/bin/python</span></code>).</p>
+<ul class="simple">
+<li><p>If you do not see a path like this then please try typing <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">init</span></code>, closing your terminal, and repeating this step.
+If your issue is still not resolved skip the following step and contact an instructor on the #help-installation channel of the BHS Slack.</p></li>
+</ul>
+</li>
+<li><p>Type the following to remove the installation script that was downloaded:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span> rm ./Miniconda3-latest-MacOSX-x86_64.sh
+</pre></div>
+</div>
+</li>
+</ol>
+<p><strong>Python packages</strong></p>
+<p>Open a terminal and type the following commands:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    conda config --append channels conda-forge
+    conda config --set channel_priority strict
+</pre></div>
+</div>
+<p><strong>Git configuration</strong></p>
+<p>After installing Git, please run these commands one after another in your terminal (it doesn’t matter in which directory you currently are) to check and complete your setup (you can just copy-paste the commands):</p>
+<p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">--version</span></code></p>
+<p>→ this tells you if the installation was successful by telling you the version number of git you installed.</p>
+<p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">config</span> <span class="pre">--global</span> <span class="pre">user.name</span> <span class="pre">&quot;Example</span> <span class="pre">Name&quot;</span></code></p>
+<p>→ put in your real name. You have to set the quotation marks around your name otherwise git can’t read it.</p>
+<p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">config</span> <span class="pre">--global</span> <span class="pre">user.email</span> <span class="pre">example&#64;example.com</span></code></p>
+<p>→ choose your preferred email.</p>
+<p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">config</span> <span class="pre">--global</span> <span class="pre">init.defaultBranch</span> <span class="pre">main</span></code></p>
+<p>→ this makes sure that your default branch is main, which is currently used by most users as their default branch. Don’t worry about what it means, we will talk about that in the workshop ☺</p>
+<p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">config</span> <span class="pre">--global</span> <span class="pre">core.editor</span> <span class="pre">ExampleEditor</span></code></p>
+<p>→ this sets a default text editor when working with git. Just type in the editor you want to use. My recommendation is to use nano or vim. You don’t have to download anything, it’s already on your machine as it is a command-line editor. So, it’s super convenient for working with git, as
+the git commands are also run in the command-line. It simply means that when writing commit messages you can do it in one window (i.e., your terminal) and you don’t have to bother with a new window opening and making sure it’s really closed etc. But of course, you can use any text editor you want. Just as an example, for making nano your gloab git-editor
+type <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">config</span> <span class="pre">--global</span> <span class="pre">core.editor</span> <span class="pre">nano</span></code>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">config</span> <span class="pre">--global</span> <span class="pre">pull.rebase</span> <span class="pre">false</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">config</span> <span class="pre">--global</span> <span class="pre">pull.merge</span> <span class="pre">true</span></code></p>
+<p>→ this makes sure that your merges are shown in the commit history which is nice if you just start learning to use Git. When you’re more experienced, git rebase is also a very nice command (we’ll learn about that in the course!).</p>
+<p><code class="docutils literal notranslate"><span class="pre">cat</span> <span class="pre">~/.gitconfig</span></code></p>
+<p>→ checks if your configuration was successful. It should give you this output:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>  [user] name = Your Name email = yourname@yourplace.org
+  [core] editor = YourEditor
+  [init] defaultBranch = main
+  [pull] rebase = false merge = true
+</pre></div>
+</div>
+<p>Please run the two following commands so that the .DS_Store files are always ignored by Git. You don’t need it ever and it just makes troubles.</p>
+<p><code class="docutils literal notranslate"><span class="pre">echo</span> <span class="pre">.DS_Store</span> <span class="pre">&gt;&gt;</span> <span class="pre">~/.gitignore_global</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">config</span> <span class="pre">--global</span> <span class="pre">core.excludesfile</span> <span class="pre">~/.gitignore_global</span></code></p>
+</div>
+</div>
+</section>
+<section id="modern-web-browser">
+<h3>Modern web browser<a class="headerlink" href="#modern-web-browser" title="Permalink to this heading">#</a></h3>
+<p>Please install <a class="reference external" href="https://www.google.com/chrome/index.html">Chrome</a> or <a class="reference external" href="https://www.mozilla.org/en-CA/firefox/new/">Firefox</a>.
+(Safari might also work.)
+Microsoft Edge is not modern, despite what Microsoft might try and otherwise tell you.</p>
+<p>Yeah, you did! Great job!</p>
+<p><img alt="logo" src="https://media1.tenor.com/images/d5ebabf248130ec3842ed3b8627fd4f2/tenor.gif?itemid=4770158" /><br />
+<sub><sup><sub><sup><a class="reference external" href="https://media1.tenor.com/images/d5ebabf248130ec3842ed3b8627fd4f2/tenor.gif?itemid=4770158">https://media1.tenor.com/images/d5ebabf248130ec3842ed3b8627fd4f2/tenor.gif?itemid=4770158</a></sup></sub></sup></sub></p>
+</section>
+</section>
+<section id="getting-the-course-content">
+<h2>Getting the course content<a class="headerlink" href="#getting-the-course-content" title="Permalink to this heading">#</a></h2>
+<p>Now that you have installed the required software (or not) to follow the course, it’s time to gather the respective materials.</p>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/e/ea/Conda_logo.svg" alt="conda logo" width="300"/><br />
+<sub><sup><sub><sup><a class="reference external" href="https://upload.wikimedia.org/wikipedia/commons/e/ea/Conda_logo.svg">https://upload.wikimedia.org/wikipedia/commons/e/ea/Conda_logo.svg</a></sup></sub></sup></sub></p>
+<p>By installing <code class="docutils literal notranslate"><span class="pre">Python</span></code> on your system (i.e. specifically <code class="docutils literal notranslate"><span class="pre">Conda</span></code>) and setting up the appropriate environment, you will be able to open all the <code class="docutils literal notranslate"><span class="pre">Jupyter</span> <span class="pre">Notebooks</span></code> and go through the whole content of the course locally.</p>
+<p>To get things up and running, please follow these steps:</p>
+<p>NB: The instructions are written for unix-based OS, e.g. <code class="docutils literal notranslate"><span class="pre">linux</span></code> and <code class="docutils literal notranslate"><span class="pre">macOS</span></code>. Please remember to update the paths for <code class="docutils literal notranslate"><span class="pre">windows</span> <span class="pre">OS</span></code> respectively, ie <code class="docutils literal notranslate"><span class="pre">\</span></code> instead of <code class="docutils literal notranslate"><span class="pre">/</span></code> and so on.</p>
+<p>There are two options to set up the computational environment and get the course content. Please try the first option, ie <code class="docutils literal notranslate"><span class="pre">environment.yml</span></code> first and only if it does not work for you, try the second option, ie <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code>.</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-3" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-3">
+Option 1 - environment.yml</label><div class="sd-tab-content docutils">
+<ol class="arabic simple">
+<li><p>Create a directory dedicated only for work before and during the school, e.g. <code class="docutils literal notranslate"><span class="pre">Desktop/Clean_Repro_Code_Neuromatch</span></code>.</p></li>
+<li><p>Download the materials in this repository via <a class="reference external" href="https://github.com/peerherholz/Clean_Repro_Code_Neuromatch/-/archive/main/Clean_Repro_Code_Neuromatch-main.zip?path=school/materials">this link</a> and unzip them to directory you just created, e.g. <code class="docutils literal notranslate"><span class="pre">Desktop/Clean_Repro_Code_Neuromatch</span></code>.</p></li>
+<li><p>Download the <a class="reference external" href="https://github.com/peerherholz/Clean_Repro_Code_Neuromatch/-/raw/main/environment.yml?ref_type=heads"><code class="docutils literal notranslate"><span class="pre">environment.yml</span></code></a> file (e.g. with right mouse click -&gt; Save As) and also save it in the directory you just created . Make sure that the file ends with <code class="docutils literal notranslate"><span class="pre">.yml</span></code> and not <code class="docutils literal notranslate"><span class="pre">.txt</span></code>.</p></li>
+<li><p>Open up a <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">terminal</span></code>,   <code class="docutils literal notranslate"><span class="pre">WSL</span></code> (or any other <code class="docutils literal notranslate"><span class="pre">terminal</span></code>), and create a new <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">environment</span></code> with the following command: <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">env</span> <span class="pre">create</span> <span class="pre">-f</span> <span class="pre">/path/to/file/environment.yml</span></code> - For example <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">env</span> <span class="pre">create</span> <span class="pre">-f</span> <span class="pre">~/Desktop/environment.yml</span></code></p></li>
+<li><p>Next, open up a <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">terminal</span></code> (or any other <code class="docutils literal notranslate"><span class="pre">terminal</span></code>), activate the <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">environment</span></code> with <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">activate</span> <span class="pre">Clean_Repro_Code_Neuromatch</span></code> (or on older <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">environment</span> <span class="pre">managers</span></code> with <code class="docutils literal notranslate"><span class="pre">source</span> <span class="pre">activate</span> <span class="pre">Clean_Repro_Code_Neuromatch</span></code> for <code class="docutils literal notranslate"><span class="pre">mac</span></code> and <code class="docutils literal notranslate"><span class="pre">linux</span></code> and <code class="docutils literal notranslate"><span class="pre">activate</span> <span class="pre">Clean_Repro_Code_Neuromatch</span></code> for <code class="docutils literal notranslate"><span class="pre">windows</span></code>).</p></li>
+<li><p>Finally, via the <code class="docutils literal notranslate"><span class="pre">terminal</span></code>, move to the folder where you’ve put all the unzipped content of this workshop, e.g. with the command <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">~/Desktop/Clean_Repro_Code_Neuromatch</span></code> and run the command <code class="docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">notebook</span></code>. If the <code class="docutils literal notranslate"><span class="pre">notebook</span> <span class="pre">server</span></code> isn’t automatically opened in a new browser window, please copy-paste either the <code class="docutils literal notranslate"><span class="pre">http://127.0.0.1:8888/...</span></code> or the <code class="docutils literal notranslate"><span class="pre">http://localhost:8888/...</span></code> path into a new browser window and press <code class="docutils literal notranslate"><span class="pre">Enter</span></code>. You should now see the <code class="docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">notebook</span> <span class="pre">server</span></code> (looking like a file browser and displaying the content of the directory).</p></li>
+</ol>
+</div>
+<input id="sd-tab-item-4" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-4">
+Option 2 - requirements.txt</label><div class="sd-tab-content docutils">
+<ol class="arabic simple">
+<li><p>Create a directory dedicated only for work before and during the school, e.g. <code class="docutils literal notranslate"><span class="pre">Desktop/Clean_Repro_Code_Neuromatch</span></code>.</p></li>
+<li><p>Download the materials in this repository via <a class="reference external" href="https://github.com/peerherholz/Clean_Repro_Code_Neuromatch/-/archive/main/Clean_Repro_Code_Neuromatch-main.zip?path=school/materials">this link</a> and unzip them to directory you just created, e.g. <code class="docutils literal notranslate"><span class="pre">Desktop/Clean_Repro_Code_Neuromatch</span></code>.</p></li>
+<li><p>Download the <a class="reference external" href="https://github.com/peerherholz/Clean_Repro_Code_Neuromatch/-/blob/main/requirements.txt?ref_type=heads"><code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code></a> file (e.g. with right mouse click -&gt; Save As) and also save it in the directory you just created . Make sure that the file ends with <code class="docutils literal notranslate"><span class="pre">.txt</span></code> and not <code class="docutils literal notranslate"><span class="pre">.yml</span></code>.</p></li>
+<li><p>Open up a <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">terminal</span></code>,   <code class="docutils literal notranslate"><span class="pre">WSL</span></code> (or any other <code class="docutils literal notranslate"><span class="pre">terminal</span></code>), and create a new <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">environment</span></code> with the following command: <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">create</span> <span class="pre">-n</span> <span class="pre">Clean_Repro_Code_Neuromatch</span> <span class="pre">python=3.10.6</span></code>.</p></li>
+<li><p>Next, open up a <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">terminal</span></code> (or any other <code class="docutils literal notranslate"><span class="pre">terminal</span></code>), activate the <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">environment</span></code> with <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">activate</span> <span class="pre">Clean_Repro_Code_Neuromatch</span></code> (or on older <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">environment</span> <span class="pre">managers</span></code> with <code class="docutils literal notranslate"><span class="pre">source</span> <span class="pre">activate</span> <span class="pre">Clean_Repro_Code_Neuromatch</span></code> for <code class="docutils literal notranslate"><span class="pre">mac</span></code> and <code class="docutils literal notranslate"><span class="pre">linux</span></code> and <code class="docutils literal notranslate"><span class="pre">activate</span> <span class="pre">Clean_Repro_Code_Neuromatch</span></code> for <code class="docutils literal notranslate"><span class="pre">windows</span></code>).</p></li>
+<li><p>Run <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">config</span> <span class="pre">--set</span> <span class="pre">channel_priority</span> <span class="pre">flexible</span></code></p></li>
+<li><p>Now run the following command to install all required <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">packages</span></code>, pointing to the <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> you downloaded before: <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-r</span> <span class="pre">/path/to/requirements.txt</span></code>. For example, <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-r</span> <span class="pre">Desktop/Clean_Repro_Code_Neuromatch/requirements.txt</span></code>.</p></li>
+<li><p>Finally, via the <code class="docutils literal notranslate"><span class="pre">terminal</span></code>, ie <code class="docutils literal notranslate"><span class="pre">WSL</span></code> on <code class="docutils literal notranslate"><span class="pre">windows</span> <span class="pre">OS</span></code>, move to the folder where you’ve put all the unzipped content of this workshop, e.g. with the command <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">~/Desktop/Clean_Repro_Code_Neuromatch</span></code> and run the command <code class="docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">notebook</span></code>. If the <code class="docutils literal notranslate"><span class="pre">notebook</span> <span class="pre">server</span></code> isn’t automatically opened in a new browser window, please copy-paste either the <code class="docutils literal notranslate"><span class="pre">http://127.0.0.1:8888/...</span></code> or the <code class="docutils literal notranslate"><span class="pre">http://localhost:8888/...</span></code> path into a new browser window and press <code class="docutils literal notranslate"><span class="pre">Enter</span></code>. You should now see the <code class="docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">notebook</span> <span class="pre">server</span></code> (looking like a file browser and displaying the content of the directory).</p></li>
+</ol>
+</div>
+</div>
+</section>
+<section id="support">
+<h2>Support<a class="headerlink" href="#support" title="Permalink to this heading">#</a></h2>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>If the instructions aren’t working and you have spent more than 15-20 minutes troubleshooting on your own, reach out with the exact problems you’re having.
+One of the instructors will try and get back to you quickly to help resolve the situation.</p>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="dei.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Diversity, Equity and Inclusion</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="materials/code_form_test_CI/overview_code_form_test.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Code formatting and testing</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#general-things">General things</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#required-software">Required software</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#some-quick-general-notes-on-instructions">Some quick general notes on instructions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#os-specific-installation-instructions">OS-specific installation instructions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modern-web-browser">Modern web browser</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-the-course-content">Getting the course content</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#support">Support</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Neuromatch Impact Scholars team
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024-.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

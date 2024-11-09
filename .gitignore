@@ -1,0 +1,16 @@
+# macOS
+.DS_Store
+
+# PyCharm
+.idea/
+
+# build
+workshop/_build/*
+
+# example outputs
+outputs/*
+
+# ipynb checkponts
+
+
+# caches

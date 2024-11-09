@@ -1,0 +1,11 @@
+jupyter==1.0.0
+ipykernel==6.29.0
+jupyter-book==0.15.1
+flake8
+black
+autopep8
+numpy
+torch
+scikit-learn
+matplotlib
+seaborn

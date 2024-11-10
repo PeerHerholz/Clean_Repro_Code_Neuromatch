@@ -717,7 +717,7 @@
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">AssertionError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">result</span> <span class="o">=</span> <span class="n">add</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>  
 <span class="ne">----&gt; </span><span class="mi">2</span> <span class="k">assert</span> <span class="n">result</span> <span class="o">==</span> <span class="mi">7</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;Expected 7, but got </span><span class="si">{</span><span class="n">result</span><span class="si">}</span><span class="s2">&quot;</span>
 
@@ -750,12 +750,12 @@
 </div>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">name</span> <span class="o">=</span> <span class="n">get_name</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="nb">str</span><span class="p">),</span> <span class="sa">f</span><span class="s2">&quot;Expected type str, but got </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">name</span><span class="p">)</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="ne">AssertionError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">6</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">name</span> <span class="o">=</span> <span class="n">get_name</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="nb">str</span><span class="p">),</span> <span class="sa">f</span><span class="s2">&quot;Expected type str, but got </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">name</span><span class="p">)</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2">&quot;</span>
 
-<span class="ne">NameError</span>: name &#39;get_name&#39; is not defined
+<span class="ne">AssertionError</span>: Expected type str, but got int
 </pre></div>
 </div>
 </div>
@@ -804,7 +804,7 @@
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">AssertionError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">7</span><span class="p">],</span> <span class="n">line</span> <span class="mi">5</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">9</span><span class="p">],</span> <span class="n">line</span> <span class="mi">5</span>
 <span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">expected_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
 <span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="c1"># Assert that both lists are identical</span>
 <span class="ne">----&gt; </span><span class="mi">5</span> <span class="k">assert</span> <span class="n">actual_list</span> <span class="o">==</span> <span class="n">expected_list</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;Expected </span><span class="si">{</span><span class="n">expected_list</span><span class="si">}</span><span class="s2">, but got </span><span class="si">{</span><span class="n">actual_list</span><span class="si">}</span><span class="s2">&quot;</span>
@@ -871,8 +871,8 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./outputs/ exists.
-./outputs/data exists.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./outputs/ does not exist, creating it.
+./outputs/data does not exist, creating it.
 data shape as expected: (2000, 100)
 </pre></div>
 </div>
@@ -941,11 +941,11 @@ pip install pytest
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: pytest in /Users/peerherholz/anaconda3/envs/course_name/lib/python3.10/site-packages (8.3.3)
-Requirement already satisfied: tomli&gt;=1 in /Users/peerherholz/anaconda3/envs/course_name/lib/python3.10/site-packages (from pytest) (2.0.1)
-Requirement already satisfied: exceptiongroup&gt;=1.0.0rc8 in /Users/peerherholz/anaconda3/envs/course_name/lib/python3.10/site-packages (from pytest) (1.2.0)
-Requirement already satisfied: packaging in /Users/peerherholz/anaconda3/envs/course_name/lib/python3.10/site-packages (from pytest) (23.2)
 Requirement already satisfied: pluggy&lt;2,&gt;=1.5 in /Users/peerherholz/anaconda3/envs/course_name/lib/python3.10/site-packages (from pytest) (1.5.0)
 Requirement already satisfied: iniconfig in /Users/peerherholz/anaconda3/envs/course_name/lib/python3.10/site-packages (from pytest) (2.0.0)
+Requirement already satisfied: exceptiongroup&gt;=1.0.0rc8 in /Users/peerherholz/anaconda3/envs/course_name/lib/python3.10/site-packages (from pytest) (1.2.0)
+Requirement already satisfied: tomli&gt;=1 in /Users/peerherholz/anaconda3/envs/course_name/lib/python3.10/site-packages (from pytest) (2.0.1)
+Requirement already satisfied: packaging in /Users/peerherholz/anaconda3/envs/course_name/lib/python3.10/site-packages (from pytest) (23.2)
 </pre></div>
 </div>
 </div>
@@ -1002,7 +1002,7 @@ plugins: anyio-4.2.0
 
 tests/test_addition.py::test_example <span class=" -Color -Color-Green">PASSED                              [100%]</span>
 
-<span class=" -Color -Color-Green">============================== </span><span class=" -Color -Color-Bold -Color-Bold-Green">1 passed</span><span class=" -Color -Color-Green"> in 0.01s ===============================</span>
+<span class=" -Color -Color-Green">============================== </span><span class=" -Color -Color-Bold -Color-Bold-Green">1 passed</span><span class=" -Color -Color-Green"> in 0.04s ===============================</span>
 </pre></div>
 </div>
 </div>
@@ -1081,7 +1081,7 @@ tests/test_parameterized.py::test_addition[1-1-2] <span class=" -Color -Color-Gr
 tests/test_parameterized.py::test_addition[2-3-5] <span class=" -Color -Color-Green">PASSED                 [ 80%]</span>
 tests/test_parameterized.py::test_addition[3-3-6] <span class=" -Color -Color-Green">PASSED                 [100%]</span>
 
-<span class=" -Color -Color-Green">============================== </span><span class=" -Color -Color-Bold -Color-Bold-Green">5 passed</span><span class=" -Color -Color-Green"> in 0.05s ===============================</span>
+<span class=" -Color -Color-Green">============================== </span><span class=" -Color -Color-Bold -Color-Bold-Green">5 passed</span><span class=" -Color -Color-Green"> in 0.16s ===============================</span>
 </pre></div>
 </div>
 </div>
@@ -1133,7 +1133,7 @@ tests/test_parameterized.py::test_addition[1-1-2] <span class=" -Color -Color-Gr
 tests/test_parameterized.py::test_addition[2-3-5] <span class=" -Color -Color-Green">PASSED                 [ 75%]</span>
 tests/test_parameterized.py::test_addition[3-3-6] <span class=" -Color -Color-Green">PASSED                 [100%]</span>
 
-<span class=" -Color -Color-Green">======================= </span><span class=" -Color -Color-Bold -Color-Bold-Green">4 passed</span>, <span class=" -Color -Color-Yellow">1 deselected</span><span class=" -Color -Color-Green"> in 0.02s ========================</span>
+<span class=" -Color -Color-Green">======================= </span><span class=" -Color -Color-Bold -Color-Bold-Green">4 passed</span>, <span class=" -Color -Color-Yellow">1 deselected</span><span class=" -Color -Color-Green"> in 0.03s ========================</span>
 </pre></div>
 </div>
 </div>
@@ -1157,7 +1157,7 @@ plugins: anyio-4.2.0
 
 tests/test_fixture.py::test_sum <span class=" -Color -Color-Green">PASSED                                   [100%]</span>
 
-<span class=" -Color -Color-Green">======================= </span><span class=" -Color -Color-Bold -Color-Bold-Green">1 passed</span>, <span class=" -Color -Color-Yellow">4 deselected</span><span class=" -Color -Color-Green"> in 0.03s ========================</span>
+<span class=" -Color -Color-Green">======================= </span><span class=" -Color -Color-Bold -Color-Bold-Green">1 passed</span>, <span class=" -Color -Color-Yellow">4 deselected</span><span class=" -Color -Color-Green"> in 0.02s ========================</span>
 </pre></div>
 </div>
 </div>
@@ -1387,7 +1387,7 @@ plugins: anyio-4.2.0
 
 tests/test_paths.py::test_create_output_paths <span class=" -Color -Color-Green">PASSED                     [100%]</span>
 
-<span class=" -Color -Color-Green">============================== </span><span class=" -Color -Color-Bold -Color-Bold-Green">1 passed</span><span class=" -Color -Color-Green"> in 0.02s ===============================</span>
+<span class=" -Color -Color-Green">============================== </span><span class=" -Color -Color-Bold -Color-Bold-Green">1 passed</span><span class=" -Color -Color-Green"> in 0.03s ===============================</span>
 </pre></div>
 </div>
 </div>
@@ -1417,7 +1417,7 @@ tests/test_parameterized.py::test_addition[2-3-5] <span class=" -Color -Color-Gr
 tests/test_parameterized.py::test_addition[3-3-6] <span class=" -Color -Color-Green">PASSED                 [ 83%]</span>
 tests/test_paths.py::test_create_output_paths <span class=" -Color -Color-Green">PASSED                     [100%]</span>
 
-<span class=" -Color -Color-Green">============================== </span><span class=" -Color -Color-Bold -Color-Bold-Green">6 passed</span><span class=" -Color -Color-Green"> in 0.03s ===============================</span>
+<span class=" -Color -Color-Green">============================== </span><span class=" -Color -Color-Bold -Color-Bold-Green">6 passed</span><span class=" -Color -Color-Green"> in 0.04s ===============================</span>
 </pre></div>
 </div>
 </div>
@@ -1553,7 +1553,7 @@ tests/test_path_sim_data_gen.py::test_create_output_paths <span class=" -Color -
 tests/test_path_sim_data_gen.py::test_simulate_data <span class=" -Color -Color-Green">PASSED               [ 87%]</span>
 tests/test_paths.py::test_create_output_paths <span class=" -Color -Color-Green">PASSED                     [100%]</span>
 
-<span class=" -Color -Color-Green">============================== </span><span class=" -Color -Color-Bold -Color-Bold-Green">8 passed</span><span class=" -Color -Color-Green"> in 0.21s ===============================</span>
+<span class=" -Color -Color-Green">============================== </span><span class=" -Color -Color-Bold -Color-Bold-Green">8 passed</span><span class=" -Color -Color-Green"> in 0.18s ===============================</span>
 </pre></div>
 </div>
 </div>
@@ -1812,7 +1812,7 @@ tests/test_path_sim_data_gen.py::test_simulate_data <span class=" -Color -Color-
 tests/test_paths.py::test_create_output_paths <span class=" -Color -Color-Green">PASSED                     [ 88%]</span>
 tests/test_pipeline.py::test_end_to_end_pipeline <span class=" -Color -Color-Green">PASSED                  [100%]</span>
 
-<span class=" -Color -Color-Green">============================== </span><span class=" -Color -Color-Bold -Color-Bold-Green">9 passed</span><span class=" -Color -Color-Green"> in 6.46s ===============================</span>
+<span class=" -Color -Color-Green">============================== </span><span class=" -Color -Color-Bold -Color-Bold-Green">9 passed</span><span class=" -Color -Color-Green"> in 4.33s ===============================</span>
 </pre></div>
 </div>
 </div>
@@ -2218,7 +2218,7 @@ tests/test_system_analyses.py::test_system_workflow
     warnings.warn(msg, RuntimeWarning)
 
 -- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
-<span class=" -Color -Color-Yellow">======================= </span><span class=" -Color -Color-Green">10 passed</span>, <span class=" -Color -Color-Bold -Color-Bold-Yellow">17 warnings</span><span class=" -Color -Color-Yellow"> in 18.97s =======================</span>
+<span class=" -Color -Color-Yellow">======================= </span><span class=" -Color -Color-Green">10 passed</span>, <span class=" -Color -Color-Bold -Color-Bold-Yellow">17 warnings</span><span class=" -Color -Color-Yellow"> in 16.15s =======================</span>
 </pre></div>
 </div>
 </div>
@@ -2260,7 +2260,10 @@ tests/test_system_analyses.py::test_system_workflow
 </ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import all necessary modules</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%writefile</span> ./tests/test_regeression_analyses.py
+
+<span class="c1"># Import all necessary modules</span>
+<span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">import</span> <span class="nn">shutil</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">torch</span>
@@ -2314,6 +2317,11 @@ tests/test_system_analyses.py::test_system_workflow
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing ./tests/test_regeression_analyses.py
+</pre></div>
+</div>
+</div>
 </div>
 <p>For the last time in this session, let’s run the <code class="docutils literal notranslate"><span class="pre">tests</span></code>.</p>
 <div class="cell docutils container">
@@ -2331,17 +2339,18 @@ rootdir: /Users/peerherholz/google_drive/GitHub/Clean_Repro_Code_Neuromatch/work
 configfile: pytest.ini
 testpaths: ./tests
 plugins: anyio-4.2.0
-<span class=" -Color -Color-Bold">collecting ... </span>collected 10 items
+<span class=" -Color -Color-Bold">collecting ... </span>collected 11 items
 
-tests/test_addition.py::test_example <span class=" -Color -Color-Green">PASSED</span><span class=" -Color -Color-Yellow">                              [ 10%]</span>
-tests/test_fixture.py::test_sum <span class=" -Color -Color-Green">PASSED</span><span class=" -Color -Color-Yellow">                                   [ 20%]</span>
-tests/test_parameterized.py::test_addition[1-1-2] <span class=" -Color -Color-Green">PASSED</span><span class=" -Color -Color-Yellow">                 [ 30%]</span>
-tests/test_parameterized.py::test_addition[2-3-5] <span class=" -Color -Color-Green">PASSED</span><span class=" -Color -Color-Yellow">                 [ 40%]</span>
-tests/test_parameterized.py::test_addition[3-3-6] <span class=" -Color -Color-Green">PASSED</span><span class=" -Color -Color-Yellow">                 [ 50%]</span>
-tests/test_path_sim_data_gen.py::test_create_output_paths <span class=" -Color -Color-Green">PASSED</span><span class=" -Color -Color-Yellow">         [ 60%]</span>
-tests/test_path_sim_data_gen.py::test_simulate_data <span class=" -Color -Color-Green">PASSED</span><span class=" -Color -Color-Yellow">               [ 70%]</span>
-tests/test_paths.py::test_create_output_paths <span class=" -Color -Color-Green">PASSED</span><span class=" -Color -Color-Yellow">                     [ 80%]</span>
-tests/test_pipeline.py::test_end_to_end_pipeline <span class=" -Color -Color-Green">PASSED</span><span class=" -Color -Color-Yellow">                  [ 90%]</span>
+tests/test_addition.py::test_example <span class=" -Color -Color-Green">PASSED</span><span class=" -Color -Color-Yellow">                              [  9%]</span>
+tests/test_fixture.py::test_sum <span class=" -Color -Color-Green">PASSED</span><span class=" -Color -Color-Yellow">                                   [ 18%]</span>
+tests/test_parameterized.py::test_addition[1-1-2] <span class=" -Color -Color-Green">PASSED</span><span class=" -Color -Color-Yellow">                 [ 27%]</span>
+tests/test_parameterized.py::test_addition[2-3-5] <span class=" -Color -Color-Green">PASSED</span><span class=" -Color -Color-Yellow">                 [ 36%]</span>
+tests/test_parameterized.py::test_addition[3-3-6] <span class=" -Color -Color-Green">PASSED</span><span class=" -Color -Color-Yellow">                 [ 45%]</span>
+tests/test_path_sim_data_gen.py::test_create_output_paths <span class=" -Color -Color-Green">PASSED</span><span class=" -Color -Color-Yellow">         [ 54%]</span>
+tests/test_path_sim_data_gen.py::test_simulate_data <span class=" -Color -Color-Green">PASSED</span><span class=" -Color -Color-Yellow">               [ 63%]</span>
+tests/test_paths.py::test_create_output_paths <span class=" -Color -Color-Green">PASSED</span><span class=" -Color -Color-Yellow">                     [ 72%]</span>
+tests/test_pipeline.py::test_end_to_end_pipeline <span class=" -Color -Color-Green">PASSED</span><span class=" -Color -Color-Yellow">                  [ 81%]</span>
+tests/test_regeression_analyses.py::test_regression_workflow <span class=" -Color -Color-Green">PASSED</span><span class=" -Color -Color-Yellow">      [ 90%]</span>
 tests/test_system_analyses.py::test_system_workflow <span class=" -Color -Color-Green">PASSED</span><span class=" -Color -Color-Yellow">               [100%]</span>
 
 <span class=" -Color -Color-Yellow">=============================== warnings summary ===============================</span>
@@ -2398,7 +2407,7 @@ tests/test_system_analyses.py::test_system_workflow
     warnings.warn(msg, RuntimeWarning)
 
 -- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
-<span class=" -Color -Color-Yellow">======================= </span><span class=" -Color -Color-Green">10 passed</span>, <span class=" -Color -Color-Bold -Color-Bold-Yellow">17 warnings</span><span class=" -Color -Color-Yellow"> in 15.71s =======================</span>
+<span class=" -Color -Color-Yellow">======================= </span><span class=" -Color -Color-Green">11 passed</span>, <span class=" -Color -Color-Bold -Color-Bold-Yellow">17 warnings</span><span class=" -Color -Color-Yellow"> in 16.76s =======================</span>
 </pre></div>
 </div>
 </div>

@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Code formatting and testing &#8212; Code formatting &amp; testing</title>
+    <title>Clean, tested and reproducible code &#8212; Code formatting &amp; testing</title>
   
   
   
@@ -174,7 +174,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../CoC.html">Code of Conduct</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../dei.html">Diversity, Equity and Inclusion</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../setup.html">Setup</a></li>
-<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Code formatting and testing</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Clean, tested and reproducible code</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="code_formatting.html">Code formatting, styling and linting</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code_testing.html">Code testing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="CI_CD.html">Continuous Integration</a></li>
@@ -376,7 +376,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Code formatting and testing</h1>
+    <h1>Clean, tested and reproducible code</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -402,7 +402,6 @@
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Materials📓</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optional-reading-further-materials">optional/reading/further materials</a></li>
 </ul>
 </li>
 </ul>
@@ -416,40 +415,70 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="code-formatting-and-testing">
-<h1>Code formatting and testing<a class="headerlink" href="#code-formatting-and-testing" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="clean-tested-and-reproducible-code">
+<h1>Clean, tested and reproducible code<a class="headerlink" href="#clean-tested-and-reproducible-code" title="Link to this heading">#</a></h1>
+<p>Often overlooked but tremendously important: clean, tested and reproducible code is the basis for any type of computational work, no matter if in academia or industry. But what does this actually refer to, what does it entail and what tools can be used to make it easier/ensure quality?</p>
 <section id="topics">
 <h2>Topics 💡<a class="headerlink" href="#topics" title="Link to this heading">#</a></h2>
 <p>In the following you’ll find the <code class="docutils literal notranslate"><span class="pre">objectives</span></code> and <code class="docutils literal notranslate"><span class="pre">materials</span></code> for each of the topics we’ll discuss during this session.</p>
 <section id="code-formatting">
 <h3>Code formatting<a class="headerlink" href="#code-formatting" title="Link to this heading">#</a></h3>
+<p>Here’s one scenario all of us have been in before, most likely countless times: we want to run an anlysis and get a script from a colleague that should exactly what we want. Sounds great, eh? However, upon opening it your joy starts to drastically diminish: the entire script, many hundreds of lines long, is basically unintelligable. There are no comments, a fast number of apparently random variables, huge blocks of code, etc. . Long story short: re-using and/or adapting this script will be a lot of work and maybe not even possible.</p>
+<p>The same holds true for code you might find online in repositories or even tutorials, as well as the worst case: your own code from a while ago. You wrote this once and now you don’t understand a single thing that’s going on. How is anyone supposed to understand the content of files like <code class="docutils literal notranslate"><span class="pre">finalanalysis_final_2.py</span></code> or <code class="docutils literal notranslate"><span class="pre">runthisbefore_monday.py</span></code>?</p>
+<p>It’s just annoying, frustrating and not <code class="docutils literal notranslate"><span class="pre">FAIR</span></code>. So, isn’t there anything one can do about that?</p>
+<p>There is: <code class="docutils literal notranslate"><span class="pre">code</span> <span class="pre">formatting</span></code>!</p>
 <section id="objectives">
 <h4>Objectives📍<a class="headerlink" href="#objectives" title="Link to this heading">#</a></h4>
+<p>We will briefly explore and learn about the following topics:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://peerherholz.github.io/Clean_Repro_Code_Neuromatch/materials/code_form_test_CI/code_formatting.html#guidelines-for-code-styling">Guidelines for Code Styling</a></p></li>
+<li><p><a class="reference external" href="https://peerherholz.github.io/Clean_Repro_Code_Neuromatch/materials/code_form_test_CI/code_formatting.html#writing-human-readable-code">Writing Human Readable Code</a></p></li>
+<li><p><a class="reference external" href="https://peerherholz.github.io/Clean_Repro_Code_Neuromatch/materials/code_form_test_CI/code_formatting.html#code-styling-tools">Code Styling Tools</a></p></li>
+</ul>
 </section>
 <section id="materials">
 <h4>Materials📓<a class="headerlink" href="#materials" title="Link to this heading">#</a></h4>
+<p>Please navigate to the respective section in the <code class="docutils literal notranslate"><span class="pre">ToC</span></code> on the left or <a class="reference external" href="https://peerherholz.github.io/Clean_Repro_Code_Neuromatch/materials/code_form_test_CI/code_formatting.html#">click here</a></p>
 </section>
 </section>
 <section id="code-testing">
 <h3>Code testing<a class="headerlink" href="#code-testing" title="Link to this heading">#</a></h3>
+<p>Here’s another scenario many of us have encountered more times than we’d like to admit: we carefully write a <code class="docutils literal notranslate"><span class="pre">script</span></code>, everything seems to work perfectly, and we proudly share it with a colleague, in an open repository—or perhaps revisit it ourselves after a few months. Then, the dreaded moment comes. Someone runs the <code class="docutils literal notranslate"><span class="pre">code</span></code>, only to encounter mysterious <code class="docutils literal notranslate"><span class="pre">errors</span></code>, or it runs but produces results that make no sense. Everyone starts troubleshooting, <code class="docutils literal notranslate"><span class="pre">line</span></code> by <code class="docutils literal notranslate"><span class="pre">line</span></code>, only to realize that a single <code class="docutils literal notranslate"><span class="pre">function</span></code> doesn’t do what it’s supposed to, or that a critical <code class="docutils literal notranslate"><span class="pre">calculation</span></code> is misbehaving. In short, the <code class="docutils literal notranslate"><span class="pre">code</span></code> fails in ways that aren’t immediately obvious. It’s frustrating, time-consuming, and sometimes downright confusing.</p>
+<p>The same scenario can apply to <code class="docutils literal notranslate"><span class="pre">code</span></code> you find online or even <code class="docutils literal notranslate"><span class="pre">code</span></code> that others depend on in <code class="docutils literal notranslate"><span class="pre">tutorials</span></code> or <code class="docutils literal notranslate"><span class="pre">open-source</span> <span class="pre">repositories</span></code>. Just because <code class="docutils literal notranslate"><span class="pre">code</span></code> works once doesn’t mean it will continue to work or work in different scenarios or on different data. In the worst-case scenario, you don’t even know if the <code class="docutils literal notranslate"><span class="pre">code</span></code> is doing what it should because there’s no clear way to check its behavior in different situations.</p>
+<p>So, isn’t there something we can do about this?</p>
+<p>There is: <code class="docutils literal notranslate"><span class="pre">code</span> <span class="pre">testing</span></code>!</p>
 <section id="id1">
 <h4>Objectives📍<a class="headerlink" href="#id1" title="Link to this heading">#</a></h4>
+<p>We will briefly explore and learn about the following topics:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://peerherholz.github.io/Clean_Repro_Code_Neuromatch/materials/code_form_test_CI/code_testing.html#code-testing-the-basics">Code testing - the basics</a></p></li>
+<li><p><a class="reference external" href="https://peerherholz.github.io/Clean_Repro_Code_Neuromatch/materials/code_form_test_CI/code_testing.html#testing-frameworks">Testing frameworks</a></p></li>
+<li><p><a class="reference external" href="https://peerherholz.github.io/Clean_Repro_Code_Neuromatch/materials/code_form_test_CI/code_testing.html#code-testing-different-types-of-tests">Code testing - different types of testing</a></p></li>
+</ul>
 </section>
 <section id="id2">
 <h4>Materials📓<a class="headerlink" href="#id2" title="Link to this heading">#</a></h4>
+<p>Please navigate to the respective section in the <code class="docutils literal notranslate"><span class="pre">ToC</span></code> on the left or <a class="reference external" href="https://peerherholz.github.io/Clean_Repro_Code_Neuromatch/materials/code_form_test_CI/code_testing.html#">click here</a></p>
 </section>
 </section>
 <section id="continuous-integration">
 <h3>Continuous integration<a class="headerlink" href="#continuous-integration" title="Link to this heading">#</a></h3>
+<p>Imagine this: you’ve finally finished writing a <code class="docutils literal notranslate"><span class="pre">script</span></code> or a new <code class="docutils literal notranslate"><span class="pre">code</span> <span class="pre">feature</span></code>, and you <code class="docutils literal notranslate"><span class="pre">push</span></code> your changes to the respective <code class="docutils literal notranslate"><span class="pre">repository</span></code>. Now, it’s time to relax, right? Not so fast! Hours later, you receive messages from your collaborators and other people who want to use your <code class="docutils literal notranslate"><span class="pre">code</span></code> about bugs that appeared in it. It turns out your changes unintentionally broke other parts of the <code class="docutils literal notranslate"><span class="pre">project</span></code>, or they’re only working on your <code class="docutils literal notranslate"><span class="pre">setup</span></code> and failing elsewhere. Now, you’re faced with hours of troubleshooting—and possibly even a rollback.</p>
+<p>This scenario also sounds very familiar, eh? Relying solely on local <code class="docutils literal notranslate"><span class="pre">testing</span></code> or manual checks before sharing <code class="docutils literal notranslate"><span class="pre">code</span></code> is time-consuming and often unreliable, especially when multiple people work on the same <code class="docutils literal notranslate"><span class="pre">codebase</span></code>.</p>
+<p>But there is a solution: <code class="docutils literal notranslate"><span class="pre">continuous</span> <span class="pre">integration</span></code> (<code class="docutils literal notranslate"><span class="pre">CI</span></code>)!</p>
 <section id="id3">
 <h4>Objectives📍<a class="headerlink" href="#id3" title="Link to this heading">#</a></h4>
+<p>We will briefly explore and learn about the following topics:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://peerherholz.github.io/Clean_Repro_Code_Neuromatch/materials/code_form_test_CI/CI_CD.html#">Continuous Integration basics</a></p></li>
+<li><p><a class="reference external" href="https://peerherholz.github.io/Clean_Repro_Code_Neuromatch/materials/code_form_test_CI/CI_CD.html#github-actions">GitHub actions</a></p></li>
+<li><p><a class="reference external" href="https://peerherholz.github.io/Clean_Repro_Code_Neuromatch/materials/code_form_test_CI/CI_CD.html#building-workflows">Building workflows</a></p></li>
+</ul>
 </section>
 <section id="id4">
 <h4>Materials📓<a class="headerlink" href="#id4" title="Link to this heading">#</a></h4>
+<p>Please navigate to the respective section in the <code class="docutils literal notranslate"><span class="pre">ToC</span></code> on the left or <a class="reference external" href="https://peerherholz.github.io/Clean_Repro_Code_Neuromatch/materials/code_form_test_CI/CI_CD.html#">click here</a></p>
 </section>
-</section>
-<section id="optional-reading-further-materials">
-<h3>optional/reading/further materials<a class="headerlink" href="#optional-reading-further-materials" title="Link to this heading">#</a></h3>
 </section>
 </section>
 <div class="toctree-wrapper compound">
@@ -537,7 +566,6 @@
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Materials📓</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optional-reading-further-materials">optional/reading/further materials</a></li>
 </ul>
 </li>
 </ul>

@@ -1,3 +1,8 @@
+
+<p align="center">
+  <img src="https://impact-scholars.neuromatch.io/_static/Sciencematch.png" alt="Image description" width="300"/>
+</p>
+
 # Welcome
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gl/peerherholz%2FClean_Repro_Code_Neuromatch/main)

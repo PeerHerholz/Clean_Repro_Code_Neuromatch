@@ -8,8 +8,8 @@
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gl/peerherholz%2FClean_Repro_Code_Neuromatch/main)
 [![License](https://img.shields.io/github/license/peerherholz/Clean_Repro_Code_Neuromatch)](https://github.com/peerherholz/Clean_Repro_Code_Neuromatch)
 [![Contributors](https://img.shields.io/github/contributors/peerherholz/Clean_Repro_Code_Neuromatch)](https://github.com/peerherholz/Clean_Repro_Code_Neuromatch)
-[![Issues](https://img.shields.io/github/issues/all/peerherholz%2FClean_Repro_Code_Neuromatch)](https://github.com/peerherholz/Clean_Repro_Code_Neuromatch/issues)
-[![PRs](https://img.shields.io/github/pulls/all/peerherholz%2FClean_Repro_Code_Neuromatch)](https://github.com/peerherholz/Clean_Repro_Code_Neuromatch/pulls)
+[![Issues](https://img.shields.io/github/issues/peerherholz/Clean_Repro_Code_Neuromatch)](https://github.com/peerherholz/Clean_Repro_Code_Neuromatch/issues)
+[![PRs](https://img.shields.io/github/pulls/peerherholz/Clean_Repro_Code_Neuromatch)](https://github.com/peerherholz/Clean_Repro_Code_Neuromatch/pulls)
 
 Hello everyone and welcome to the [Neuromatch ](https://neuromatch.io/) [Impact Scholars](https://impact-scholars.neuromatch.io/impact-scholars/intro.html) `Clean and Reproducible Code` workshop!
 

@@ -15,7 +15,7 @@ The workshop was first held virtually on November 11th-12th 2024.
 
 All materials are published as a [JupyterBook](https://peerherholz.github.io/Clean_Repro_Code_Neuromatch). 
 
-We will further explain the aspects, as well as the `setup`, etc. below. For a precise outline of this workshop, please consult the respective [page](https://peerherholz.github.io/Clean_Repro_Code_Neuromatch/outline.html). 
+We will further explain the aspects, as well as the `setup`, etc. below. For a precise outline of this workshop, please consult the respective [page](https://peerherholz.github.io/Clean_Repro_Code_Neuromatch/materials/code_form_test_CI/overview_code_form_test.html). 
 
 
 ## The framework and setup

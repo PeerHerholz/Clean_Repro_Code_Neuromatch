@@ -5,22 +5,22 @@ Often overlooked but tremendously important: clean and reproducible code is the 
 In this short [Neuromatch](https://neuromatch.io/) [Impact Scholars](https://impact-scholars.neuromatch.io/impact-scholars/intro.html) workshop, we will explore the respective basis, including:
 
 
-- Code formatting, styling and linting
-- Code testing
-- Continuous integration
+- [Code formatting, styling and linting](https://peerherholz.github.io/Clean_Repro_Code_Neuromatch/materials/code_form_test_CI/code_formatting.html)
+- [Code testing](https://peerherholz.github.io/Clean_Repro_Code_Neuromatch/materials/code_form_test_CI/code_testing.html)
+- [Continuous integration](https://peerherholz.github.io/Clean_Repro_Code_Neuromatch/materials/code_form_test_CI/CI_CD.html)
 
-These topics will be explored based on examples, both provided by the organizers and brought by the participants. 
+These topics will be explored based on examples provided by the organizers with the option to also discuss examples brought by the participants. 
 
 The workshop was first held virtually on November 11th-12th 2024.
 
 All materials are published as a [JupyterBook](https://peerherholz.github.io/Clean_Repro_Code_Neuromatch). 
 
-We will further explain the aspects, as well as the `setup`, etc. below. For a precise outline of this winter school, please consult the respective [page](https://peerherholz.github.io/Clean_Repro_Code_Neuromatch/outline.html). 
+We will further explain the aspects, as well as the `setup`, etc. below. For a precise outline of this workshop, please consult the respective [page](https://peerherholz.github.io/Clean_Repro_Code_Neuromatch/outline.html). 
 
 
 ## The framework and setup
 
-The entire workshop will be conducted via the [Jupyter ecosystem](https://jupyter.org/), utilizing the [python programming language](https://www.python.org/) for all examples. All materials will be provided within the [Jupyter Book](https://jupyterbook.org/intro.html) format you're currently look, free for everyone to check and try out, as well as utilize further. To help folks that don't have any experience with these resources, we compiled a set of tutorials that participants can go through within the [prerequisite section](). While this won't be enough to go past basic skills, we still hope it will be useful to familiarize yourself with core aspects that will help during the workshop. Each of these tutorials, as well as "main" materials will be in [jupyter notebooks](https://jupyter.org/) and contain a mixture of explanations and code and presented as a "slide show" during the workshop. They can be just viewed, or either run interactively via cloud instances (via [mybinder](https://mybinder.org/)) or locally. Depending on a given participant's computational resources and infrastructure, we provide multiple ways to participate in the winter school as outlined in the [Setup](https://peerherholz.github.io/Clean_Repro_Code_Neuromatch/setup.html) section.
+The entire workshop will be conducted via the [Jupyter ecosystem](https://jupyter.org/), utilizing the [python programming language](https://www.python.org/) for all examples. All materials will be provided within the [Jupyter Book](https://jupyterbook.org/intro.html) format you're currently look, free for everyone to check and try out, as well as utilize further. To help folks that don't have any experience with these resources, we compiled a set of tutorials that participants can go through within the [prerequisite section](https://peerherholz.github.io/Clean_Repro_Code_Neuromatch/prerequisites.html). While this won't be enough to go past basic skills, we still hope it will be useful to familiarize yourself with core aspects that will help during the workshop. Each of these tutorials, as well as "main" materials will be in [jupyter notebooks](https://jupyter.org/) and contain a mixture of explanations and code and presented as a "slide show" during the workshop. They can be just viewed, or either run interactively via cloud instances (via [mybinder](https://mybinder.org/)) or locally. Depending on a given participant's computational resources and infrastructure, we provide multiple ways to participate in the workshop as outlined in the [Setup](https://peerherholz.github.io/Clean_Repro_Code_Neuromatch/setup.html) section.
 
 ## Instructors
 
@@ -45,7 +45,7 @@ When contacting us, please refrain from using titles when addressing us and supe
 
 ### The details
 
-Below you will find important details regarding the winter school, summarized in a compact form. Please consult and familiarize yourself with the information presented there prior to and/or within the first few days of the winter school. 
+Below you will find important details regarding the workshop, summarized in a compact form. Please consult and familiarize yourself with the information presented there prior to and/or within the first few days of the workshop. 
 
 #### When and where
 
@@ -55,7 +55,7 @@ Below you will find important details regarding the winter school, summarized in
 
 | 11/11/2024 | 12/11/2024 |
 |:---:|:---:|
-| Code formatting & Code testing 1 | Code testing 2 & CI |
+| Intro/Setup & Code formatting | Code testing & CI |
 
 #### Can I use my calculator?
 
@@ -100,17 +100,15 @@ If you have:
 
 - questions about course content - these are awesome! We want everyone to see them and have their questions answered too, so either use the [hypothes.is](https://web.hypothes.is/) plugin, the `e-mail` list or the [GitHub repository](https://github.com/peerherholz/Clean_Repro_Code_Neuromatch/-/issues).
 
-- a technical assignment question - come to office hours. Answering technical questions is often best accomplished ‘in person’ where we can discuss the question and talk through ideas. However, if that is not possible, post your question the [github repository](https://github.com/peerherholz/Clean_Repro_Code_Neuromatch/-/issues). Be as specific as you can in the question you ask. And, for those answering, help your classmates as much as you can without just giving the answer. Help guide them, point them in a direction, provide pseudo code, but do not provide code that answers assignment questions.
+- a technical assignment question - come to office hours. Answering technical questions is often best accomplished ‘in person’ where we can discuss the question and talk through ideas. However, if that is not possible, post your question the [GitHub repository](https://github.com/peerherholz/Clean_Repro_Code_Neuromatch/-/issues). Be as specific as you can in the question you ask. And, for those answering, help your classmates as much as you can without just giving the answer. Help guide them, point them in a direction, provide pseudo code, but do not provide code that answers assignment questions.
 
-- been stuck on something for a while (>30min) and aren’t even really sure where to start - it can be frustrating and it may not always be obvious what is going wrong or why something isn’t working. That’s OK - we’ve all been there! IF you are stuck, you can and should reach out for help, even if you aren’t exactly sure what your specific question is. To determine when to reach out, consider the 2-hour rule. This rule states that if you are stuck, work on that problem for an hour. Then, take a 30 minute break and do something else. When you come back after your break, try for another 30 minutes or so to solve your problem. If you are still completely stuck, stop and contact us (office hours or [github repository](https://github.com/peerherholz/Clean_Repro_Code_Neuromatch/-/issues)). If you don’t have a specific question, include the information you have (what you’re stuck on, the code you’ve been trying that hasn’t been happening, and/or the error messages you’ve been getting).
+- been stuck on something for a while (>30min) and aren’t even really sure where to start - it can be frustrating and it may not always be obvious what is going wrong or why something isn’t working. That’s OK - we’ve all been there! IF you are stuck, you can and should reach out for help, even if you aren’t exactly sure what your specific question is. To determine when to reach out, consider the 2-hour rule. This rule states that if you are stuck, work on that problem for an hour. Then, take a 30 minute break and do something else. When you come back after your break, try for another 30 minutes or so to solve your problem. If you are still completely stuck, stop and contact us (via Email or [GitHub repository](https://github.com/peerherholz/Clean_Repro_Code_Neuromatch/-/issues)). If you don’t have a specific question, include the information you have (what you’re stuck on, the code you’ve been trying that hasn’t been happening, and/or the error messages you’ve been getting).
 
-- questions about course logistics - first, check the [overview](https://peerherholz.github.io/Clean_Repro_Code_Neuromatch/overview.html) & [syllabus](https://peerherholz.github.io/Clean_Repro_Code_Neuromatch/outline.html). If you can’t find the answer there, first ask a classmate. If still unsure, make use of the office hours or [github repository](https://github.com/peerherholz/Clean_Repro_Code_Neuromatch/-/issues).
+- questions about course logistics - first, check the [overview](https://peerherholz.github.io/Clean_Repro_Code_Neuromatch/overview.html). If you can’t find the answer there, first ask a classmate. If still unsure, make use of the [GitHub repository](https://github.com/peerherholz/Clean_Repro_Code_Neuromatch/-/issues).
 
-- something super cool to share related to class or want to talk about a topic in further depth - feel free to post it, contact the instructors or come to office hours. 
+- something super cool to share related to class or want to talk about a topic in further depth - feel free to post it, contact the organizers/instructors. 
 
-- some feedback about the course you want to share anonymously - If you’ve been offended by an example, really liked or disliked a lesson, or wish there were something covered in class that wasn’t but would rather not share this publicly, etc., please fill out the anonymous Google Form*
-
-*This form can be taken down at any time if it’s not being used for its intended purpose; however, you will be notified should that happen.
+- some feedback about the course you want to share anonymously - If you’ve been offended by an example, really liked or disliked a session, or wish there were something covered in the workshop that wasn’t but would rather not share this publicly, etc., please reach out via Email
 
 ### Acknowledgements
 

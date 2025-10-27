@@ -16,34 +16,31 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
-  <!-- 
-    this give us a css class that will be invisible only if js is disabled 
-  -->
-  <noscript>
-    <style>
-      .pst-js-only { display: none !important; }
-
-    </style>
-  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../../_static/myfile.css?v=3437f865" />
   
-  <!-- So that users can add custom icons -->
-  <script src="../../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
     <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="../../_static/doctools.js?v=9a2dae69"></script>
@@ -68,7 +65,6 @@
     <link rel="prev" title="Code formatting, styling and linting" href="code_formatting.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -84,8 +80,19 @@
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <dialog id="pst-search-dialog">
-    
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
 <form class="bd-search d-flex align-items-center"
       action="../../search.html"
       method="get">
@@ -93,6 +100,7 @@
   <input type="search"
          class="form-control"
          name="q"
+         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -100,8 +108,8 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form>
-  </dialog>
+</form></div>
+  </div>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -117,8 +125,7 @@
       
       
       
-      <dialog id="pst-primary-sidebar-modal"></dialog>
-      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+      <div class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -147,18 +154,22 @@
       
     
     
-    <img src="https://impact-scholars.neuromatch.io/_static/Sciencematch.png" class="logo__image only-light" alt="Code formatting & testing - Home"/>
-    <img src="https://impact-scholars.neuromatch.io/_static/Sciencematch.png" class="logo__image only-dark pst-js-only" alt="Code formatting & testing - Home"/>
+    <img src="https://portal.neuromatchacademy.org/static/media/logo-black.f6feb8a6.png" class="logo__image only-light" alt="Code formatting & testing - Home"/>
+    <script>document.write(`<img src="https://portal.neuromatchacademy.org/static/media/logo-black.f6feb8a6.png" class="logo__image only-dark" alt="Code formatting & testing - Home"/>`);</script>
   
   
 </a></div>
         <div class="sidebar-primary-item">
 
-<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
- <i class="fa-solid fa-magnifying-glass"></i>
- <span class="search-button__default-text">Search</span>
- <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-</button></div>
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
@@ -353,16 +364,24 @@
 
 
 
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button>
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
 
 
-<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-</button>
+  </button>
+`);
+</script>
 <button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
@@ -586,7 +605,7 @@
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Dummy value to fill in as a placeholder</span>
 <span class="n">dummy_logger</span> <span class="o">=</span> <span class="kc">None</span>
 
-<span class="k">def</span> <span class="nf">process_data</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">logger</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">process_data</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">logger</span><span class="p">):</span>
     <span class="c1"># The function doesn&#39;t actually use the logger in this case</span>
     <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Processed </span><span class="si">{</span><span class="n">data</span><span class="si">}</span><span class="s2">&quot;</span>
 
@@ -598,10 +617,10 @@
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Fake buffer </span>
 <span class="n">fake_buffer</span> <span class="o">=</span> <span class="p">[]</span>
 
-<span class="k">def</span> <span class="nf">add_reading</span><span class="p">(</span><span class="n">buffer</span><span class="p">,</span> <span class="n">reading</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">add_reading</span><span class="p">(</span><span class="n">buffer</span><span class="p">,</span> <span class="n">reading</span><span class="p">):</span>
     <span class="n">buffer</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">reading</span><span class="p">)</span>
 
-<span class="k">def</span> <span class="nf">get_latest_reading</span><span class="p">(</span><span class="n">buffer</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">get_latest_reading</span><span class="p">(</span><span class="n">buffer</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">buffer</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="k">if</span> <span class="n">buffer</span> <span class="k">else</span> <span class="kc">None</span>
 
 <span class="c1"># Using the fake buffer in a test</span>
@@ -614,7 +633,7 @@
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Stub that only provides results for specific test inputs</span>
 <span class="n">stub_calls</span> <span class="o">=</span> <span class="p">[]</span>  <span class="c1"># List to record calls</span>
 
-<span class="k">def</span> <span class="nf">calculate_distance</span><span class="p">(</span><span class="n">speed</span><span class="p">,</span> <span class="n">time</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">calculate_distance</span><span class="p">(</span><span class="n">speed</span><span class="p">,</span> <span class="n">time</span><span class="p">):</span>
     <span class="n">stub_calls</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">speed</span><span class="p">,</span> <span class="n">time</span><span class="p">))</span>  <span class="c1"># Record the call</span>
     <span class="k">if</span> <span class="n">speed</span> <span class="o">==</span> <span class="mi">10</span> <span class="ow">and</span> <span class="n">time</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
         <span class="k">return</span> <span class="mi">20</span>  <span class="c1"># A specific expected response</span>
@@ -627,7 +646,7 @@
 </div>
 </li>
 <li><p><code class="docutils literal notranslate"><span class="pre">Mocks</span></code> simulate <code class="docutils literal notranslate"><span class="pre">interfaces</span></code> or <code class="docutils literal notranslate"><span class="pre">classes</span></code>, with <code class="docutils literal notranslate"><span class="pre">predefined</span> <span class="pre">outputs</span></code> for <code class="docutils literal notranslate"><span class="pre">method</span></code> calls, often recording interactions for <code class="docutils literal notranslate"><span class="pre">test</span></code> validation.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">unittest.mock</span> <span class="kn">import</span> <span class="n">Mock</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">unittest.mock</span><span class="w"> </span><span class="kn">import</span> <span class="n">Mock</span>
 
 <span class="c1"># Mock function to simulate a complex calculation</span>
 <span class="n">mock_calculate</span> <span class="o">=</span> <span class="n">Mock</span><span class="p">(</span><span class="n">return_value</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
@@ -675,11 +694,11 @@
 <p>Here’s a simple example demonstrating how <code class="docutils literal notranslate"><span class="pre">assert</span></code> might be used in a <code class="docutils literal notranslate"><span class="pre">test</span> <span class="pre">case</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span> 
 
 <span class="c1"># Test case for the add function</span>
-<span class="k">def</span> <span class="nf">test_add</span><span class="p">():</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">test_add</span><span class="p">():</span>
     <span class="n">result</span> <span class="o">=</span> <span class="n">add</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span> 
     <span class="k">assert</span> <span class="n">result</span> <span class="o">==</span> <span class="mi">5</span><span class="p">,</span> <span class="s2">&quot;Expected add(2, 3) to be 5&quot;</span>
 
@@ -698,7 +717,7 @@
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
 
 <span class="c1"># Assert that the function output is as expected</span>
@@ -732,7 +751,7 @@
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_name</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">get_name</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">name</span>
 
 <span class="c1"># Assert that the return value is a string</span>
@@ -766,7 +785,7 @@
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">add_to_list</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="n">lst</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">add_to_list</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="n">lst</span><span class="p">):</span>
     <span class="n">lst</span><span class="o">=</span><span class="p">[]</span>
     <span class="n">lst</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">lst</span>
@@ -832,8 +851,8 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import all necessary modules and functions</span>
-<span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 
 <span class="c1"># Define paths for all to be generated outputs</span>
 <span class="n">output_path</span> <span class="o">=</span> <span class="s2">&quot;./outputs/&quot;</span>
@@ -955,7 +974,7 @@ Requirement already satisfied: packaging in /Users/peerherholz/anaconda3/envs/co
 <p>they should ideally be placed in a dedicated directory that is different from the path where you work on the <code class="docutils literal notranslate"><span class="pre">code</span></code>/<code class="docutils literal notranslate"><span class="pre">analysis</span> <span class="pre">scripts</span></code>. Thus, let’s create a respective <code class="docutils literal notranslate"><span class="pre">test</span> <span class="pre">directory</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
 
 <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="s1">&#39;./tests&#39;</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
@@ -973,7 +992,7 @@ Requirement already satisfied: packaging in /Users/peerherholz/anaconda3/envs/co
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%writefile</span> ./tests/test_addition.py
 
 
-<span class="k">def</span> <span class="nf">test_example</span><span class="p">():</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">test_example</span><span class="p">():</span>
     <span class="k">assert</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">==</span> <span class="mi">2</span>
 </pre></div>
 </div>
@@ -1019,14 +1038,14 @@ tests/test_addition.py::test_example <span class=" -Color -Color-Green">PASSED  
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%writefile</span> ./tests/test_fixture.py
 
-<span class="kn">import</span> <span class="nn">pytest</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pytest</span>
 
 <span class="nd">@pytest</span><span class="o">.</span><span class="n">fixture</span>
-<span class="k">def</span> <span class="nf">sample_data</span><span class="p">():</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">sample_data</span><span class="p">():</span>
     <span class="k">return</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
 
 <span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">sum</span>
-<span class="k">def</span> <span class="nf">test_sum</span><span class="p">(</span><span class="n">sample_data</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">test_sum</span><span class="p">(</span><span class="n">sample_data</span><span class="p">):</span>
     <span class="k">assert</span> <span class="nb">sum</span><span class="p">(</span><span class="n">sample_data</span><span class="p">)</span> <span class="o">==</span> <span class="mi">15</span>
 </pre></div>
 </div>
@@ -1045,10 +1064,10 @@ tests/test_addition.py::test_example <span class=" -Color -Color-Green">PASSED  
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%writefile</span> ./tests/test_parameterized.py
 
-<span class="kn">import</span> <span class="nn">pytest</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pytest</span>
 
 <span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">parametrize</span><span class="p">(</span><span class="s2">&quot;a,b,expected&quot;</span><span class="p">,</span> <span class="p">[(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">)])</span>
-<span class="k">def</span> <span class="nf">test_addition</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">expected</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">test_addition</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">expected</span><span class="p">):</span>
     <span class="k">assert</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span> <span class="o">==</span> <span class="n">expected</span>
 </pre></div>
 </div>
@@ -1235,18 +1254,18 @@ tests/test_parameterized.py::test_addition[3-3-6] <span class=" -Color -Color-Gr
 <p>As mentioned before, to follow best practices and make things manageable and easy for the long run, we need to refractor our <code class="docutils literal notranslate"><span class="pre">code</span></code>/<code class="docutils literal notranslate"><span class="pre">analyses</span></code> to run certain parts within <code class="docutils literal notranslate"><span class="pre">functions</span></code> that we can <code class="docutils literal notranslate"><span class="pre">import</span></code> in the <code class="docutils literal notranslate"><span class="pre">tests</span></code>.</p>
 <p>For the <code class="docutils literal notranslate"><span class="pre">output</span> <span class="pre">directory</span> <span class="pre">generation</span></code> part, we would change things from:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import all necessary modules and functions</span>
-<span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">torch</span>
-<span class="kn">import</span> <span class="nn">torch.nn</span> <span class="k">as</span> <span class="nn">nn</span>
-<span class="kn">import</span> <span class="nn">torch.optim</span> <span class="k">as</span> <span class="nn">optim</span>
-<span class="kn">from</span> <span class="nn">sklearn.mixture</span> <span class="kn">import</span> <span class="n">BayesianGaussianMixture</span>
-<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
-<span class="kn">from</span> <span class="nn">sklearn.manifold</span> <span class="kn">import</span> <span class="n">TSNE</span>
-<span class="kn">from</span> <span class="nn">joblib</span> <span class="kn">import</span> <span class="n">dump</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">torch</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">torch.nn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">nn</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">torch.optim</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">optim</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.mixture</span><span class="w"> </span><span class="kn">import</span> <span class="n">BayesianGaussianMixture</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.model_selection</span><span class="w"> </span><span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.manifold</span><span class="w"> </span><span class="kn">import</span> <span class="n">TSNE</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">joblib</span><span class="w"> </span><span class="kn">import</span> <span class="n">dump</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">seaborn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sns</span>
 
 <span class="c1"># Define paths for all to be generated outputs</span>
 <span class="n">output_path</span> <span class="o">=</span> <span class="s2">&quot;./outputs/&quot;</span>
@@ -1273,17 +1292,17 @@ tests/test_parameterized.py::test_addition[3-3-6] <span class=" -Color -Color-Gr
 </div>
 <p>to</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import all necessary modules</span>
-<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
 
 <span class="c1"># Define utility function to create paths</span>
-<span class="k">def</span> <span class="nf">create_output_paths</span><span class="p">(</span><span class="n">paths</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">create_output_paths</span><span class="p">(</span><span class="n">paths</span><span class="p">):</span>
     <span class="k">for</span> <span class="n">path</span> <span class="ow">in</span> <span class="n">paths</span><span class="p">:</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
             <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">paths</span>
 
 <span class="c1"># Run all steps of the code/analysis</span>
-<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
     <span class="c1"># Set up output directories</span>
     <span class="n">paths</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;./outputs/&quot;</span><span class="p">,</span> <span class="s2">&quot;./outputs/data&quot;</span><span class="p">,</span> <span class="s2">&quot;./outputs/graphics&quot;</span><span class="p">,</span> <span class="s2">&quot;./outputs/models&quot;</span><span class="p">]</span>
     <span class="n">create_output_paths</span><span class="p">(</span><span class="n">paths</span><span class="p">)</span>
@@ -1298,10 +1317,10 @@ tests/test_parameterized.py::test_addition[3-3-6] <span class=" -Color -Color-Gr
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%writefile</span> ./emd_clust_cont_loss_sim_functions.py
 
 <span class="c1"># Import all necessary modules</span>
-<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
 
 <span class="c1"># Define utility function to create paths</span>
-<span class="k">def</span> <span class="nf">create_output_paths</span><span class="p">(</span><span class="n">paths</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">create_output_paths</span><span class="p">(</span><span class="n">paths</span><span class="p">):</span>
     <span class="k">for</span> <span class="n">path</span> <span class="ow">in</span> <span class="n">paths</span><span class="p">:</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
             <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
@@ -1312,7 +1331,7 @@ tests/test_parameterized.py::test_addition[3-3-6] <span class=" -Color -Color-Gr
 
 
 <span class="c1"># Run all steps of the code/analysis</span>
-<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
     <span class="c1"># Set up output directories</span>
     <span class="n">create_output_paths</span><span class="p">(</span><span class="n">paths</span><span class="p">)</span>
 
@@ -1333,16 +1352,16 @@ tests/test_parameterized.py::test_addition[3-3-6] <span class=" -Color -Color-Gr
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%writefile</span> ./tests/test_paths.py
 
 
-<span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">import</span> <span class="nn">shutil</span>
-<span class="kn">import</span> <span class="nn">pytest</span>
-<span class="kn">from</span> <span class="nn">emd_clust_cont_loss_sim_functions</span> <span class="kn">import</span> <span class="n">create_output_paths</span> 
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">shutil</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pytest</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">emd_clust_cont_loss_sim_functions</span><span class="w"> </span><span class="kn">import</span> <span class="n">create_output_paths</span> 
 
 <span class="c1"># Define test paths (use temporary or unique paths to avoid overwriting real data)</span>
 <span class="n">test_paths</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;./test_outputs/&quot;</span><span class="p">,</span> <span class="s2">&quot;./test_outputs/data&quot;</span><span class="p">,</span> <span class="s2">&quot;./test_outputs/graphics&quot;</span><span class="p">,</span> <span class="s2">&quot;./test_outputs/models&quot;</span><span class="p">]</span>
 
 <span class="c1"># Define tests</span>
-<span class="k">def</span> <span class="nf">test_create_output_paths</span><span class="p">():</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">test_create_output_paths</span><span class="p">():</span>
 
     <span class="c1"># Run the path creation function</span>
     <span class="n">create_output_paths</span><span class="p">(</span><span class="n">test_paths</span><span class="p">)</span>
@@ -1430,34 +1449,34 @@ tests/test_paths.py::test_create_output_paths <span class=" -Color -Color-Green"
 <p>A level of the <code class="docutils literal notranslate"><span class="pre">software</span> <span class="pre">testing</span></code> process where individual <code class="docutils literal notranslate"><span class="pre">units</span></code> of a <code class="docutils literal notranslate"><span class="pre">software</span></code> are <code class="docutils literal notranslate"><span class="pre">tested</span></code>. The purpose is to validate that each <code class="docutils literal notranslate"><span class="pre">unit</span></code> of the <code class="docutils literal notranslate"><span class="pre">software</span></code> performs as designed. For example, in our <code class="docutils literal notranslate"><span class="pre">code</span></code>/<code class="docutils literal notranslate"><span class="pre">analyses</span></code>, we could evaluate if the <code class="docutils literal notranslate"><span class="pre">functions</span></code> for <code class="docutils literal notranslate"><span class="pre">path</span></code> and <code class="docutils literal notranslate"><span class="pre">data</span></code> generation work as expected. Thus, we could write a <code class="docutils literal notranslate"><span class="pre">unit</span> <span class="pre">test</span></code> for both comparing the expected to the actual output.</p>
 <p>At first, we need to refactor the <code class="docutils literal notranslate"><span class="pre">data</span> <span class="pre">generation</span></code> in our <code class="docutils literal notranslate"><span class="pre">code</span></code>/<code class="docutils literal notranslate"><span class="pre">analyses</span></code> to be run as a <code class="docutils literal notranslate"><span class="pre">function</span></code>, ie adding it to the new version of the script.</p>
 <div class="cell tag_hide-input docutils container">
-<details class="hide above-input">
+<details class="admonition hide above-input">
 <summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell source</span>
-<span class="expanded">Hide code cell source</span>
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
 </summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%writefile</span> ./emd_clust_cont_loss_sim_functions.py
 
 <span class="c1"># Import all necessary modules</span>
-<span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 
 <span class="c1"># Define utility function to create paths</span>
-<span class="k">def</span> <span class="nf">create_output_paths</span><span class="p">(</span><span class="n">paths</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">create_output_paths</span><span class="p">(</span><span class="n">paths</span><span class="p">):</span>
     <span class="k">for</span> <span class="n">path</span> <span class="ow">in</span> <span class="n">paths</span><span class="p">:</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
             <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">paths</span>
 
 <span class="c1"># Define utility function to generate data</span>
-<span class="k">def</span> <span class="nf">simulate_data</span><span class="p">(</span><span class="n">seed</span><span class="o">=</span><span class="mi">42</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">2000</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span> <span class="n">save_path</span><span class="o">=</span><span class="s2">&quot;./outputs/data/raw_data_sim.npy&quot;</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">simulate_data</span><span class="p">(</span><span class="n">seed</span><span class="o">=</span><span class="mi">42</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">2000</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span> <span class="n">save_path</span><span class="o">=</span><span class="s2">&quot;./outputs/data/raw_data_sim.npy&quot;</span><span class="p">):</span>
     <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="n">seed</span><span class="p">)</span>
     <span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="o">*</span><span class="n">size</span><span class="p">)</span>
     <span class="n">np</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">save_path</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">data</span>
 
 <span class="c1"># Run all steps of the code/analysis</span>
-<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
     <span class="c1"># Set up output directories</span>
     <span class="n">paths</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;./outputs/&quot;</span><span class="p">,</span> <span class="s2">&quot;./outputs/data&quot;</span><span class="p">,</span> <span class="s2">&quot;./outputs/graphics&quot;</span><span class="p">,</span> <span class="s2">&quot;./outputs/models&quot;</span><span class="p">]</span>
     <span class="n">create_output_paths</span><span class="p">(</span><span class="n">paths</span><span class="p">)</span>
@@ -1484,17 +1503,17 @@ tests/test_paths.py::test_create_output_paths <span class=" -Color -Color-Green"
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%writefile</span> ./tests/test_path_sim_data_gen.py
 
 
-<span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">import</span> <span class="nn">shutil</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">pytest</span>
-<span class="kn">from</span> <span class="nn">emd_clust_cont_loss_sim_functions</span> <span class="kn">import</span> <span class="n">create_output_paths</span><span class="p">,</span> <span class="n">simulate_data</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">shutil</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pytest</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">emd_clust_cont_loss_sim_functions</span><span class="w"> </span><span class="kn">import</span> <span class="n">create_output_paths</span><span class="p">,</span> <span class="n">simulate_data</span>
 
 <span class="c1"># Define temporary test paths to avoid overwriting real data</span>
 <span class="n">test_paths</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;./test_outputs/&quot;</span><span class="p">,</span> <span class="s2">&quot;./test_outputs/data&quot;</span><span class="p">,</span> <span class="s2">&quot;./test_outputs/graphics&quot;</span><span class="p">,</span> <span class="s2">&quot;./test_outputs/models&quot;</span><span class="p">]</span>
 
 
-<span class="k">def</span> <span class="nf">test_create_output_paths</span><span class="p">():</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">test_create_output_paths</span><span class="p">():</span>
     <span class="c1"># Run the path creation function</span>
     <span class="n">create_output_paths</span><span class="p">(</span><span class="n">test_paths</span><span class="p">)</span>
     
@@ -1503,7 +1522,7 @@ tests/test_paths.py::test_create_output_paths <span class=" -Color -Color-Green"
         <span class="k">assert</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">path</span><span class="p">),</span> <span class="sa">f</span><span class="s2">&quot;Expected directory </span><span class="si">{</span><span class="n">path</span><span class="si">}</span><span class="s2"> to be created, but it was not.&quot;</span>
 
 
-<span class="k">def</span> <span class="nf">test_simulate_data</span><span class="p">():</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">test_simulate_data</span><span class="p">():</span>
     <span class="c1"># Generate test data</span>
     <span class="n">data</span> <span class="o">=</span> <span class="n">simulate_data</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">50</span><span class="p">),</span> <span class="n">save_path</span><span class="o">=</span><span class="s2">&quot;./test_outputs/data/raw_data_sim.npy&quot;</span><span class="p">)</span>
     
@@ -1608,33 +1627,33 @@ tests/test_paths.py::test_create_output_paths <span class=" -Color -Color-Green"
 </ol>
 <p>The first step, as always, is to adapt our <code class="docutils literal notranslate"><span class="pre">code</span></code>/<code class="docutils literal notranslate"><span class="pre">analyses</span></code> so that all needed aspects are run in via <code class="docutils literal notranslate"><span class="pre">functions</span></code>.</p>
 <div class="cell tag_hide-input docutils container">
-<details class="hide above-input">
+<details class="admonition hide above-input">
 <summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell source</span>
-<span class="expanded">Hide code cell source</span>
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
 </summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%writefile</span> ./emd_clust_cont_loss_sim_functions.py
 
 
 <span class="c1"># Import all necessary modules</span>
-<span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">torch</span>
-<span class="kn">import</span> <span class="nn">torch.nn</span> <span class="k">as</span> <span class="nn">nn</span>
-<span class="kn">import</span> <span class="nn">torch.optim</span> <span class="k">as</span> <span class="nn">optim</span>
-<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">torch</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">torch.nn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">nn</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">torch.optim</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">optim</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.model_selection</span><span class="w"> </span><span class="kn">import</span> <span class="n">train_test_split</span>
 
 
 <span class="c1"># Define utility function to create paths</span>
-<span class="k">def</span> <span class="nf">create_output_paths</span><span class="p">(</span><span class="n">paths</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">create_output_paths</span><span class="p">(</span><span class="n">paths</span><span class="p">):</span>
     <span class="k">for</span> <span class="n">path</span> <span class="ow">in</span> <span class="n">paths</span><span class="p">:</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
             <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">paths</span>
 
 <span class="c1"># Define utility function to generate data</span>
-<span class="k">def</span> <span class="nf">simulate_data</span><span class="p">(</span><span class="n">seed</span><span class="o">=</span><span class="mi">42</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">2000</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span> <span class="n">save_path</span><span class="o">=</span><span class="s2">&quot;./outputs/data/raw_data_sim.npy&quot;</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">simulate_data</span><span class="p">(</span><span class="n">seed</span><span class="o">=</span><span class="mi">42</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">2000</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span> <span class="n">save_path</span><span class="o">=</span><span class="s2">&quot;./outputs/data/raw_data_sim.npy&quot;</span><span class="p">):</span>
     <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="n">seed</span><span class="p">)</span>
     <span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="o">*</span><span class="n">size</span><span class="p">)</span>
     <span class="n">np</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">save_path</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
@@ -1642,8 +1661,8 @@ tests/test_paths.py::test_create_output_paths <span class=" -Color -Color-Green"
 
     
 <span class="c1"># Define class for the Encoder</span>
-<span class="k">class</span> <span class="nc">Encoder</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">input_dim</span><span class="p">,</span> <span class="n">hidden_dim</span><span class="p">,</span> <span class="n">embedding_dim</span><span class="p">):</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Encoder</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">input_dim</span><span class="p">,</span> <span class="n">hidden_dim</span><span class="p">,</span> <span class="n">embedding_dim</span><span class="p">):</span>
         <span class="nb">super</span><span class="p">(</span><span class="n">Encoder</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">layers</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Sequential</span><span class="p">(</span>
             <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="n">input_dim</span><span class="p">,</span> <span class="n">hidden_dim</span><span class="p">),</span>
@@ -1651,12 +1670,12 @@ tests/test_paths.py::test_create_output_paths <span class=" -Color -Color-Green"
             <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="n">hidden_dim</span><span class="p">,</span> <span class="n">embedding_dim</span><span class="p">)</span>
         <span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">layers</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 
 <span class="c1"># Define class for the MLP</span>
-<span class="k">class</span> <span class="nc">MLP</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">input_dim</span><span class="p">,</span> <span class="n">hidden_dim</span><span class="p">):</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">MLP</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">input_dim</span><span class="p">,</span> <span class="n">hidden_dim</span><span class="p">):</span>
         <span class="nb">super</span><span class="p">(</span><span class="n">MLP</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">layers</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Sequential</span><span class="p">(</span>
             <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="n">input_dim</span><span class="p">,</span> <span class="n">hidden_dim</span><span class="p">),</span>
@@ -1666,22 +1685,22 @@ tests/test_paths.py::test_create_output_paths <span class=" -Color -Color-Green"
             <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="n">hidden_dim</span><span class="p">,</span> <span class="n">input_dim</span><span class="p">)</span>
         <span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">layers</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 
 <span class="c1"># Define class for the contrastive loss</span>
-<span class="k">class</span> <span class="nc">ContrastiveLoss</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">margin</span><span class="p">):</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">ContrastiveLoss</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">margin</span><span class="p">):</span>
         <span class="nb">super</span><span class="p">(</span><span class="n">ContrastiveLoss</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">margin</span> <span class="o">=</span> <span class="n">margin</span>
 
-    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">output1</span><span class="p">,</span> <span class="n">output2</span><span class="p">,</span> <span class="n">label</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">output1</span><span class="p">,</span> <span class="n">output2</span><span class="p">,</span> <span class="n">label</span><span class="p">):</span>
         <span class="n">euclidean_distance</span> <span class="o">=</span> <span class="p">(</span><span class="n">output1</span> <span class="o">-</span> <span class="n">output2</span><span class="p">)</span><span class="o">.</span><span class="n">pow</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">torch</span><span class="o">.</span><span class="n">mean</span><span class="p">((</span><span class="mi">1</span> <span class="o">-</span> <span class="n">label</span><span class="p">)</span> <span class="o">*</span> <span class="n">euclidean_distance</span> <span class="o">+</span> <span class="n">label</span> <span class="o">*</span> <span class="n">torch</span><span class="o">.</span><span class="n">clamp</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">margin</span> <span class="o">-</span> <span class="n">euclidean_distance</span><span class="p">,</span> <span class="nb">min</span><span class="o">=</span><span class="mf">0.0</span><span class="p">))</span>
 
 
 <span class="c1"># Define utility function to train the encoder</span>
-<span class="k">def</span> <span class="nf">train_encoder</span><span class="p">(</span><span class="n">encoder</span><span class="p">,</span> <span class="n">data_train</span><span class="p">,</span> <span class="n">epochs</span><span class="o">=</span><span class="mi">4000</span><span class="p">,</span> <span class="n">lr</span><span class="o">=</span><span class="mf">0.001</span><span class="p">,</span> <span class="n">momentum</span><span class="o">=</span><span class="mf">0.9</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">train_encoder</span><span class="p">(</span><span class="n">encoder</span><span class="p">,</span> <span class="n">data_train</span><span class="p">,</span> <span class="n">epochs</span><span class="o">=</span><span class="mi">4000</span><span class="p">,</span> <span class="n">lr</span><span class="o">=</span><span class="mf">0.001</span><span class="p">,</span> <span class="n">momentum</span><span class="o">=</span><span class="mf">0.9</span><span class="p">):</span>
     <span class="n">loss_function</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">MSELoss</span><span class="p">()</span>
     <span class="n">optimizer</span> <span class="o">=</span> <span class="n">optim</span><span class="o">.</span><span class="n">SGD</span><span class="p">(</span><span class="n">encoder</span><span class="o">.</span><span class="n">parameters</span><span class="p">(),</span> <span class="n">lr</span><span class="o">=</span><span class="n">lr</span><span class="p">,</span> <span class="n">momentum</span><span class="o">=</span><span class="n">momentum</span><span class="p">)</span>
     <span class="n">losses</span> <span class="o">=</span> <span class="p">[]</span>
@@ -1704,7 +1723,7 @@ tests/test_paths.py::test_create_output_paths <span class=" -Color -Color-Green"
 
 
 <span class="c1"># Run all steps of the code/analysis</span>
-<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
     <span class="c1"># Set up output directories</span>
     <span class="n">paths</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;./outputs/&quot;</span><span class="p">,</span> <span class="s2">&quot;./outputs/data&quot;</span><span class="p">,</span> <span class="s2">&quot;./outputs/graphics&quot;</span><span class="p">,</span> <span class="s2">&quot;./outputs/models&quot;</span><span class="p">]</span>
     <span class="n">create_output_paths</span><span class="p">(</span><span class="n">paths</span><span class="p">)</span>
@@ -1738,18 +1757,18 @@ tests/test_paths.py::test_create_output_paths <span class=" -Color -Color-Green"
 
 
 <span class="c1"># Import all necessary modules</span>
-<span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">import</span> <span class="nn">shutil</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">torch</span>
-<span class="kn">from</span> <span class="nn">emd_clust_cont_loss_sim_functions</span> <span class="kn">import</span> <span class="n">create_output_paths</span><span class="p">,</span> <span class="n">simulate_data</span><span class="p">,</span> <span class="n">Encoder</span><span class="p">,</span> <span class="n">train_encoder</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">shutil</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">torch</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">emd_clust_cont_loss_sim_functions</span><span class="w"> </span><span class="kn">import</span> <span class="n">create_output_paths</span><span class="p">,</span> <span class="n">simulate_data</span><span class="p">,</span> <span class="n">Encoder</span><span class="p">,</span> <span class="n">train_encoder</span>
 
 <span class="c1"># Define list of paths</span>
 <span class="n">test_paths</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;./test_outputs/&quot;</span><span class="p">,</span> <span class="s2">&quot;./test_outputs/data&quot;</span><span class="p">,</span> <span class="s2">&quot;./test_outputs/graphics&quot;</span><span class="p">,</span> <span class="s2">&quot;./test_outputs/models&quot;</span><span class="p">]</span>
 
 
 <span class="c1"># Define the tests</span>
-<span class="k">def</span> <span class="nf">test_end_to_end_pipeline</span><span class="p">():</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">test_end_to_end_pipeline</span><span class="p">():</span>
     <span class="c1"># Step 1: Set up output directories</span>
     <span class="n">create_output_paths</span><span class="p">(</span><span class="n">test_paths</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">path</span> <span class="ow">in</span> <span class="n">test_paths</span><span class="p">:</span>
@@ -1841,46 +1860,46 @@ tests/test_pipeline.py::test_end_to_end_pipeline <span class=" -Color -Color-Gre
 <p>Because <code class="docutils literal notranslate"><span class="pre">system</span> <span class="pre">tests</span></code> can be time consuming it may be impractical to <code class="docutils literal notranslate"><span class="pre">run</span></code> them very regularly (such as multiple times a day after small changes in the <code class="docutils literal notranslate"><span class="pre">code</span></code>). Therefore it can be a good idea to <code class="docutils literal notranslate"><span class="pre">run</span></code> them each night (and to <code class="docutils literal notranslate"><span class="pre">automate</span></code> this process) so that if <code class="docutils literal notranslate"><span class="pre">errors</span></code> are introduced that only <code class="docutils literal notranslate"><span class="pre">system</span> <span class="pre">testing</span></code> can detect, the developer(s) will be made aware of them relatively quickly.</p>
 <p>In order to run a <code class="docutils literal notranslate"><span class="pre">system</span> <span class="pre">test</span></code> for our <code class="docutils literal notranslate"><span class="pre">code</span></code>/<code class="docutils literal notranslate"><span class="pre">analyses</span></code>, we need to refactor the entire <code class="docutils literal notranslate"><span class="pre">script</span></code> to utilize <code class="docutils literal notranslate"><span class="pre">functions</span></code>.</p>
 <div class="cell tag_hide-input docutils container">
-<details class="hide above-input">
+<details class="admonition hide above-input">
 <summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell source</span>
-<span class="expanded">Hide code cell source</span>
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
 </summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%writefile</span> ./emd_clust_cont_loss_sim_functions.py
 
 
 <span class="c1"># Import necessary modules</span>
-<span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">torch</span>
-<span class="kn">import</span> <span class="nn">torch.nn</span> <span class="k">as</span> <span class="nn">nn</span>
-<span class="kn">import</span> <span class="nn">torch.optim</span> <span class="k">as</span> <span class="nn">optim</span>
-<span class="kn">from</span> <span class="nn">sklearn.mixture</span> <span class="kn">import</span> <span class="n">BayesianGaussianMixture</span>
-<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
-<span class="kn">from</span> <span class="nn">sklearn.manifold</span> <span class="kn">import</span> <span class="n">TSNE</span>
-<span class="kn">from</span> <span class="nn">joblib</span> <span class="kn">import</span> <span class="n">dump</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">torch</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">torch.nn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">nn</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">torch.optim</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">optim</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.mixture</span><span class="w"> </span><span class="kn">import</span> <span class="n">BayesianGaussianMixture</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.model_selection</span><span class="w"> </span><span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.manifold</span><span class="w"> </span><span class="kn">import</span> <span class="n">TSNE</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">joblib</span><span class="w"> </span><span class="kn">import</span> <span class="n">dump</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">seaborn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sns</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
 
 
 <span class="c1"># Define utility function to create paths</span>
-<span class="k">def</span> <span class="nf">create_output_paths</span><span class="p">(</span><span class="n">paths</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">create_output_paths</span><span class="p">(</span><span class="n">paths</span><span class="p">):</span>
     <span class="k">for</span> <span class="n">path</span> <span class="ow">in</span> <span class="n">paths</span><span class="p">:</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
             <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">paths</span>
 
 <span class="c1"># Define utility function to simulate data</span>
-<span class="k">def</span> <span class="nf">simulate_data</span><span class="p">(</span><span class="n">seed</span><span class="o">=</span><span class="mi">42</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">2000</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span> <span class="n">save_path</span><span class="o">=</span><span class="s2">&quot;./outputs/data/raw_data_sim.npy&quot;</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">simulate_data</span><span class="p">(</span><span class="n">seed</span><span class="o">=</span><span class="mi">42</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">2000</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span> <span class="n">save_path</span><span class="o">=</span><span class="s2">&quot;./outputs/data/raw_data_sim.npy&quot;</span><span class="p">):</span>
     <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="n">seed</span><span class="p">)</span>
     <span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="o">*</span><span class="n">size</span><span class="p">)</span>
     <span class="n">np</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">save_path</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">data</span>
 
 <span class="c1"># Define utility function to data plots</span>
-<span class="k">def</span> <span class="nf">plot_data_samples</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">save_path</span><span class="o">=</span><span class="s2">&quot;./outputs/graphics/data_examples.png&quot;</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">plot_data_samples</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">save_path</span><span class="o">=</span><span class="s2">&quot;./outputs/graphics/data_examples.png&quot;</span><span class="p">):</span>
     <span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">sharex</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
     <span class="k">for</span> <span class="n">sample</span><span class="p">,</span> <span class="n">ax</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">5</span><span class="p">),</span> <span class="n">axes</span><span class="o">.</span><span class="n">flat</span><span class="p">):</span>
         <span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">sample</span><span class="p">]</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span> <span class="n">cbar</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">annot</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
@@ -1890,8 +1909,8 @@ tests/test_pipeline.py::test_end_to_end_pipeline <span class=" -Color -Color-Gre
 
 
 <span class="c1"># Define class for the Encoder</span>
-<span class="k">class</span> <span class="nc">Encoder</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">input_dim</span><span class="p">,</span> <span class="n">hidden_dim</span><span class="p">,</span> <span class="n">embedding_dim</span><span class="p">):</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Encoder</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">input_dim</span><span class="p">,</span> <span class="n">hidden_dim</span><span class="p">,</span> <span class="n">embedding_dim</span><span class="p">):</span>
         <span class="nb">super</span><span class="p">(</span><span class="n">Encoder</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">layers</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Sequential</span><span class="p">(</span>
             <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="n">input_dim</span><span class="p">,</span> <span class="n">hidden_dim</span><span class="p">),</span>
@@ -1899,13 +1918,13 @@ tests/test_pipeline.py::test_end_to_end_pipeline <span class=" -Color -Color-Gre
             <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="n">hidden_dim</span><span class="p">,</span> <span class="n">embedding_dim</span><span class="p">)</span>
         <span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">layers</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 
 
 <span class="c1"># Define class for the MLP</span>
-<span class="k">class</span> <span class="nc">MLP</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">input_dim</span><span class="p">,</span> <span class="n">hidden_dim</span><span class="p">):</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">MLP</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">input_dim</span><span class="p">,</span> <span class="n">hidden_dim</span><span class="p">):</span>
         <span class="nb">super</span><span class="p">(</span><span class="n">MLP</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">layers</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Sequential</span><span class="p">(</span>
             <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="n">input_dim</span><span class="p">,</span> <span class="n">hidden_dim</span><span class="p">),</span>
@@ -1915,23 +1934,23 @@ tests/test_pipeline.py::test_end_to_end_pipeline <span class=" -Color -Color-Gre
             <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="n">hidden_dim</span><span class="p">,</span> <span class="n">input_dim</span><span class="p">)</span>
         <span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">layers</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 
 
 <span class="c1"># Define class for the contrastive loss</span>
-<span class="k">class</span> <span class="nc">ContrastiveLoss</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">margin</span><span class="p">):</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">ContrastiveLoss</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">margin</span><span class="p">):</span>
         <span class="nb">super</span><span class="p">(</span><span class="n">ContrastiveLoss</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">margin</span> <span class="o">=</span> <span class="n">margin</span>
 
-    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">output1</span><span class="p">,</span> <span class="n">output2</span><span class="p">,</span> <span class="n">label</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">output1</span><span class="p">,</span> <span class="n">output2</span><span class="p">,</span> <span class="n">label</span><span class="p">):</span>
         <span class="n">euclidean_distance</span> <span class="o">=</span> <span class="p">(</span><span class="n">output1</span> <span class="o">-</span> <span class="n">output2</span><span class="p">)</span><span class="o">.</span><span class="n">pow</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">torch</span><span class="o">.</span><span class="n">mean</span><span class="p">((</span><span class="mi">1</span> <span class="o">-</span> <span class="n">label</span><span class="p">)</span> <span class="o">*</span> <span class="n">euclidean_distance</span> <span class="o">+</span> <span class="n">label</span> <span class="o">*</span> <span class="n">torch</span><span class="o">.</span><span class="n">clamp</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">margin</span> <span class="o">-</span> <span class="n">euclidean_distance</span><span class="p">,</span> <span class="nb">min</span><span class="o">=</span><span class="mf">0.0</span><span class="p">))</span>
 
 
 <span class="c1"># Define utility function to train the encoder</span>
-<span class="k">def</span> <span class="nf">train_encoder</span><span class="p">(</span><span class="n">encoder</span><span class="p">,</span> <span class="n">data_train</span><span class="p">,</span> <span class="n">epochs</span><span class="o">=</span><span class="mi">4000</span><span class="p">,</span> <span class="n">lr</span><span class="o">=</span><span class="mf">0.001</span><span class="p">,</span> <span class="n">momentum</span><span class="o">=</span><span class="mf">0.9</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">train_encoder</span><span class="p">(</span><span class="n">encoder</span><span class="p">,</span> <span class="n">data_train</span><span class="p">,</span> <span class="n">epochs</span><span class="o">=</span><span class="mi">4000</span><span class="p">,</span> <span class="n">lr</span><span class="o">=</span><span class="mf">0.001</span><span class="p">,</span> <span class="n">momentum</span><span class="o">=</span><span class="mf">0.9</span><span class="p">):</span>
     <span class="n">loss_function</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">MSELoss</span><span class="p">()</span>
     <span class="n">optimizer</span> <span class="o">=</span> <span class="n">optim</span><span class="o">.</span><span class="n">SGD</span><span class="p">(</span><span class="n">encoder</span><span class="o">.</span><span class="n">parameters</span><span class="p">(),</span> <span class="n">lr</span><span class="o">=</span><span class="n">lr</span><span class="p">,</span> <span class="n">momentum</span><span class="o">=</span><span class="n">momentum</span><span class="p">)</span>
     <span class="n">losses</span> <span class="o">=</span> <span class="p">[]</span>
@@ -1954,7 +1973,7 @@ tests/test_pipeline.py::test_end_to_end_pipeline <span class=" -Color -Color-Gre
 
 
 <span class="c1"># Define utility function to plot loss</span>
-<span class="k">def</span> <span class="nf">plot_loss</span><span class="p">(</span><span class="n">losses</span><span class="p">,</span> <span class="n">title</span><span class="p">,</span> <span class="n">save_path</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">plot_loss</span><span class="p">(</span><span class="n">losses</span><span class="p">,</span> <span class="n">title</span><span class="p">,</span> <span class="n">save_path</span><span class="p">):</span>
     <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
     <span class="n">sns</span><span class="o">.</span><span class="n">lineplot</span><span class="p">(</span><span class="n">losses</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
     <span class="n">sns</span><span class="o">.</span><span class="n">despine</span><span class="p">(</span><span class="n">offset</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
@@ -1965,7 +1984,7 @@ tests/test_pipeline.py::test_end_to_end_pipeline <span class=" -Color -Color-Gre
 
 
 <span class="c1"># Define utility function to plot encoder representations</span>
-<span class="k">def</span> <span class="nf">plot_encoder_representations</span><span class="p">(</span><span class="n">representations</span><span class="p">,</span> <span class="n">save_path</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">plot_encoder_representations</span><span class="p">(</span><span class="n">representations</span><span class="p">,</span> <span class="n">save_path</span><span class="p">):</span>
     <span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="n">sharex</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
     <span class="k">for</span> <span class="n">sample</span><span class="p">,</span> <span class="n">ax</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">5</span><span class="p">),</span> <span class="n">axes</span><span class="o">.</span><span class="n">flat</span><span class="p">):</span>
         <span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">representations</span><span class="p">[</span><span class="n">sample</span><span class="p">]</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="n">cbar</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">annot</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
@@ -1975,7 +1994,7 @@ tests/test_pipeline.py::test_end_to_end_pipeline <span class=" -Color -Color-Gre
 
 
 <span class="c1"># Define utility function to apply clustering</span>
-<span class="k">def</span> <span class="nf">apply_clustering</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">save_path</span><span class="o">=</span><span class="s1">&#39;./outputs/models/dpgmm.joblib&#39;</span><span class="p">,</span> <span class="n">n_components</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">apply_clustering</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">save_path</span><span class="o">=</span><span class="s1">&#39;./outputs/models/dpgmm.joblib&#39;</span><span class="p">,</span> <span class="n">n_components</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
     <span class="n">dpgmm</span> <span class="o">=</span> <span class="n">BayesianGaussianMixture</span><span class="p">(</span>
         <span class="n">n_components</span><span class="o">=</span><span class="n">n_components</span><span class="p">,</span> <span class="n">covariance_type</span><span class="o">=</span><span class="s1">&#39;full&#39;</span><span class="p">,</span>
         <span class="n">weight_concentration_prior_type</span><span class="o">=</span><span class="s2">&quot;dirichlet_process&quot;</span><span class="p">,</span>
@@ -1986,7 +2005,7 @@ tests/test_pipeline.py::test_end_to_end_pipeline <span class=" -Color -Color-Gre
 
 
 <span class="c1"># Define utility function to plot TSNE</span>
-<span class="k">def</span> <span class="nf">plot_tsne</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">labels</span><span class="p">,</span> <span class="n">save_path</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">plot_tsne</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">labels</span><span class="p">,</span> <span class="n">save_path</span><span class="p">):</span>
     <span class="n">tsne</span> <span class="o">=</span> <span class="n">TSNE</span><span class="p">(</span><span class="n">n_components</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">perplexity</span><span class="o">=</span><span class="mi">40</span><span class="p">,</span> <span class="n">n_iter</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
     <span class="n">tsne_results</span> <span class="o">=</span> <span class="n">tsne</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
 
@@ -2003,7 +2022,7 @@ tests/test_pipeline.py::test_end_to_end_pipeline <span class=" -Color -Color-Gre
 
 
 <span class="c1"># Define analysis steps</span>
-<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
     <span class="c1"># Set up output directories</span>
     <span class="n">paths</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;./outputs/&quot;</span><span class="p">,</span> <span class="s2">&quot;./outputs/data&quot;</span><span class="p">,</span> <span class="s2">&quot;./outputs/graphics&quot;</span><span class="p">,</span> <span class="s2">&quot;./outputs/models&quot;</span><span class="p">]</span>
     <span class="n">create_output_paths</span><span class="p">(</span><span class="n">paths</span><span class="p">)</span>
@@ -2065,13 +2084,13 @@ tests/test_pipeline.py::test_end_to_end_pipeline <span class=" -Color -Color-Gre
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%writefile</span> ./tests/test_system_analyses.py
 
-<span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">import</span> <span class="nn">shutil</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">torch</span>
-<span class="kn">from</span> <span class="nn">emd_clust_cont_loss_sim_functions</span> <span class="kn">import</span> <span class="n">main</span><span class="p">,</span> <span class="n">Encoder</span><span class="p">,</span> <span class="n">simulate_data</span><span class="p">,</span> <span class="n">train_encoder</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">shutil</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">torch</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">emd_clust_cont_loss_sim_functions</span><span class="w"> </span><span class="kn">import</span> <span class="n">main</span><span class="p">,</span> <span class="n">Encoder</span><span class="p">,</span> <span class="n">simulate_data</span><span class="p">,</span> <span class="n">train_encoder</span>
 
-<span class="k">def</span> <span class="nf">test_system_workflow</span><span class="p">():</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">test_system_workflow</span><span class="p">():</span>
     <span class="c1"># Set up paths for verification</span>
     <span class="n">output_paths</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;./outputs/&quot;</span><span class="p">,</span> <span class="s2">&quot;./outputs/data&quot;</span><span class="p">,</span> <span class="s2">&quot;./outputs/graphics&quot;</span><span class="p">,</span> <span class="s2">&quot;./outputs/models&quot;</span><span class="p">]</span>
     <span class="n">data_file</span> <span class="o">=</span> <span class="s2">&quot;./outputs/data/raw_data_sim.npy&quot;</span>
@@ -2264,11 +2283,11 @@ tests/test_system_analyses.py::test_system_workflow
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%writefile</span> ./tests/test_regression_analyses.py
 
 <span class="c1"># Import all necessary modules</span>
-<span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">import</span> <span class="nn">shutil</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">torch</span>
-<span class="kn">from</span> <span class="nn">emd_clust_cont_loss_sim_functions</span> <span class="kn">import</span> <span class="n">simulate_data</span><span class="p">,</span> <span class="n">Encoder</span><span class="p">,</span> <span class="n">train_encoder</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">shutil</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">torch</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">emd_clust_cont_loss_sim_functions</span><span class="w"> </span><span class="kn">import</span> <span class="n">simulate_data</span><span class="p">,</span> <span class="n">Encoder</span><span class="p">,</span> <span class="n">train_encoder</span>
 
 
 <span class="c1"># Define list of paths</span>
@@ -2276,7 +2295,7 @@ tests/test_system_analyses.py::test_system_workflow
 
 
 <span class="c1"># Define regression test</span>
-<span class="k">def</span> <span class="nf">test_regression_workflow</span><span class="p">():</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">test_regression_workflow</span><span class="p">():</span>
     <span class="c1"># Part 1: Data Consistency Check</span>
     <span class="c1"># Generate test data and check shape and sample values</span>
     <span class="n">data</span> <span class="o">=</span> <span class="n">simulate_data</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span> <span class="n">save_path</span><span class="o">=</span><span class="s2">&quot;./test_outputs/data/raw_data_sim.npy&quot;</span><span class="p">)</span>
@@ -2482,8 +2501,7 @@ tests/test_system_analyses.py::test_system_workflow
             
             
               
-                <dialog id="pst-secondary-sidebar-modal"></dialog>
-                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
   <div class="sidebar-secondary-item">
@@ -2611,8 +2629,8 @@ By Neuromatch Impact Scholars team
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
-<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>

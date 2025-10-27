@@ -1,6 +1,6 @@
 
 <p align="center">
-  <img src="https://impact-scholars.neuromatch.io/_static/Sciencematch.png" alt="Image description" width="300"/>
+  <img src="https://portal.neuromatchacademy.org/static/media/logo-black.f6feb8a6.png" alt="Image description" width="300"/>
 </p>
 
 # Welcome
